@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:movie_app/core/widgets/app_bottom_nav_shell.dart';
 
 import '../../features/browse/presentation/screens/browse_screen.dart';
 import '../../features/home/presentation/screens/home_screen.dart';
@@ -11,6 +10,7 @@ import '../../features/splash/presentation/screens/splash_screen.dart';
 import '../../features/watchlist/presentation/screens/watchlist_screen.dart';
 import '../../models/movie.dart';
 import '../constants/app_durations.dart';
+import '../widgets/app_bottom_nav_shell.dart';
 import 'route_names.dart';
 
 /// Centralized navigation graph.

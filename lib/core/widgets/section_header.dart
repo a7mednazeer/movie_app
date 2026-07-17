@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/constants/app_dimens.dart';
-import 'package:movie_app/core/constants/app_strings.dart';
-import '../../../../core/extensions/context_extensions.dart';
 
+import '../constants/app_dimens.dart';
+import '../constants/app_strings.dart';
+import '../extensions/context_extensions.dart';
+
+/// Consistent "Section Title    See All →" header used above every
+/// horizontal/vertical movie rail throughout the app.
 class SectionHeader extends StatelessWidget {
   const SectionHeader({
     required this.title,

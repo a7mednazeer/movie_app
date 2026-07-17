@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../../../core/extensions/context_extensions.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_dimens.dart';
+import '../extensions/context_extensions.dart';
 
-
+/// A shimmering placeholder rectangle used to build skeleton loading
+/// states (poster cards, list tiles, banners) without duplicating the
+/// shimmer wiring in every widget.
 class ShimmerBox extends StatelessWidget {
   const ShimmerBox({
     required this.width,

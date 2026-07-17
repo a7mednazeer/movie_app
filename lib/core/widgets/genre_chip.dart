@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/constants/app_dimens.dart';
-import '../../../../core/extensions/context_extensions.dart';
 
+import '../constants/app_dimens.dart';
+import '../extensions/context_extensions.dart';
 
+/// A pill-shaped, tappable genre/category label.
 class GenreChip extends StatelessWidget {
   const GenreChip({required this.label, required this.onTap, super.key});
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/widgets/app_error_view.dart';
 
 import '../../../../core/constants/app_strings.dart';
+import '../../../../core/widgets/app_error_view.dart';
 
 /// Temporary placeholder. The genre grid, honoring an optional
 /// `genreId`/`genreName` deep link from Home's category chips, will

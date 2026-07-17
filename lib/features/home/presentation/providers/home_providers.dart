@@ -1,21 +1,11 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart';
 
-import '../../../../core/errors/failures.dart';
+import '../../../../core/utils/either_unwrap.dart';
 import '../../../../models/genre.dart';
 import '../../../../models/movie.dart';
 import '../../../../providers/repository_providers.dart';
 import '../../../../repositories/movie_repository.dart';
-
-/// Unwraps an `Either<Failure, T>` into a plain `T`, throwing the
-/// [Failure] on the left side so it surfaces naturally as
-/// `AsyncValue.error` — each section's UI can then inspect
-/// `error is NetworkFailure` etc. to tailor its empty/error state.
-Future<T> _unwrap<T>(Future<Either<Failure, T>> future) async {
-  final Either<Failure, T> result = await future;
-  return result.fold((Failure failure) => throw failure, (T data) => data);
-}
 
 /// Each provider below is independent, so a failure or slow response in
 /// one rail never blocks the others, and pull-to-refresh can invalidate
@@ -24,38 +14,38 @@ Future<T> _unwrap<T>(Future<Either<Failure, T>> future) async {
 final FutureProvider<List<Movie>> trendingMoviesProvider =
     FutureProvider<List<Movie>>((Ref ref) {
   final MovieRepository repo = ref.watch(movieRepositoryProvider);
-  return _unwrap(repo.getTrendingMovies());
+  return unwrapEither(repo.getTrendingMovies());
 });
 
 final FutureProvider<List<Movie>> popularMoviesProvider =
     FutureProvider<List<Movie>>((Ref ref) {
   final MovieRepository repo = ref.watch(movieRepositoryProvider);
-  return _unwrap(repo.getPopularMovies());
+  return unwrapEither(repo.getPopularMovies());
 });
 
 final FutureProvider<List<Movie>> topRatedMoviesProvider =
     FutureProvider<List<Movie>>((Ref ref) {
   final MovieRepository repo = ref.watch(movieRepositoryProvider);
-  return _unwrap(repo.getTopRatedMovies());
+  return unwrapEither(repo.getTopRatedMovies());
 });
 
 final FutureProvider<List<Movie>> upcomingMoviesProvider =
     FutureProvider<List<Movie>>((Ref ref) {
   final MovieRepository repo = ref.watch(movieRepositoryProvider);
-  return _unwrap(repo.getUpcomingMovies());
+  return unwrapEither(repo.getUpcomingMovies());
 });
 
 final FutureProvider<List<Movie>> recommendedMoviesProvider =
     FutureProvider<List<Movie>>((Ref ref) {
   final MovieRepository repo = ref.watch(movieRepositoryProvider);
-  return _unwrap(repo.getRecommendedMovies());
+  return unwrapEither(repo.getRecommendedMovies());
 });
 
 final FutureProvider<List<Genre>> homeGenresProvider = FutureProvider<List<Genre>>((
   Ref ref,
 ) {
   final MovieRepository repo = ref.watch(movieRepositoryProvider);
-  return _unwrap(repo.getGenres());
+  return unwrapEither(repo.getGenres());
 });
 
 /// All Home section providers, invalidated together by pull-to-refresh.

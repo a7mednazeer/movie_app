@@ -23,6 +23,7 @@ class Movie extends Equatable {
     this.genres = const <Genre>[],
     this.genreIds = const <int>[],
     this.certification,
+    this.videoKey,
   });
 
   final int id;
@@ -48,6 +49,13 @@ class Movie extends Equatable {
 
   /// Content rating, e.g. `PG-13`. `null` when unknown.
   final String? certification;
+
+  /// YouTube video key for the trailer (from TMDB's `/movie/{id}/videos`).
+  /// `null` when no trailer is available yet.
+  final String? videoKey;
+
+  String? get trailerUrl =>
+      (videoKey == null || videoKey!.isEmpty) ? null : 'https://www.youtube.com/watch?v=$videoKey';
 
   String? get posterUrl =>
       (posterPath == null || posterPath!.isEmpty) ? null : ApiEndpoints.posterUrl(posterPath!);
@@ -81,6 +89,7 @@ class Movie extends Equatable {
       voteCount: (json['vote_count'] as num?)?.toInt() ?? 0,
       runtimeMinutes: (json['runtime'] as num?)?.toInt(),
       certification: json['certification'] as String?,
+      videoKey: json['video_key'] as String?,
       genres: json['genres'] is List
           ? (json['genres'] as List<dynamic>)
               .map((dynamic g) => Genre.fromJson(g as Map<String, dynamic>))
@@ -97,7 +106,12 @@ class Movie extends Equatable {
     return DateTime.tryParse(raw);
   }
 
-  Movie copyWith({List<Genre>? genres, int? runtimeMinutes, String? certification}) {
+  Movie copyWith({
+    List<Genre>? genres,
+    int? runtimeMinutes,
+    String? certification,
+    String? videoKey,
+  }) {
     return Movie(
       id: id,
       title: title,
@@ -111,6 +125,7 @@ class Movie extends Equatable {
       genres: genres ?? this.genres,
       genreIds: genreIds,
       certification: certification ?? this.certification,
+      videoKey: videoKey ?? this.videoKey,
     );
   }
 

@@ -1,8 +1,10 @@
 import 'package:dartz/dartz.dart';
 
 import '../core/errors/failures.dart';
+import '../models/cast_member.dart';
 import '../models/genre.dart';
 import '../models/movie.dart';
+import '../models/review.dart';
 
 /// Contract for everything movie-data-related.
 ///
@@ -28,6 +30,10 @@ abstract class MovieRepository {
   Future<Either<Failure, Movie>> getMovieDetails(int movieId);
 
   Future<Either<Failure, List<Movie>>> getSimilarMovies(int movieId);
+
+  Future<Either<Failure, List<CastMember>>> getMovieCredits(int movieId);
+
+  Future<Either<Failure, List<Review>>> getMovieReviews(int movieId);
 
   Future<Either<Failure, List<Genre>>> getGenres();
 }

@@ -1,11 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/constants/app_colors.dart';
-import 'package:movie_app/core/constants/app_dimens.dart';
-import 'package:movie_app/core/widgets/shimmer_box.dart';
-import 'package:movie_app/models/movie.dart';
-import '../../../../core/extensions/context_extensions.dart';
 
+import '../../models/movie.dart';
+import '../constants/app_colors.dart';
+import '../constants/app_dimens.dart';
+import '../extensions/context_extensions.dart';
+import 'shimmer_box.dart';
+
+/// Returns a stable Hero tag shared between a poster card and the details
+/// screen it navigates to, so the poster animates smoothly between them.
 String moviePosterHeroTag(int movieId) => 'movie-poster-$movieId';
 
 /// A portrait poster card: image, rating badge, title, and year — the

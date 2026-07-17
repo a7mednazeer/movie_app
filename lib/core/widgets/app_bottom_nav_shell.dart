@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:movie_app/core/constants/app_strings.dart';
 
+import '../constants/app_strings.dart';
 
 /// Shared bottom-navigation chrome for the four main tabs (Home, Search,
 /// Browse, Watchlist). Wraps GoRouter's [StatefulNavigationShell] so each

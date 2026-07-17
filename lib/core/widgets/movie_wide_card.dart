@@ -1,12 +1,17 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/constants/app_colors.dart';
-import 'package:movie_app/core/constants/app_dimens.dart';
-import 'package:movie_app/core/widgets/movie_poster_card.dart';
-import 'package:movie_app/core/widgets/shimmer_box.dart';
-import 'package:movie_app/models/movie.dart';
-import '../../../../core/extensions/context_extensions.dart';
 
+import '../../models/movie.dart';
+import '../constants/app_colors.dart';
+import '../constants/app_dimens.dart';
+import '../extensions/context_extensions.dart';
+import 'movie_poster_card.dart';
+import 'shimmer_box.dart';
+
+/// A wide, horizontally-laid-out movie card: poster thumbnail + title,
+/// year, genres, rating, and an optional trailing action. Used for
+/// vertical lists like Home's "Recommended For You" and (later) Search
+/// results and the Watchlist screen.
 class MovieWideCard extends StatelessWidget {
   const MovieWideCard({
     required this.movie,

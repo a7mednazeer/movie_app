@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:movie_app/core/widgets/app_error_view.dart';
-import 'package:movie_app/core/widgets/movie_wide_card.dart';
-import 'package:movie_app/core/widgets/section_header.dart';
-import 'package:movie_app/core/widgets/shimmer_box.dart';
 
 import '../../../../core/constants/app_dimens.dart';
 import '../../../../core/constants/app_strings.dart';
-
+import '../../../../core/widgets/app_error_view.dart';
+import '../../../../core/widgets/movie_wide_card.dart';
+import '../../../../core/widgets/section_header.dart';
+import '../../../../core/widgets/shimmer_box.dart';
 import '../../../../models/movie.dart';
 import '../../../../providers/watchlist_provider.dart';
 import '../providers/home_providers.dart';

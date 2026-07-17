@@ -5,13 +5,13 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_dimens.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/routes/route_names.dart';
+import '../../../../core/widgets/movie_rail_section.dart';
 import '../../../../models/genre.dart';
 import '../../../../models/movie.dart';
 import '../providers/home_providers.dart';
 import '../widgets/categories_section.dart';
 import '../widgets/featured_banner.dart';
 import '../widgets/home_app_bar.dart';
-import '../widgets/movie_rail_section.dart';
 import '../widgets/recommended_section.dart';
 
 /// The app's landing screen: a featured banner carousel followed by

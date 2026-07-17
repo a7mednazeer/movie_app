@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:movie_app/core/widgets/genre_chip.dart';
-import 'package:movie_app/core/widgets/section_header.dart';
-import 'package:movie_app/core/widgets/shimmer_box.dart';
 
 import '../../../../core/constants/app_dimens.dart';
 import '../../../../core/constants/app_strings.dart';
-
+import '../../../../core/widgets/genre_chip.dart';
+import '../../../../core/widgets/section_header.dart';
+import '../../../../core/widgets/shimmer_box.dart';
 import '../../../../models/genre.dart';
 import '../providers/home_providers.dart';
 

@@ -2,8 +2,10 @@ import 'package:dartz/dartz.dart';
 
 import '../core/errors/exceptions.dart';
 import '../core/errors/failures.dart';
+import '../models/cast_member.dart';
 import '../models/genre.dart';
 import '../models/movie.dart';
+import '../models/review.dart';
 import 'datasources/dummy_movie_data_source.dart';
 import 'movie_repository.dart';
 
@@ -86,6 +88,16 @@ class MovieRepositoryImpl implements MovieRepository {
   @override
   Future<Either<Failure, List<Movie>>> getSimilarMovies(int movieId) {
     return _guard(() => _dataSource.fetchSimilar(movieId));
+  }
+
+  @override
+  Future<Either<Failure, List<CastMember>>> getMovieCredits(int movieId) {
+    return _guard(() => _dataSource.fetchCredits(movieId));
+  }
+
+  @override
+  Future<Either<Failure, List<Review>>> getMovieReviews(int movieId) {
+    return _guard(() => _dataSource.fetchReviews(movieId));
   }
 
   @override

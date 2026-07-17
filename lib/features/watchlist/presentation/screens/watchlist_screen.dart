@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:movie_app/core/widgets/app_error_view.dart';
 
 import '../../../../core/constants/app_strings.dart';
+import '../../../../core/widgets/app_error_view.dart';
 import '../../../../providers/watchlist_provider.dart';
 
 /// Temporary placeholder that already reflects real, functional state —

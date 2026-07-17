@@ -1,72 +1,51 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/widgets/movie_poster_card.dart';
 
-import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimens.dart';
-import '../../../../core/extensions/context_extensions.dart';
+import '../../../../core/utils/url_launcher_helper.dart';
 import '../../../../models/movie.dart';
+import '../widgets/action_buttons_row.dart';
+import '../widgets/cast_section.dart';
+import '../widgets/details_sliver_app_bar.dart';
+import '../widgets/expandable_description.dart';
+import '../widgets/movie_info_header.dart';
+import '../widgets/reviews_section.dart';
+import '../widgets/similar_movies_section.dart';
 
-/// Temporary placeholder that already wires up the real navigation
-/// contract (`context.push(RouteNames.movieDetails, extra: movie)`) and
-/// the Hero poster animation from every movie card. The full details
-/// experience — backdrop, cast, similar movies, reviews, trailer, etc. —
-/// is the next screen on the build plan and replaces this file.
+/// The full Movie Details experience: collapsing backdrop with a trailer
+/// play button, poster + metadata, favorite/watchlist/share/trailer
+/// actions, an expandable overview, cast, reviews, and a "More Like
+/// This" rail — each section loading and failing independently.
 class MovieDetailsScreen extends StatelessWidget {
   const MovieDetailsScreen({required this.movie, super.key});
 
   final Movie movie;
 
+  Future<void> _playTrailer(BuildContext context) {
+    return openExternalUrl(
+      context,
+      movie.trailerUrl,
+      missingUrlMessage: 'No trailer available for this title yet.',
+      launchFailedMessage: 'Couldn\'t open the trailer.',
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(movie.title)),
-      body: Padding(
-        padding: const EdgeInsets.all(AppDimens.space20),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Hero(
-              tag: moviePosterHeroTag(movie.id),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(AppDimens.radiusMd),
-                child: SizedBox(
-                  width: 120,
-                  height: 180,
-                  child: movie.posterUrl == null
-                      ? Container(
-                          color: AppColors.darkSurfaceElevated,
-                          alignment: Alignment.center,
-                          child: const Icon(Icons.movie_creation_outlined),
-                        )
-                      : CachedNetworkImage(imageUrl: movie.posterUrl!, fit: BoxFit.cover),
-                ),
-              ),
-            ),
-            const SizedBox(width: AppDimens.space16),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(movie.title, style: context.textTheme.headlineSmall),
-                  const SizedBox(height: AppDimens.space8),
-                  Text(
-                    '${movie.releaseYear} · ${movie.formattedRuntime}',
-                    style: context.textTheme.bodyMedium,
-                  ),
-                  const SizedBox(height: AppDimens.space16),
-                  Text(movie.overview, style: context.textTheme.bodyMedium),
-                  const SizedBox(height: AppDimens.space16),
-                  Text(
-                    'Full details (cast, similar movies, reviews, trailer) '
-                    'coming next.',
-                    style: context.textTheme.bodySmall,
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          DetailsSliverAppBar(movie: movie, onPlayTrailer: () => _playTrailer(context)),
+          SliverToBoxAdapter(child: MovieInfoHeader(movie: movie)),
+          SliverToBoxAdapter(child: ActionButtonsRow(movie: movie)),
+          SliverToBoxAdapter(child: ExpandableDescription(text: movie.overview)),
+          const SliverToBoxAdapter(child: SizedBox(height: AppDimens.space24)),
+          SliverToBoxAdapter(child: CastSection(movieId: movie.id)),
+          const SliverToBoxAdapter(child: SizedBox(height: AppDimens.space24)),
+          SliverToBoxAdapter(child: SimilarMoviesSection(movieId: movie.id)),
+          const SliverToBoxAdapter(child: SizedBox(height: AppDimens.space24)),
+          SliverToBoxAdapter(child: ReviewsSection(movieId: movie.id)),
+          const SliverToBoxAdapter(child: SizedBox(height: AppDimens.space32)),
+        ],
       ),
     );
   }

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/constants/app_colors.dart';
-import 'package:movie_app/core/constants/app_dimens.dart';
-import 'package:movie_app/core/constants/app_strings.dart';
-import '../../../../core/extensions/context_extensions.dart';
 
+import '../constants/app_colors.dart';
+import '../constants/app_dimens.dart';
+import '../constants/app_strings.dart';
+import '../extensions/context_extensions.dart';
+
+/// A compact, inline error state — used inside a single rail/section so
+/// one failing request never blocks the rest of the screen.
 class InlineErrorView extends StatelessWidget {
   const InlineErrorView({
     required this.onRetry,

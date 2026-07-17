@@ -1,5 +1,7 @@
+import '../../models/cast_member.dart';
 import '../../models/genre.dart';
 import '../../models/movie.dart';
+import '../../models/review.dart';
 
 /// Temporary in-memory data source standing in for the real TMDB API.
 ///
@@ -83,6 +85,50 @@ class DummyMovieDataSource {
     'PG', 'PG-13', 'R', 'PG-13', 'G',
   ];
 
+  static const List<CastMember> _castPool = <CastMember>[
+    CastMember(id: 101, name: 'Elena Marsh', character: 'Dr. Ava Kessler'),
+    CastMember(id: 102, name: 'Theo Whitfield', character: 'Captain Reyes'),
+    CastMember(id: 103, name: 'Priya Anand', character: 'Sana Voss'),
+    CastMember(id: 104, name: 'Marcus Delgado', character: 'The Cartographer'),
+    CastMember(id: 105, name: 'Ingrid Solberg', character: 'Commissioner Hale'),
+    CastMember(id: 106, name: 'Jonah Pierce', character: 'Milo Andrade'),
+    CastMember(id: 107, name: 'Yuki Tanaka', character: 'Dr. Renata Cho'),
+    CastMember(id: 108, name: 'Malik Osei', character: 'Detective Farrow'),
+  ];
+
+  static final List<Review> _reviewPool = <Review>[
+    Review(
+      id: 'r1',
+      author: 'CinemaWanderer',
+      content:
+          'A confident, atmospheric ride that trusts its audience — the '
+          'pacing lags a little in the second act, but the final twenty '
+          'minutes more than make up for it.',
+      rating: 8.5,
+      createdAt: DateTime(2024, 3, 2),
+    ),
+    Review(
+      id: 'r2',
+      author: 'nightscreen_reviews',
+      content:
+          'Gorgeous to look at, and the lead performance carries scenes '
+          'that would otherwise feel thin. Worth watching for the '
+          'cinematography alone.',
+      rating: 7.2,
+      createdAt: DateTime(2024, 1, 18),
+    ),
+    Review(
+      id: 'r3',
+      author: 'popcorn_and_prose',
+      content:
+          'Didn\'t fully click for me — the setup promises more than the '
+          'ending delivers — but it\'s a solid one-time watch on a quiet '
+          'evening.',
+      rating: 6.0,
+      createdAt: DateTime(2023, 11, 27),
+    ),
+  ];
+
   /// Simulates realistic network latency so loading/shimmer states are
   /// visible during development — remove once backed by a real API call.
   Future<void> _simulateLatency() =>
@@ -142,6 +188,23 @@ class DummyMovieDataSource {
   Future<List<Movie>> fetchSimilar(int movieId) async {
     await _simulateLatency();
     return _catalog.where((Movie movie) => movie.id != movieId).take(10).toList();
+  }
+
+  Future<List<CastMember>> fetchCredits(int movieId) async {
+    await _simulateLatency();
+    // Rotate the pool slightly per movie so different titles show a
+    // slightly different cast order, mirroring how a real API response
+    // would vary.
+    final int offset = movieId % _castPool.length;
+    return <CastMember>[
+      ..._castPool.sublist(offset),
+      ..._castPool.sublist(0, offset),
+    ];
+  }
+
+  Future<List<Review>> fetchReviews(int movieId) async {
+    await _simulateLatency();
+    return _reviewPool;
   }
 
   Future<List<Genre>> fetchGenres() async {

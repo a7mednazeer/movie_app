@@ -3,20 +3,20 @@ import 'dart:async';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:movie_app/core/widgets/app_error_view.dart';
-import 'package:movie_app/core/widgets/shimmer_box.dart';
-import 'package:movie_app/models/movie.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimens.dart';
-
+import '../../../../core/extensions/context_extensions.dart';
+import '../../../../core/widgets/app_error_view.dart';
+import '../../../../core/widgets/shimmer_box.dart';
+import '../../../../models/movie.dart';
 import '../../../../providers/watchlist_provider.dart';
 import '../providers/home_providers.dart';
 
-import '../../../../core/extensions/context_extensions.dart';
-
-
+/// The hero banner at the top of Home: an auto-advancing carousel built
+/// from the current trending movies, each slide showing the backdrop,
+/// title, quick metadata, and primary actions (play / watchlist).
 class FeaturedBanner extends ConsumerWidget {
   const FeaturedBanner({required this.onMovieTap, super.key});
 
