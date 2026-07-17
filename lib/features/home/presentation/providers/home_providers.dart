@@ -2,8 +2,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart';
 
 import '../../../../core/utils/either_unwrap.dart';
-import '../../../../models/genre.dart';
 import '../../../../models/movie.dart';
+import '../../../../providers/genres_provider.dart';
 import '../../../../providers/repository_providers.dart';
 import '../../../../repositories/movie_repository.dart';
 
@@ -41,21 +41,16 @@ final FutureProvider<List<Movie>> recommendedMoviesProvider =
   return unwrapEither(repo.getRecommendedMovies());
 });
 
-final FutureProvider<List<Genre>> homeGenresProvider = FutureProvider<List<Genre>>((
-  Ref ref,
-) {
-  final MovieRepository repo = ref.watch(movieRepositoryProvider);
-  return unwrapEither(repo.getGenres());
-});
-
 /// All Home section providers, invalidated together by pull-to-refresh.
+/// `genresProvider` is shared app-wide (see `providers/genres_provider.dart`)
+/// since Browse's genre grid needs the exact same data.
 final List<ProviderOrFamily> homeSectionProviders = <ProviderOrFamily>[
   trendingMoviesProvider,
   popularMoviesProvider,
   topRatedMoviesProvider,
   upcomingMoviesProvider,
   recommendedMoviesProvider,
-  homeGenresProvider,
+  genresProvider,
 ];
 
 /// Invalidates every Home provider and awaits them all — used by the
@@ -70,6 +65,6 @@ Future<void> refreshHome(WidgetRef ref) async {
     ref.read(topRatedMoviesProvider.future),
     ref.read(upcomingMoviesProvider.future),
     ref.read(recommendedMoviesProvider.future),
-    ref.read(homeGenresProvider.future),
+    ref.read(genresProvider.future),
   ]);
 }

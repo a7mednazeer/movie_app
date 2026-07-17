@@ -11,7 +11,7 @@ import '../../../../repositories/movie_repository.dart';
 /// user moves on, and `family`-keyed so each distinct query string gets
 /// its own cached, independently-retryable request.
 final searchResultsProvider =
-    FutureProvider.autoDispose.family<List<Movie>, String>((ref, query) {
+    FutureProvider.autoDispose.family<List<Movie>, String>((Ref ref, String query) {
   final String trimmed = query.trim();
   if (trimmed.isEmpty) return Future<List<Movie>>.value(const <Movie>[]);
 

@@ -7,10 +7,10 @@ import '../../../../core/widgets/genre_chip.dart';
 import '../../../../core/widgets/section_header.dart';
 import '../../../../core/widgets/shimmer_box.dart';
 import '../../../../models/genre.dart';
-import '../providers/home_providers.dart';
+import '../../../../providers/genres_provider.dart';
 
-/// A horizontally-scrolling row of genre chips, sourced from
-/// [homeGenresProvider]. Tapping a chip opens Browse pre-filtered to that
+/// A horizontally-scrolling row of genre chips, sourced from the shared
+/// [genresProvider]. Tapping a chip opens Browse pre-filtered to that
 /// genre — wired in [HomeScreen] via [onGenreTap].
 class CategoriesSection extends ConsumerWidget {
   const CategoriesSection({required this.onGenreTap, super.key});
@@ -19,7 +19,7 @@ class CategoriesSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final AsyncValue<List<Genre>> genresAsync = ref.watch(homeGenresProvider);
+    final AsyncValue<List<Genre>> genresAsync = ref.watch(genresProvider);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,7 +40,7 @@ class CategoriesSection extends ConsumerWidget {
             ),
             error: (Object error, StackTrace stackTrace) => Center(
               child: TextButton(
-                onPressed: () => ref.invalidate(homeGenresProvider),
+                onPressed: () => ref.invalidate(genresProvider),
                 child: const Text(AppStrings.retry),
               ),
             ),

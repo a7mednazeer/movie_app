@@ -2,9 +2,9 @@
 
 A production-grade Flutter movie discovery app built with Clean
 Architecture, MVVM-style separation, and Riverpod for state management.
-This is being built **page by page**. This drop contains: the
-foundational architecture, and complete **Splash**, **Home**,
-**Movie Details**, and **Search** screens.
+This is being built **page by page**. All six core screens are now
+complete: **Splash**, **Home**, **Movie Details**, **Search**,
+**Browse**, and **Watchlist**.
 
 ## What's included in this step
 
@@ -13,25 +13,27 @@ lib/
 ├── main.dart
 ├── models/                # Movie, Genre, CastMember, Review
 ├── repositories/           # MovieRepository contract + dummy-backed impl + data source
-├── providers/              # App-wide DI (repository, API client) + Watchlist + Favorites state
+├── providers/              # App-wide DI (repository, API client) + Watchlist + Favorites +
+│                             Genres state (Watchlist/Favorites persisted via Hive)
 ├── core/
 │   ├── constants/           # Colors, text styles, spacing, strings, asset paths, durations
 │   ├── theme/                # Centralized Material 3 light/dark ThemeData + theme-mode provider
-│   ├── routes/                # GoRouter config — bottom-nav shell + Movie Details route
+│   ├── routes/                # GoRouter config — bottom-nav shell, nested Browse→Genre route,
+│   │                            Movie Details route
 │   ├── network/                # Dio API client, TMDB endpoint constants, connectivity checker
 │   ├── errors/                  # Failure (domain) + Exception (data) types
 │   ├── utils/                    # Logger, Either-unwrap helper, external URL launcher helper
 │   ├── extensions/                 # BuildContext convenience extensions
 │   └── widgets/                     # Shared widgets: poster/wide movie cards, MovieRailSection,
-│                                       shimmer, error views, section header, genre chip, bottom-nav shell
+│                                       shimmer, error views, section header, genre chip,
+│                                       confirm dialog, bottom-nav shell
 └── features/
     ├── splash/           → ✅ Complete
     ├── home/              → ✅ Complete
     ├── movie_details/     → ✅ Complete
     ├── search/            → ✅ Complete
-    ├── browse/            → Temporary placeholder — next screen to build
-    └── watchlist/         → Temporary placeholder (already functional: toggling a card's
-                              bookmark icon anywhere in the app really adds/removes it here)
+    ├── browse/            → ✅ Complete
+    └── watchlist/         → ✅ Complete
 ```
 
 ## Home Screen — what it does
@@ -42,8 +44,8 @@ lib/
   opens Movie Details, a watchlist toggle, and `smooth_page_indicator`
   dots.
 - **Categories** — a horizontal row of genre chips sourced from the
-  repository; tapping one deep-links to Browse with `genreId`/`genreName`
-  query params already wired through GoRouter.
+  shared `genresProvider`; tapping one deep-links straight into Browse's
+  genre-movies grid (`/browse/genre/:genreId`) via GoRouter.
 - **Trending / Popular / Top Rated / Upcoming** — four independent
   horizontal rails (`MovieRailSection`, now shared from `core/widgets`),
   each backed by its own `FutureProvider` so a slow or failed request in
@@ -113,6 +115,37 @@ lib/
   Recommended section and Movie Details), so there's zero duplicated
   list-card UI across the app.
 
+## Browse Screen — what it does
+
+- **Genre grid** — every genre from the shared `genresProvider` as a
+  colorful gradient card (`GenreGridCard`, deterministic palette by genre
+  id so it's consistent and vivid without needing real artwork).
+- **Genre movies** — tapping a card (or a Home category chip) opens
+  `/browse/genre/:genreId`, a route *nested* inside Browse's own
+  `StatefulShellBranch` — so the back button returns to the grid with its
+  scroll position intact, exactly like a real app's tab navigation.
+- The genre-movies grid computes its own cell width via `LayoutBuilder`
+  so `MoviePosterCard` (built for the horizontal rails' fixed-width use)
+  renders correctly at three columns with no layout overflow.
+- Independent loading shimmer, inline retry-on-error, and an empty state
+  for a genre with no matches.
+
+## Watchlist Screen — what it does
+
+- **Real persistence** — `watchlistProvider`'s ids are backed by a Hive
+  box (`watchlist_ids`), so everything saved from any screen in the app
+  (Home, Search, Browse, Movie Details) survives an app restart. Adding
+  Hive only changed the notifier's internals — every card's `onToggleSaved`
+  callback across the app kept working unmodified.
+  `favoritesProvider` got the same treatment for consistency.
+- **Swipe-to-remove** — `Dismissible` rows with an "Undo" `SnackBar`
+  action that instantly restores the movie if tapped.
+- Ids resolve to full `Movie` objects via `watchlistMoviesProvider`,
+  fetched in parallel (`Future.wait`) rather than one at a time, ordered
+  most-recently-added first.
+- Loading shimmer, inline retry-on-error, and the same empty state
+  wording used everywhere else in the app.
+
 ## Architecture decisions
 
 - **State management:** Riverpod (`flutter_riverpod`). Section data
@@ -170,18 +203,22 @@ flutter run
 ```
 
 Splash → Home → tap any movie → full Movie Details, including tapping
-into "More Like This" for nested navigation. Tap Search in the bottom
-nav for live search with recent searches and trending suggestions.
-Browse/Watchlist still show temporary (clearly-labeled) placeholders —
-that's expected per the page-by-page process.
+into "More Like This" for nested navigation. Search for live search with
+recent searches and trending suggestions. Browse for the genre grid
+(genre cards and Home's category chips both lead to the same
+genre-movies view). Watchlist for everything you've saved, with
+swipe-to-remove + Undo — and it's still there after a restart.
 
-## Next steps (in order)
+## What's left (optional enhancements)
 
-1. ~~Home Screen~~ ✅
-2. ~~Movie Details~~ ✅
-3. ~~Search~~ ✅
-4. **Browse** — genre grid
-5. **Watchlist** — swipe-to-remove list backed by Hive persistence
-6. Profile / Settings (optional enhancements)
+All six core screens from the original spec are done. Two optional
+enhancements remain, both explicitly called out as optional in the
+original brief:
 
-Say "continue" (or "build Browse next") whenever you're ready.
+1. **Profile** — avatar, favorites count, watchlist count, settings shortcut
+2. **Settings** — theme switch (the `themeModeProvider` this would use
+   already exists and persists), language, about
+
+Say "continue" (or "build Profile next") whenever you'd like these, or
+let me know if you'd rather revisit/polish any of the six core screens
+first.

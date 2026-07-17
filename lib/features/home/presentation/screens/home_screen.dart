@@ -26,7 +26,7 @@ class HomeScreen extends ConsumerWidget {
   }
 
   void _openGenre(BuildContext context, Genre genre) {
-    context.go('${RouteNames.browse}?genreId=${genre.id}&genreName=${genre.name}');
+    context.go('${RouteNames.browse}/genre/${genre.id}?name=${Uri.encodeComponent(genre.name)}');
   }
 
   @override

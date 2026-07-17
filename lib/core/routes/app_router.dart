@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/browse/presentation/screens/browse_screen.dart';
+import '../../features/browse/presentation/screens/genre_movies_screen.dart';
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/movie_details/presentation/screens/movie_details_screen.dart';
 import '../../features/search/presentation/screens/search_screen.dart';
@@ -61,13 +62,27 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((Ref ref) {
               GoRoute(
                 path: RouteNames.browse,
                 pageBuilder: (BuildContext context, GoRouterState state) {
-                  return NoTransitionPage<void>(
-                    child: BrowseScreen(
-                      genreId: state.uri.queryParameters['genreId'],
-                      genreName: state.uri.queryParameters['genreName'],
-                    ),
-                  );
+                  return const NoTransitionPage<void>(child: BrowseScreen());
                 },
+                routes: <RouteBase>[
+                  // Nested under /browse so it lives in the Browse tab's own
+                  // stack — the back button returns to the genre grid with
+                  // its scroll position intact. Home's category chips also
+                  // deep-link straight here via `context.go(...)`.
+                  GoRoute(
+                    path: 'genre/:genreId',
+                    pageBuilder: (BuildContext context, GoRouterState state) {
+                      final int genreId =
+                          int.parse(state.pathParameters['genreId']!);
+                      final String genreName =
+                          state.uri.queryParameters['name'] ?? 'Genre';
+                      return _fadeThroughPage(
+                        GenreMoviesScreen(genreId: genreId, genreName: genreName),
+                        state,
+                      );
+                    },
+                  ),
+                ],
               ),
             ],
           ),
