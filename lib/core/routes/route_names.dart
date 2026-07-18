@@ -6,6 +6,7 @@ abstract final class RouteNames {
   static const String browse = '/browse';
   static const String watchlist = '/watchlist';
   static const String profile = '/profile';
+  static const String settings = '/settings';
   static const String movieDetails = '/movie-details';
 
   const RouteNames._();

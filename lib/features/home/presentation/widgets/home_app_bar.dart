@@ -9,9 +9,10 @@ import '../../../../core/extensions/context_extensions.dart';
 /// on the right. Kept as a [PreferredSizeWidget] so it slots directly into
 /// `Scaffold.appBar`.
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const HomeAppBar({required this.onSearchTap, super.key});
+  const HomeAppBar({required this.onSearchTap, required this.onProfileTap, super.key});
 
   final VoidCallback onSearchTap;
+  final VoidCallback onProfileTap;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +48,10 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
           onPressed: onSearchTap,
           icon: const Icon(Icons.search_rounded),
+        ),
+        IconButton(
+          onPressed: onProfileTap,
+          icon: const Icon(Icons.person_outline_rounded),
         ),
         const SizedBox(width: AppDimens.space8),
       ],

@@ -37,7 +37,10 @@ class HomeScreen extends ConsumerWidget {
     final AsyncValue<List<Movie>> upcoming = ref.watch(upcomingMoviesProvider);
 
     return Scaffold(
-      appBar: HomeAppBar(onSearchTap: () => context.go(RouteNames.search)),
+      appBar: HomeAppBar(
+        onSearchTap: () => context.go(RouteNames.search),
+        onProfileTap: () => context.push(RouteNames.profile),
+      ),
       body: RefreshIndicator(
         onRefresh: () => refreshHome(ref),
         child: CustomScrollView(

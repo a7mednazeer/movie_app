@@ -2,9 +2,10 @@
 
 A production-grade Flutter movie discovery app built with Clean
 Architecture, MVVM-style separation, and Riverpod for state management.
-This is being built **page by page**. All six core screens are now
-complete: **Splash**, **Home**, **Movie Details**, **Search**,
-**Browse**, and **Watchlist**.
+This is being built **page by page**. Every screen from the original
+brief is now complete, including both optional enhancements:
+**Splash**, **Home**, **Movie Details**, **Search**, **Browse**,
+**Watchlist**, **Profile**, and **Settings**.
 
 ## What's included in this step
 
@@ -18,22 +19,24 @@ lib/
 ├── core/
 │   ├── constants/           # Colors, text styles, spacing, strings, asset paths, durations
 │   ├── theme/                # Centralized Material 3 light/dark ThemeData + theme-mode provider
-│   ├── routes/                # GoRouter config — bottom-nav shell, nested Browse→Genre route,
-│   │                            Movie Details route
+│   ├── routes/                # GoRouter config — bottom-nav shell, nested Browse→Genre and
+│   │                            Profile→Favorites routes, Movie Details + Settings routes
 │   ├── network/                # Dio API client, TMDB endpoint constants, connectivity checker
 │   ├── errors/                  # Failure (domain) + Exception (data) types
 │   ├── utils/                    # Logger, Either-unwrap helper, external URL launcher helper
 │   ├── extensions/                 # BuildContext convenience extensions
 │   └── widgets/                     # Shared widgets: poster/wide movie cards, MovieRailSection,
-│                                       shimmer, error views, section header, genre chip,
-│                                       confirm dialog, bottom-nav shell
+│                                       SavedMoviesList, shimmer, error views, section header,
+│                                       genre chip, confirm dialog, bottom-nav shell
 └── features/
     ├── splash/           → ✅ Complete
     ├── home/              → ✅ Complete
     ├── movie_details/     → ✅ Complete
     ├── search/            → ✅ Complete
     ├── browse/            → ✅ Complete
-    └── watchlist/         → ✅ Complete
+    ├── watchList/         → ✅ Complete
+    ├── profile/           → ✅ Complete (includes the Favorites screen)
+    └── settings/          → ✅ Complete
 ```
 
 ## Home Screen — what it does
@@ -207,18 +210,54 @@ into "More Like This" for nested navigation. Search for live search with
 recent searches and trending suggestions. Browse for the genre grid
 (genre cards and Home's category chips both lead to the same
 genre-movies view). Watchlist for everything you've saved, with
-swipe-to-remove + Undo — and it's still there after a restart.
+swipe-to-remove + Undo — and it's still there after a restart. Tap the
+profile icon next to Search in Home's app bar for Profile → Favorites
+and Settings.
 
-## What's left (optional enhancements)
+## Profile Screen — what it does
 
-All six core screens from the original spec are done. Two optional
-enhancements remain, both explicitly called out as optional in the
-original brief:
+- Deliberately doesn't invent a signed-in user (no name/email/avatar
+  photo) since the app has no accounts — framed instead as "Your
+  Library": real counts of what's actually persisted.
+- **Favorites** and **Watchlist** stat cards show live counts
+  (`favoritesProvider`/`watchlistProvider`) and tap through to the full
+  list — Favorites is a new nested route (`/profile/favorites`);
+  Watchlist switches straight to its bottom-nav tab.
+- Settings shortcut.
 
-1. **Profile** — avatar, favorites count, watchlist count, settings shortcut
-2. **Settings** — theme switch (the `themeModeProvider` this would use
-   already exists and persists), language, about
+## Settings Screen — what it does
 
-Say "continue" (or "build Profile next") whenever you'd like these, or
-let me know if you'd rather revisit/polish any of the six core screens
-first.
+- **Theme switch** — a Light/Dark/Auto `SegmentedButton` wired directly
+  to the existing `themeModeProvider` (already persisted since Splash);
+  switching updates the whole app instantly.
+- **Language** — a modal picker over four languages. English is fully
+  wired and persisted; the other three are visibly labeled "Coming
+  soon" and can't be selected — an honest, functional picker rather than
+  one that silently pretends to translate content it can't.
+- **About** — app version, a short description, and the TMDB attribution
+  line required by TMDB's terms, with a "Visit TMDB" link via the shared
+  `openExternalUrl` helper.
+
+## New shared infrastructure this step
+
+- **`SavedMoviesList`** (`core/widgets`) — the swipe-to-remove/Undo/empty/
+  loading/error list pattern, extracted once Favorites needed the exact
+  same behavior as Watchlist. `WatchlistScreen` was refactored to use it
+  too, so that logic now lives in exactly one place instead of two.
+- **`favoriteMoviesProvider`** mirrors `watchlistMoviesProvider` exactly
+  (ids → resolved `Movie`s, most-recent-first, parallel fetch).
+
+## Project status: complete
+
+Every screen from the original brief — including both enhancements
+explicitly marked optional — is built and wired end-to-end:
+
+**Splash · Home · Movie Details · Search · Browse · Watchlist · Profile
+· Settings**
+
+The architecture is ready for the real TMDB API (see above), Light/Dark
+theming is centralized and complete, and every async section in the app
+follows the same loading/error/empty/retry pattern. From here, natural
+next steps would be swapping in the real TMDB data source, adding real
+image assets, or writing tests against the repository/provider layer —
+happy to pick up any of those, or revisit/polish anything already built.

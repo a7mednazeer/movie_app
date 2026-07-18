@@ -6,7 +6,10 @@ import '../../features/browse/presentation/screens/browse_screen.dart';
 import '../../features/browse/presentation/screens/genre_movies_screen.dart';
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/movie_details/presentation/screens/movie_details_screen.dart';
+import '../../features/profile/presentation/screens/favorites_screen.dart';
+import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../features/search/presentation/screens/search_screen.dart';
+import '../../features/settings/presentation/screens/settings_screen.dart';
 import '../../features/splash/presentation/screens/splash_screen.dart';
 import '../../features/watchlist/presentation/screens/watchlist_screen.dart';
 import '../../models/movie.dart';
@@ -105,8 +108,26 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((Ref ref) {
           return _fadeThroughPage(MovieDetailsScreen(movie: movie), state);
         },
       ),
-      // Profile and Settings routes are added here once those optional
-      // screens are built, following the same pattern.
+      GoRoute(
+        path: RouteNames.profile,
+        pageBuilder: (BuildContext context, GoRouterState state) {
+          return _fadeThroughPage(const ProfileScreen(), state);
+        },
+        routes: <RouteBase>[
+          GoRoute(
+            path: 'favorites',
+            pageBuilder: (BuildContext context, GoRouterState state) {
+              return _fadeThroughPage(const FavoritesScreen(), state);
+            },
+          ),
+        ],
+      ),
+      GoRoute(
+        path: RouteNames.settings,
+        pageBuilder: (BuildContext context, GoRouterState state) {
+          return _fadeThroughPage(const SettingsScreen(), state);
+        },
+      ),
     ],
   );
 });
