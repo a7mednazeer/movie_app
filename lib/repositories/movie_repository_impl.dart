@@ -2,29 +2,41 @@ import 'package:dartz/dartz.dart';
 
 import '../core/errors/exceptions.dart';
 import '../core/errors/failures.dart';
+import '../core/network/api_endpoints.dart';
 import '../models/cast_member.dart';
 import '../models/genre.dart';
 import '../models/movie.dart';
 import '../models/review.dart';
 import 'datasources/dummy_movie_data_source.dart';
+import 'datasources/movie_remote_data_source.dart';
 import 'movie_repository.dart';
 
-/// Concrete [MovieRepository], currently backed by [DummyMovieDataSource].
+/// Concrete [MovieRepository].
 ///
-/// ## Swapping in the real TMDB API
-/// 1. Create `MovieRemoteDataSource` with the same method signatures as
-///    [DummyMovieDataSource], calling `ApiClient.get(ApiEndpoints...)` and
-///    mapping the JSON response into `Movie`/`Genre` via
-///    `Movie.fromJson` / `Genre.fromJson`.
-/// 2. Replace the [DummyMovieDataSource] field below with the new remote
-///    source.
-/// 3. Nothing else changes — every Notifier/ViewModel already depends on
-///    [MovieRepository], not on this implementation.
+/// Automatically uses the real [MovieRemoteDataSource] (TMDB) once a key
+/// is configured via `--dart-define=c7e3fb5ddb5011244118a2d0e623e336=...` (see
+/// `ApiEndpoints.apiKey`), and falls back to [DummyMovieDataSource]
+/// otherwise — so the app is fully functional out of the box, and
+/// upgrades to real data the moment a key is supplied, with no code
+/// changes required either way.
+///
+/// The choice is made once at construction, not per-request: if the real
+/// API is configured but a single request fails (e.g. no internet), that
+/// failure surfaces to the UI as a real, retryable [Failure] rather than
+/// silently swapping to dummy data — a signed-in-for-real-data user
+/// should see an honest error, not quietly-wrong content.
 class MovieRepositoryImpl implements MovieRepository {
-  MovieRepositoryImpl({DummyMovieDataSource? dataSource})
-      : _dataSource = dataSource ?? DummyMovieDataSource();
+  MovieRepositoryImpl({
+    MovieRemoteDataSource? remoteDataSource,
+    DummyMovieDataSource? dummyDataSource,
+    bool? useRemote,
+  })  : _remote = remoteDataSource ?? MovieRemoteDataSource(),
+        _dummy = dummyDataSource ?? DummyMovieDataSource(),
+        _useRemote = useRemote ?? ApiEndpoints.apiKey.isNotEmpty;
 
-  final DummyMovieDataSource _dataSource;
+  final MovieRemoteDataSource _remote;
+  final DummyMovieDataSource _dummy;
+  final bool _useRemote;
 
   Future<Either<Failure, T>> _guard<T>(Future<T> Function() action) async {
     try {
@@ -47,61 +59,79 @@ class MovieRepositoryImpl implements MovieRepository {
 
   @override
   Future<Either<Failure, List<Movie>>> getTrendingMovies() {
-    return _guard(_dataSource.fetchTrending);
+    return _guard(_useRemote ? _remote.fetchTrending : _dummy.fetchTrending);
   }
 
   @override
   Future<Either<Failure, List<Movie>>> getPopularMovies({int page = 1}) {
-    return _guard(() => _dataSource.fetchPopular(page: page));
+    return _guard(() => _useRemote
+        ? _remote.fetchPopular(page: page)
+        : _dummy.fetchPopular(page: page));
   }
 
   @override
   Future<Either<Failure, List<Movie>>> getTopRatedMovies({int page = 1}) {
-    return _guard(() => _dataSource.fetchTopRated(page: page));
+    return _guard(() => _useRemote
+        ? _remote.fetchTopRated(page: page)
+        : _dummy.fetchTopRated(page: page));
   }
 
   @override
   Future<Either<Failure, List<Movie>>> getUpcomingMovies({int page = 1}) {
-    return _guard(() => _dataSource.fetchUpcoming(page: page));
+    return _guard(() => _useRemote
+        ? _remote.fetchUpcoming(page: page)
+        : _dummy.fetchUpcoming(page: page));
   }
 
   @override
   Future<Either<Failure, List<Movie>>> getRecommendedMovies() {
-    return _guard(_dataSource.fetchRecommended);
+    return _guard(_useRemote ? _remote.fetchRecommended : _dummy.fetchRecommended);
   }
 
   @override
   Future<Either<Failure, List<Movie>>> getMoviesByGenre(int genreId, {int page = 1}) {
-    return _guard(() => _dataSource.fetchByGenre(genreId, page: page));
+    return _guard(() => _useRemote
+        ? _remote.fetchByGenre(genreId, page: page)
+        : _dummy.fetchByGenre(genreId, page: page));
   }
 
   @override
   Future<Either<Failure, List<Movie>>> searchMovies(String query, {int page = 1}) {
-    return _guard(() => _dataSource.search(query, page: page));
+    return _guard(
+      () => _useRemote ? _remote.search(query, page: page) : _dummy.search(query, page: page),
+    );
   }
 
   @override
   Future<Either<Failure, Movie>> getMovieDetails(int movieId) {
-    return _guard(() => _dataSource.fetchDetails(movieId));
+    return _guard(
+      () => _useRemote ? _remote.fetchDetails(movieId) : _dummy.fetchDetails(movieId),
+    );
   }
 
   @override
   Future<Either<Failure, List<Movie>>> getSimilarMovies(int movieId) {
-    return _guard(() => _dataSource.fetchSimilar(movieId));
+    return _guard(
+      () => _useRemote ? _remote.fetchSimilar(movieId) : _dummy.fetchSimilar(movieId),
+    );
   }
 
   @override
   Future<Either<Failure, List<CastMember>>> getMovieCredits(int movieId) {
-    return _guard(() => _dataSource.fetchCredits(movieId));
+    return _guard(
+      () => _useRemote ? _remote.fetchCredits(movieId) : _dummy.fetchCredits(movieId),
+    );
   }
 
   @override
   Future<Either<Failure, List<Review>>> getMovieReviews(int movieId) {
-    return _guard(() => _dataSource.fetchReviews(movieId));
+    return _guard(
+      () => _useRemote ? _remote.fetchReviews(movieId) : _dummy.fetchReviews(movieId),
+    );
   }
 
   @override
   Future<Either<Failure, List<Genre>>> getGenres() {
-    return _guard(_dataSource.fetchGenres);
+    return _guard(_useRemote ? _remote.fetchGenres : _dummy.fetchGenres);
   }
 }

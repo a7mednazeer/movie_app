@@ -1,0 +1,18 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="92" fill="#1E2128"/>
+
+  <!-- Empty movie frame -->
+  <rect x="58" y="66" width="68" height="52" rx="8" fill="none" stroke="#2A2E37" stroke-width="6"/>
+  <line x1="72" y1="66" x2="72" y2="118" stroke="#2A2E37" stroke-width="4"/>
+  <line x1="112" y1="66" x2="112" y2="118" stroke="#2A2E37" stroke-width="4"/>
+
+  <!-- Dashed "nothing here" mark -->
+  <path d="M80 92 L104 92" stroke="#6B7080" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 10"/>
+
+  <!-- Magnifying glass -->
+  <circle cx="122" cy="122" r="38" fill="#16181D" stroke="#E8A33D" stroke-width="7"/>
+  <line x1="149" y1="149" x2="176" y2="176" stroke="#E8A33D" stroke-width="10" stroke-linecap="round"/>
+  <line x1="110" y1="122" x2="134" y2="122" stroke="#E5484D" stroke-width="6" stroke-linecap="round"/>
+
+  <circle cx="42" cy="150" r="4" fill="#E8A33D" opacity="0.5"/>
+</svg>

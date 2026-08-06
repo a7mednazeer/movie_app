@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/constants/app_dimens.dart';
+import '../../../../core/constants/asset_paths.dart';
 import '../../../../core/routes/route_names.dart';
 import '../../../../core/widgets/app_error_view.dart';
 import '../../../../core/widgets/movie_poster_card.dart';
@@ -42,7 +43,7 @@ class GenreMoviesScreen extends ConsumerWidget {
                   _spacing * (_crossAxisCount - 1)) /
               _crossAxisCount;
           final double cellHeight =
-              cellWidth / AppDimens.posterCardAspectRatio + _textBlockHeight + _spacing;
+              cellWidth / AppDimens.posterCardAspectRatio + _textBlockHeight;
 
           return moviesAsync.when(
             loading: () => _buildShimmerGrid(cellHeight),
@@ -50,6 +51,7 @@ class GenreMoviesScreen extends ConsumerWidget {
               child: Padding(
                 padding: const EdgeInsets.all(AppDimens.screenPaddingHorizontal),
                 child: InlineErrorView(
+                  error: error,
                   onRetry: () => ref.invalidate(genreMoviesProvider(genreId)),
                 ),
               ),
@@ -58,6 +60,7 @@ class GenreMoviesScreen extends ConsumerWidget {
               if (movies.isEmpty) {
                 return const FullScreenStateView(
                   icon: Icons.movie_filter_outlined,
+                  illustrationAsset: AssetPaths.noResultsIllustration,
                   title: 'No movies yet',
                   subtitle: 'Nothing in this genre right now — check back soon.',
                 );
@@ -67,7 +70,7 @@ class GenreMoviesScreen extends ConsumerWidget {
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: _crossAxisCount,
                   crossAxisSpacing: _spacing,
-                  mainAxisSpacing: AppDimens.space20,
+                  mainAxisSpacing: AppDimens.space16,
                   mainAxisExtent: cellHeight,
                 ),
                 itemCount: movies.length,

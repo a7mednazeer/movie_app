@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/network/api_client.dart';
+import '../repositories/datasources/movie_remote_data_source.dart';
 import '../repositories/movie_repository.dart';
 import '../repositories/movie_repository_impl.dart';
 
@@ -11,13 +12,13 @@ final Provider<ApiClient> apiClientProvider = Provider<ApiClient>((Ref ref) {
 
 /// The app-wide [MovieRepository] dependency. Every feature reads through
 /// this provider rather than constructing [MovieRepositoryImpl] directly,
-/// which is what makes swapping in the real API (or mocking in tests) a
-/// one-line change.
+/// which is what makes swapping data sources (or mocking in tests) a
+/// one-line change here instead of a hunt through the app.
 final Provider<MovieRepository> movieRepositoryProvider = Provider<MovieRepository>((
   Ref ref,
 ) {
-  // `apiClientProvider` is already wired up here — once a real
-  // `MovieRemoteDataSource` exists, pass `ref.watch(apiClientProvider)`
-  // into it and swap it into `MovieRepositoryImpl`'s constructor.
-  return MovieRepositoryImpl();
+  final ApiClient apiClient = ref.watch(apiClientProvider);
+  return MovieRepositoryImpl(
+    remoteDataSource: MovieRemoteDataSource(apiClient: apiClient),
+  );
 });

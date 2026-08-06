@@ -37,6 +37,7 @@ class CastSection extends ConsumerWidget {
                 horizontal: AppDimens.screenPaddingHorizontal,
               ),
               child: InlineErrorView(
+                error: error,
                 onRetry: () => ref.invalidate(movieCastProvider(movieId)),
               ),
             ),

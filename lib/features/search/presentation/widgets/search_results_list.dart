@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/constants/app_dimens.dart';
+import '../../../../core/constants/asset_paths.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/widgets/app_error_view.dart';
 import '../../../../core/widgets/movie_wide_card.dart';
@@ -40,7 +41,7 @@ class SearchResultsList extends ConsumerWidget {
       loading: _buildShimmerList,
       error: (Object error, StackTrace stackTrace) => Padding(
         padding: const EdgeInsets.all(AppDimens.screenPaddingHorizontal),
-        child: InlineErrorView(onRetry: () => ref.invalidate(searchResultsProvider(query))),
+        child: InlineErrorView(error: error, onRetry: () => ref.invalidate(searchResultsProvider(query))),
       ),
       data: (List<Movie> movies) {
         if (movies.isEmpty) {
@@ -48,6 +49,7 @@ class SearchResultsList extends ConsumerWidget {
             padding: EdgeInsets.only(top: AppDimens.space64),
             child: FullScreenStateView(
               icon: Icons.movie_filter_outlined,
+              illustrationAsset: AssetPaths.noResultsIllustration,
               title: AppStrings.noResultsFound,
               subtitle: AppStrings.noResultsSubtitle,
             ),

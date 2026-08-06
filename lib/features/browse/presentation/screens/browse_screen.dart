@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/constants/app_dimens.dart';
+import '../../../../core/constants/asset_paths.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/widgets/app_error_view.dart';
 import '../../../../core/widgets/shimmer_box.dart';
@@ -28,13 +29,14 @@ class BrowseScreen extends ConsumerWidget {
         error: (Object error, StackTrace stackTrace) => Center(
           child: Padding(
             padding: const EdgeInsets.all(AppDimens.screenPaddingHorizontal),
-            child: InlineErrorView(onRetry: () => ref.invalidate(genresProvider)),
+            child: InlineErrorView(error: error, onRetry: () => ref.invalidate(genresProvider)),
           ),
         ),
         data: (List<Genre> genres) {
           if (genres.isEmpty) {
             return const FullScreenStateView(
               icon: Icons.grid_view_rounded,
+              illustrationAsset: AssetPaths.noResultsIllustration,
               title: 'No categories available',
               subtitle: 'Check back later for genres to browse.',
             );

@@ -19,7 +19,10 @@ class FavoritesNotifier extends StateNotifier<Set<int>> {
 
   Future<void> _restore() async {
     _box = await Hive.openBox<int>(_boxName);
-    state = _box!.keys.cast<int>().toSet();
+    final Set<int> restored = _box!.keys.cast<int>().toSet();
+    if (mounted) {
+      state = restored;
+    }
   }
 
   bool isFavorite(int movieId) => state.contains(movieId);

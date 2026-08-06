@@ -47,7 +47,7 @@ class MovieRailSection extends ConsumerWidget {
               padding: const EdgeInsets.symmetric(
                 horizontal: AppDimens.screenPaddingHorizontal,
               ),
-              child: InlineErrorView(onRetry: onRetry),
+              child: InlineErrorView(error: error, onRetry: onRetry),
             ),
             data: (List<Movie> movies) {
               if (movies.isEmpty) {

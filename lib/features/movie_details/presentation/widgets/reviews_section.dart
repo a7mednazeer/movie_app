@@ -42,7 +42,7 @@ class ReviewsSection extends ConsumerWidget {
           ),
           error: (Object error, StackTrace stackTrace) => Padding(
             padding: const EdgeInsets.symmetric(horizontal: AppDimens.screenPaddingHorizontal),
-            child: InlineErrorView(onRetry: () => ref.invalidate(movieReviewsProvider(movieId))),
+            child: InlineErrorView(error: error, onRetry: () => ref.invalidate(movieReviewsProvider(movieId))),
           ),
           data: (List<Review> reviews) {
             if (reviews.isEmpty) {

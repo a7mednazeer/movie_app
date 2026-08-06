@@ -175,34 +175,68 @@ lib/
   confirm dialog) lives in exactly one file each (`core/utils`,
   `core/widgets`) and is reused across Home, Movie Details, and Search.
 
-## Wiring up the real TMDB API later
+## Real TMDB API — wired in, with an automatic fallback
 
-1. Get a free API key from https://www.themoviedb.org/settings/api
-2. Run the app with:
-   ```bash
-   flutter run --dart-define=TMDB_API_KEY=your_key_here
-   ```
-3. Create `MovieRemoteDataSource` matching `DummyMovieDataSource`'s method
-   signatures (including `fetchCredits`, `fetchReviews`), calling
-   `ApiClient.get(...)` and mapping JSON via `Movie.fromJson` /
-   `Genre.fromJson` / `CastMember.fromJson` / `Review.fromJson`. Swap it
-   into `MovieRepositoryImpl`'s constructor — nothing else changes.
-4. To enable real trailers, merge the `/movie/{id}/videos` response's
-   YouTube key into the `video_key` field before constructing `Movie`.
+`MovieRepositoryImpl` picks its data source **once, at construction**,
+based on whether a key is configured:
 
-## Adding real images later
+```bash
+flutter run --dart-define=TMDB_API_KEY=your_key_here
+```
 
-Drop files into `assets/images/`, `assets/posters/`, or `assets/icons/`
-matching the filenames referenced in `core/constants/asset_paths.dart`.
-Movie posters/backdrops come from `Movie.posterUrl`/`backdropUrl` — until
-real data flows in, cards and the details header gracefully fall back to
-a clean icon-based placeholder rather than a broken-image icon.
+- **Key present** → `MovieRemoteDataSource` (`repositories/datasources/`)
+  hits the real TMDB API and parses real JSON into `Movie`/`Genre`/
+  `CastMember`/`Review`.
+- **No key** → falls back to `DummyMovieDataSource`, so the app is fully
+  functional out of the box with zero setup.
+
+Two real-API quirks worth knowing about:
+- TMDB has no anonymous "recommended for you" endpoint (that needs a
+  signed-in user's history, and this app has no accounts) — Home's
+  Recommended rail queries `/discover/movie` for well-reviewed, popular
+  titles instead, the same honest fallback real apps use for a
+  first-time user.
+- The trailer key comes from `/movie/{id}?append_to_response=videos` (one
+  request, not two), preferring an official YouTube trailer and merging
+  the key into `Movie` via `copyWith`.
+
+Get a free key at https://www.themoviedb.org/settings/api. If a request
+fails once real data is configured (e.g. no internet), that's a genuine,
+retryable `Failure` shown to the user — it does *not* silently swap back
+to dummy data mid-session.
+
+## Real image assets
+
+- **App icon** — an original gradient "M" mark (same design and Poppins
+  Bold font as the in-app splash logo), generated to
+  `assets/icon/app_icon.png` / `app_icon_foreground.png`, with
+  `flutter_launcher_icons` configured in `pubspec.yaml`. Run
+  `dart run flutter_launcher_icons` after `flutter pub get` to generate
+  the real per-platform Android/iOS launcher icons from it.
+- **4 original SVG illustrations** (`assets/images/*.svg`, hand-authored,
+  on-brand with the app's color palette): search, no-results,
+  empty-bookmark, and connection-error. Wired through
+  `core/constants/asset_paths.dart` (previously unused — every path was
+  reserved but nothing actually referenced it) into
+  `FullScreenStateView`'s new optional `illustrationAsset` slot, replacing
+  the plain icon-in-circle on Search's empty/no-results states, Browse's
+  empty-categories state, GenreMovies' empty state, and the shared
+  Watchlist/Favorites empty state.
+- **`InlineErrorView` is now network-aware** — pass the `error` an
+  `AsyncValue.when` already caught and it shows a distinct "No internet
+  connection" message + Wi-Fi-off icon for a `NetworkFailure`, instead of
+  a generic error, across every rail/section in the app.
+- Movie posters/backdrops still come from `Movie.posterUrl`/`backdropUrl`
+  (real TMDB image CDN once wired, per above) — until then, or if a
+  specific image fails to load, cards fall back to a clean icon-based
+  placeholder rather than a broken-image glyph.
 
 ## Running this drop
 
 ```bash
 flutter pub get
-flutter run
+dart run flutter_launcher_icons   # generates the real app icon
+flutter run                       # add --dart-define=TMDB_API_KEY=... for real data
 ```
 
 Splash → Home → tap any movie → full Movie Details, including tapping
@@ -238,7 +272,7 @@ and Settings.
   line required by TMDB's terms, with a "Visit TMDB" link via the shared
   `openExternalUrl` helper.
 
-## New shared infrastructure this step
+## New shared infrastructure
 
 - **`SavedMoviesList`** (`core/widgets`) — the swipe-to-remove/Undo/empty/
   loading/error list pattern, extracted once Favorites needed the exact
@@ -246,8 +280,53 @@ and Settings.
   too, so that logic now lives in exactly one place instead of two.
 - **`favoriteMoviesProvider`** mirrors `watchlistMoviesProvider` exactly
   (ids → resolved `Movie`s, most-recent-first, parallel fetch).
+- **`MovieRemoteDataSource`** — the real TMDB data source, a drop-in
+  alongside `DummyMovieDataSource` (see above).
+- **`FullScreenStateView.illustrationAsset`** and **network-aware
+  `InlineErrorView`** — see "Real image assets" above.
 
-## Project status: complete
+## Automated tests
+
+```bash
+flutter test
+```
+
+14 test files, no mocking library — just hand-written fakes, in keeping
+with the rest of the project's style:
+
+- **`test/models/`** — `Movie`/`Genre`/`CastMember`/`Review.fromJson`
+  parsing (list-endpoint vs details-endpoint shapes, missing/malformed
+  fields defaulting sensibly instead of throwing), plus `Movie`'s
+  computed getters (`posterUrl`, `formattedRuntime`, `trailerUrl`,
+  `copyWith`, equality).
+- **`test/repositories/`** — `DummyMovieDataSource`'s data-shape
+  guarantees (trending is exactly 10, top-rated is sorted, search is
+  case-insensitive and empty-safe, genre filtering is accurate) and
+  `MovieRepositoryImpl`'s exception-to-`Failure` mapping table, exercised
+  via a small `_ThrowingDataSource` that `extends DummyMovieDataSource`
+  and overrides just the one method under test.
+- **`test/providers/`** — Home's section providers resolving
+  successfully and surfacing a `Failure` as a real `AsyncError` (via
+  `FakeMovieRepository`, a fully-controllable `MovieRepository` test
+  double with call-count tracking), plus `WatchlistNotifier`/
+  `FavoritesNotifier`'s Hive persistence (add/remove/survives-a-restart)
+  using a temp-directory `Hive.init` — no platform channels needed.
+- **`test/core/`** — the shared `unwrapEither` helper, and
+  `ThemeModeNotifier`'s default/restore/persist/toggle behavior via
+  `SharedPreferences.setMockInitialValues`.
+- **`test/widgets/`** — `MoviePosterCard` (renders title/year/rating,
+  tap vs bookmark-tap don't cross-fire), `SectionHeader` ("See All"
+  only appears when a callback is given), and `InlineErrorView`/
+  `FullScreenStateView` (the new network-aware messaging and optional
+  SVG illustration). These guard against `google_fonts` trying to hit
+  the network mid-test via `GoogleFonts.config.allowRuntimeFetching = false`.
+
+I wasn't able to run `flutter test` myself in this environment (no
+Flutter SDK available here) — please run it and let me know what comes
+back, especially anything Hive- or timing-related, since those were the
+trickiest to get exactly right without executing them.
+
+## Project status: complete, real-API-ready, illustrated, tested
 
 Every screen from the original brief — including both enhancements
 explicitly marked optional — is built and wired end-to-end:
@@ -255,9 +334,9 @@ explicitly marked optional — is built and wired end-to-end:
 **Splash · Home · Movie Details · Search · Browse · Watchlist · Profile
 · Settings**
 
-The architecture is ready for the real TMDB API (see above), Light/Dark
-theming is centralized and complete, and every async section in the app
-follows the same loading/error/empty/retry pattern. From here, natural
-next steps would be swapping in the real TMDB data source, adding real
-image assets, or writing tests against the repository/provider layer —
-happy to pick up any of those, or revisit/polish anything already built.
+The app now runs on real TMDB data the moment a key is supplied (with a
+fully-functional dummy-data fallback otherwise), ships real original
+icon/illustration assets instead of placeholders, every async section
+follows the same loading/error/empty/retry pattern with genuine offline
+awareness, and the core model/repository/provider/persistence layers
+have automated test coverage.

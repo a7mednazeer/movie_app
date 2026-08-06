@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/constants/app_strings.dart';
+import '../../../../core/constants/asset_paths.dart';
 import '../../../../core/routes/route_names.dart';
 import '../../../../core/widgets/app_error_view.dart';
 import '../../../../models/movie.dart';
@@ -128,6 +129,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
           const Expanded(
             child: FullScreenStateView(
               icon: Icons.search_rounded,
+              illustrationAsset: AssetPaths.searchIllustration,
               title: AppStrings.startSearching,
               subtitle: AppStrings.startSearchingSubtitle,
             ),

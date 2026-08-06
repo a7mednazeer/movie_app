@@ -7,6 +7,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimens.dart';
+import '../../../../core/constants/app_strings.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/widgets/app_error_view.dart';
 import '../../../../core/widgets/shimmer_box.dart';
@@ -39,7 +40,7 @@ class FeaturedBanner extends ConsumerWidget {
         ),
         error: (Object error, StackTrace stackTrace) => Padding(
           padding: const EdgeInsets.symmetric(horizontal: AppDimens.screenPaddingHorizontal),
-          child: InlineErrorView(onRetry: () => ref.invalidate(trendingMoviesProvider)),
+          child: InlineErrorView(error: error, onRetry: () => ref.invalidate(trendingMoviesProvider)),
         ),
         data: (List<Movie> movies) {
           if (movies.isEmpty) return const SizedBox.shrink();

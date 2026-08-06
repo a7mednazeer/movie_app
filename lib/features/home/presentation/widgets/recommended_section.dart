@@ -62,7 +62,7 @@ class RecommendedSection extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(
               horizontal: AppDimens.screenPaddingHorizontal,
             ),
-            child: InlineErrorView(onRetry: () => ref.invalidate(recommendedMoviesProvider)),
+            child: InlineErrorView(error: error, onRetry: () => ref.invalidate(recommendedMoviesProvider)),
           ),
           data: (List<Movie> movies) {
             if (movies.isEmpty) return const SizedBox.shrink();

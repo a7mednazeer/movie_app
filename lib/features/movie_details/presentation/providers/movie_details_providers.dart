@@ -11,21 +11,21 @@ import '../../../../repositories/movie_repository.dart';
 /// and [similarMoviesProvider] so each section of Movie Details loads,
 /// errors, and retries on its own.
 final movieCastProvider =
-    FutureProvider.autoDispose.family<List<CastMember>, int>((Ref ref, int movieId) {
+    FutureProvider.autoDispose.family<List<CastMember>, int>((ref, movieId) {
   final MovieRepository repo = ref.watch(movieRepositoryProvider);
   return unwrapEither(repo.getMovieCredits(movieId));
 });
 
 /// User reviews for a given movie id.
 final movieReviewsProvider =
-    FutureProvider.autoDispose.family<List<Review>, int>((Ref ref, int movieId) {
+    FutureProvider.autoDispose.family<List<Review>, int>((ref, movieId) {
   final MovieRepository repo = ref.watch(movieRepositoryProvider);
   return unwrapEither(repo.getMovieReviews(movieId));
 });
 
 /// "More Like This" — similar movies for a given movie id.
 final similarMoviesProvider =
-    FutureProvider.autoDispose.family<List<Movie>, int>((Ref ref, int movieId) {
+    FutureProvider.autoDispose.family<List<Movie>, int>((ref, movieId) {
   final MovieRepository repo = ref.watch(movieRepositoryProvider);
   return unwrapEither(repo.getSimilarMovies(movieId));
 });

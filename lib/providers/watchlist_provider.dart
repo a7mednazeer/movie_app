@@ -21,7 +21,10 @@ class WatchlistNotifier extends StateNotifier<Set<int>> {
     // Keys are stored as the movie id itself (see `toggle`), preserving
     // insertion order — a `Set<int>` built from them iterates oldest to
     // newest, so consumers wanting "most recent first" simply reverse it.
-    state = _box!.keys.cast<int>().toSet();
+    final Set<int> restored = _box!.keys.cast<int>().toSet();
+    if (mounted) {
+      state = restored;
+    }
   }
 
   bool isSaved(int movieId) => state.contains(movieId);

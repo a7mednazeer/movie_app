@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../models/movie.dart';
+import '../constants/asset_paths.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_dimens.dart';
 import 'app_error_view.dart';
@@ -38,13 +39,14 @@ class SavedMoviesList extends StatelessWidget {
       error: (Object error, StackTrace stackTrace) => Center(
         child: Padding(
           padding: const EdgeInsets.all(AppDimens.screenPaddingHorizontal),
-          child: InlineErrorView(onRetry: onRetry),
+          child: InlineErrorView(error: error, onRetry: onRetry),
         ),
       ),
       data: (List<Movie> movies) {
         if (movies.isEmpty) {
           return FullScreenStateView(
             icon: emptyIcon,
+            illustrationAsset: AssetPaths.emptyBookmarkIllustration,
             title: emptyTitle,
             subtitle: emptySubtitle,
           );
