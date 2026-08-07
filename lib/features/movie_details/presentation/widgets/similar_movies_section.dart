@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/constants/app_strings.dart';
+import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/routes/route_names.dart';
 import '../../../../core/widgets/movie_rail_section.dart';
 import '../../../../models/movie.dart';
@@ -21,7 +21,7 @@ class SimilarMoviesSection extends ConsumerWidget {
     final AsyncValue<List<Movie>> similarAsync = ref.watch(similarMoviesProvider(movieId));
 
     return MovieRailSection(
-      title: AppStrings.moreLikeThis,
+      title: context.l10n.moreLikeThis,
       moviesAsync: similarAsync,
       onRetry: () => ref.invalidate(similarMoviesProvider(movieId)),
       onMovieTap: (Movie movie) => context.push(RouteNames.movieDetails, extra: movie),

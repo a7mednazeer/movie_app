@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimens.dart';
-import '../../../../core/constants/app_strings.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/widgets/app_error_view.dart';
 import '../../../../core/widgets/section_header.dart';
@@ -27,7 +26,7 @@ class CastSection extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const SectionHeader(title: AppStrings.cast),
+        SectionHeader(title: context.l10n.cast),
         SizedBox(
           height: 128,
           child: castAsync.when(

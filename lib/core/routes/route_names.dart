@@ -7,6 +7,8 @@ abstract final class RouteNames {
   static const String watchlist = '/watchlist';
   static const String profile = '/profile';
   static const String settings = '/settings';
+  static const String notificationSettings = '/notification-settings';
+  static const String helpCenter = '/help-center';
   static const String movieDetails = '/movie-details';
 
   const RouteNames._();

@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/network/api_client.dart';
+import '../features/settings/presentation/providers/language_provider.dart';
 import '../repositories/datasources/movie_remote_data_source.dart';
 import '../repositories/movie_repository.dart';
 import '../repositories/movie_repository_impl.dart';
@@ -18,7 +20,14 @@ final Provider<MovieRepository> movieRepositoryProvider = Provider<MovieReposito
   Ref ref,
 ) {
   final ApiClient apiClient = ref.watch(apiClientProvider);
+  final Locale? locale = ref.watch(languageProvider);
+  final String language = locale?.languageCode ?? 'en';
+
   return MovieRepositoryImpl(
-    remoteDataSource: MovieRemoteDataSource(apiClient: apiClient),
+    language: language,
+    remoteDataSource: MovieRemoteDataSource(
+      apiClient: apiClient,
+      language: language,
+    ),
   );
 });

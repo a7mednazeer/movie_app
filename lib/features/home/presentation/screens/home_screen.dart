@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/constants/app_dimens.dart';
-import '../../../../core/constants/app_strings.dart';
+import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/routes/route_names.dart';
 import '../../../../core/widgets/movie_rail_section.dart';
 import '../../../../models/genre.dart';
@@ -61,7 +61,7 @@ class HomeScreen extends ConsumerWidget {
             const SliverToBoxAdapter(child: SizedBox(height: AppDimens.space16)),
             SliverToBoxAdapter(
               child: MovieRailSection(
-                title: AppStrings.sectionTrending,
+                title: context.l10n.sectionTrending,
                 moviesAsync: trending,
                 onRetry: () => ref.invalidate(trendingMoviesProvider),
                 onMovieTap: (Movie movie) => _openMovieDetails(context, movie),
@@ -70,7 +70,7 @@ class HomeScreen extends ConsumerWidget {
             const SliverToBoxAdapter(child: SizedBox(height: AppDimens.space16)),
             SliverToBoxAdapter(
               child: MovieRailSection(
-                title: AppStrings.sectionPopular,
+                title: context.l10n.sectionPopular,
                 moviesAsync: popular,
                 onRetry: () => ref.invalidate(popularMoviesProvider),
                 onMovieTap: (Movie movie) => _openMovieDetails(context, movie),
@@ -79,7 +79,7 @@ class HomeScreen extends ConsumerWidget {
             const SliverToBoxAdapter(child: SizedBox(height: AppDimens.space16)),
             SliverToBoxAdapter(
               child: MovieRailSection(
-                title: AppStrings.sectionTopRated,
+                title: context.l10n.sectionTopRated,
                 moviesAsync: topRated,
                 onRetry: () => ref.invalidate(topRatedMoviesProvider),
                 onMovieTap: (Movie movie) => _openMovieDetails(context, movie),
@@ -88,7 +88,7 @@ class HomeScreen extends ConsumerWidget {
             const SliverToBoxAdapter(child: SizedBox(height: AppDimens.space16)),
             SliverToBoxAdapter(
               child: MovieRailSection(
-                title: AppStrings.sectionUpcoming,
+                title: context.l10n.sectionUpcoming,
                 moviesAsync: upcoming,
                 onRetry: () => ref.invalidate(upcomingMoviesProvider),
                 onMovieTap: (Movie movie) => _openMovieDetails(context, movie),

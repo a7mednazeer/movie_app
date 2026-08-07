@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../constants/app_dimens.dart';
-import '../constants/app_strings.dart';
 import '../extensions/context_extensions.dart';
 
 /// Consistent "Section Title    See All →" header used above every
@@ -42,7 +41,7 @@ class SectionHeader extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    Text(AppStrings.seeAll, style: context.textTheme.labelMedium),
+                    Text(context.l10n.seeAll, style: context.textTheme.labelMedium),
                     const SizedBox(width: AppDimens.space4),
                     Icon(
                       Icons.arrow_forward_ios_rounded,

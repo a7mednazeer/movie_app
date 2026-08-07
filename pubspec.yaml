@@ -9,9 +9,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  
   #Splash Screen
   flutter_native_splash: ^2.4.7
+  
+  #Localizations
+  flutter_localizations:
+    sdk: flutter
 
   # State Management
   flutter_riverpod: ^3.3.2
@@ -40,7 +44,10 @@ dependencies:
   smooth_page_indicator: ^2.0.1
 
   # Utilities
-  intl: ^0.20.3
+  # NOTE: flutter_localizations (SDK) pins its own `intl` version tightly.
+  # If `flutter pub get` reports a version conflict here, delete this line
+  # and let flutter_localizations resolve `intl` itself.
+  intl: ^0.20.2
   logger: ^2.3.0
   url_launcher: ^6.3.0
   share_plus: ^13.2.1
@@ -65,6 +72,7 @@ flutter_launcher_icons:
 
 flutter:
   uses-material-design: true
+  generate: true # runs `flutter gen-l10n` (see l10n.yaml) to build AppLocalizations
 
   assets:
     - assets/images/

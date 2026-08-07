@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimens.dart';
 import '../../../../core/constants/app_text_styles.dart';
+import '../../../../core/extensions/context_extensions.dart';
 
 /// The animated "M · MOVIES" brand mark shown on the splash screen.
 ///
@@ -60,7 +61,7 @@ class AnimatedLogo extends StatelessWidget {
         Opacity(
           opacity: taglineT.clamp(0, 1),
           child: Text(
-            'YOUR WORLD OF CINEMA',
+            context.l10n.appTagline,
             style: AppTextStyles.overline(color: AppColors.darkTextSecondary),
           ),
         ),

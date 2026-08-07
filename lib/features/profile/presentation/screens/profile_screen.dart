@@ -22,7 +22,7 @@ class ProfileScreen extends ConsumerWidget {
     final int watchlistCount = ref.watch(watchlistProvider).length;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Profile')),
+      appBar: AppBar(title: Text(context.l10n.profileTitle)),
       body: ListView(
         padding: const EdgeInsets.all(AppDimens.screenPaddingHorizontal),
         children: <Widget>[
@@ -40,12 +40,12 @@ class ProfileScreen extends ConsumerWidget {
           ),
           const SizedBox(height: AppDimens.space16),
           Center(
-            child: Text('Your Library', style: context.textTheme.headlineSmall),
+            child: Text(context.l10n.yourLibrary, style: context.textTheme.headlineSmall),
           ),
           const SizedBox(height: AppDimens.space4),
           Center(
             child: Text(
-              'Everything you\'ve saved, in one place',
+              context.l10n.everythingSaved,
               style: context.textTheme.bodyMedium,
             ),
           ),
@@ -55,7 +55,7 @@ class ProfileScreen extends ConsumerWidget {
               Expanded(
                 child: _StatCard(
                   icon: Icons.favorite_rounded,
-                  label: 'Favorites',
+                  label: context.l10n.favoritesLabel,
                   count: favoritesCount,
                   onTap: () => context.push('${RouteNames.profile}/favorites'),
                 ),
@@ -64,7 +64,7 @@ class ProfileScreen extends ConsumerWidget {
               Expanded(
                 child: _StatCard(
                   icon: Icons.bookmark_rounded,
-                  label: 'Watchlist',
+                  label: context.l10n.watchlistLabel,
                   count: watchlistCount,
                   onTap: () => context.go(RouteNames.watchlist),
                 ),
@@ -75,8 +75,8 @@ class ProfileScreen extends ConsumerWidget {
           Card(
             child: ListTile(
               leading: const Icon(Icons.settings_outlined),
-              title: const Text('Settings'),
-              subtitle: const Text('Theme, language, and about'),
+              title: Text(context.l10n.settingsLabel),
+              subtitle: Text(context.l10n.settingsSubtitle),
               trailing: const Icon(Icons.chevron_right_rounded),
               onTap: () => context.push(RouteNames.settings),
             ),

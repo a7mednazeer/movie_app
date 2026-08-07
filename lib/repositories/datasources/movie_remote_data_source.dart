@@ -14,9 +14,17 @@ import '../../models/review.dart';
 /// let [MovieRepositoryImpl] adopt this alongside the dummy source with
 /// no changes to any Notifier/ViewModel/widget in the app.
 class MovieRemoteDataSource {
-  MovieRemoteDataSource({ApiClient? apiClient}) : _client = apiClient ?? ApiClient();
+  MovieRemoteDataSource({ApiClient? apiClient, String? language})
+      : _client = apiClient ?? ApiClient(),
+        _language = language;
 
   final ApiClient _client;
+  final String? _language;
+
+  Map<String, dynamic> _withLanguage(Map<String, dynamic> params) {
+    if (_language == null) return params;
+    return <String, dynamic>{...params, 'language': _language};
+  }
 
   List<Movie> _parseMovieList(Response<dynamic> response) {
     final Map<String, dynamic> data = response.data as Map<String, dynamic>;
@@ -27,14 +35,17 @@ class MovieRemoteDataSource {
   }
 
   Future<List<Movie>> fetchTrending() async {
-    final Response<dynamic> response = await _client.get(ApiEndpoints.trending);
+    final Response<dynamic> response = await _client.get(
+      ApiEndpoints.trending,
+      queryParameters: _withLanguage(const <String, dynamic>{}),
+    );
     return _parseMovieList(response);
   }
 
   Future<List<Movie>> fetchPopular({int page = 1}) async {
     final Response<dynamic> response = await _client.get(
       ApiEndpoints.popular,
-      queryParameters: <String, dynamic>{'page': page},
+      queryParameters: _withLanguage(<String, dynamic>{'page': page}),
     );
     return _parseMovieList(response);
   }
@@ -42,7 +53,7 @@ class MovieRemoteDataSource {
   Future<List<Movie>> fetchTopRated({int page = 1}) async {
     final Response<dynamic> response = await _client.get(
       ApiEndpoints.topRated,
-      queryParameters: <String, dynamic>{'page': page},
+      queryParameters: _withLanguage(<String, dynamic>{'page': page}),
     );
     return _parseMovieList(response);
   }
@@ -50,7 +61,7 @@ class MovieRemoteDataSource {
   Future<List<Movie>> fetchUpcoming({int page = 1}) async {
     final Response<dynamic> response = await _client.get(
       ApiEndpoints.upcoming,
-      queryParameters: <String, dynamic>{'page': page},
+      queryParameters: _withLanguage(<String, dynamic>{'page': page}),
     );
     return _parseMovieList(response);
   }
@@ -63,11 +74,11 @@ class MovieRemoteDataSource {
   Future<List<Movie>> fetchRecommended() async {
     final Response<dynamic> response = await _client.get(
       ApiEndpoints.discoverByGenre,
-      queryParameters: <String, dynamic>{
+      queryParameters: _withLanguage(<String, dynamic>{
         'sort_by': 'popularity.desc',
         'vote_count.gte': 500,
         'vote_average.gte': 6.5,
-      },
+      }),
     );
     return _parseMovieList(response);
   }
@@ -75,11 +86,11 @@ class MovieRemoteDataSource {
   Future<List<Movie>> fetchByGenre(int genreId, {int page = 1}) async {
     final Response<dynamic> response = await _client.get(
       ApiEndpoints.discoverByGenre,
-      queryParameters: <String, dynamic>{
+      queryParameters: _withLanguage(<String, dynamic>{
         'with_genres': genreId,
         'page': page,
         'sort_by': 'popularity.desc',
-      },
+      }),
     );
     return _parseMovieList(response);
   }
@@ -87,7 +98,7 @@ class MovieRemoteDataSource {
   Future<List<Movie>> search(String query, {int page = 1}) async {
     final Response<dynamic> response = await _client.get(
       ApiEndpoints.searchMovies,
-      queryParameters: <String, dynamic>{'query': query, 'page': page},
+      queryParameters: _withLanguage(<String, dynamic>{'query': query, 'page': page}),
     );
     return _parseMovieList(response);
   }
@@ -99,7 +110,7 @@ class MovieRemoteDataSource {
   Future<Movie> fetchDetails(int movieId) async {
     final Response<dynamic> response = await _client.get(
       ApiEndpoints.movieDetails(movieId),
-      queryParameters: <String, dynamic>{'append_to_response': 'videos'},
+      queryParameters: _withLanguage(<String, dynamic>{'append_to_response': 'videos'}),
     );
     final Map<String, dynamic> data = response.data as Map<String, dynamic>;
     final Movie movie = Movie.fromJson(data);
@@ -131,12 +142,18 @@ class MovieRemoteDataSource {
   }
 
   Future<List<Movie>> fetchSimilar(int movieId) async {
-    final Response<dynamic> response = await _client.get(ApiEndpoints.movieSimilar(movieId));
+    final Response<dynamic> response = await _client.get(
+      ApiEndpoints.movieSimilar(movieId),
+      queryParameters: _withLanguage(const <String, dynamic>{}),
+    );
     return _parseMovieList(response);
   }
 
   Future<List<CastMember>> fetchCredits(int movieId) async {
-    final Response<dynamic> response = await _client.get(ApiEndpoints.movieCredits(movieId));
+    final Response<dynamic> response = await _client.get(
+      ApiEndpoints.movieCredits(movieId),
+      queryParameters: _withLanguage(const <String, dynamic>{}),
+    );
     final Map<String, dynamic> data = response.data as Map<String, dynamic>;
     final List<dynamic> cast = (data['cast'] as List<dynamic>?) ?? const <dynamic>[];
     // Top-billed 15 — TMDB's full cast list can run past a hundred names.
@@ -147,7 +164,10 @@ class MovieRemoteDataSource {
   }
 
   Future<List<Review>> fetchReviews(int movieId) async {
-    final Response<dynamic> response = await _client.get(ApiEndpoints.movieReviews(movieId));
+    final Response<dynamic> response = await _client.get(
+      ApiEndpoints.movieReviews(movieId),
+      queryParameters: _withLanguage(const <String, dynamic>{}),
+    );
     final Map<String, dynamic> data = response.data as Map<String, dynamic>;
     final List<dynamic> results = (data['results'] as List<dynamic>?) ?? const <dynamic>[];
     return results
@@ -156,7 +176,10 @@ class MovieRemoteDataSource {
   }
 
   Future<List<Genre>> fetchGenres() async {
-    final Response<dynamic> response = await _client.get(ApiEndpoints.genreList);
+    final Response<dynamic> response = await _client.get(
+      ApiEndpoints.genreList,
+      queryParameters: _withLanguage(const <String, dynamic>{}),
+    );
     final Map<String, dynamic> data = response.data as Map<String, dynamic>;
     final List<dynamic> genres = (data['genres'] as List<dynamic>?) ?? const <dynamic>[];
     return genres

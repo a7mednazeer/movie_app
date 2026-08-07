@@ -30,8 +30,9 @@ class MovieRepositoryImpl implements MovieRepository {
     MovieRemoteDataSource? remoteDataSource,
     DummyMovieDataSource? dummyDataSource,
     bool? useRemote,
-  })  : _remote = remoteDataSource ?? MovieRemoteDataSource(),
-        _dummy = dummyDataSource ?? DummyMovieDataSource(),
+    String? language,
+  })  : _remote = remoteDataSource ?? MovieRemoteDataSource(language: language),
+        _dummy = dummyDataSource ?? DummyMovieDataSource(language: language),
         _useRemote = useRemote ?? ApiEndpoints.apiKey.isNotEmpty;
 
   final MovieRemoteDataSource _remote;

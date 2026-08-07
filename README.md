@@ -5,7 +5,8 @@ Architecture, MVVM-style separation, and Riverpod for state management.
 This is being built **page by page**. Every screen from the original
 brief is now complete, including both optional enhancements:
 **Splash**, **Home**, **Movie Details**, **Search**, **Browse**,
-**Watchlist**, **Profile**, and **Settings**.
+**Watchlist**, **Profile**, and **Settings** — and the entire app is
+now fully localized into 12 languages.
 
 ## What's included in this step
 
@@ -34,7 +35,7 @@ lib/
     ├── movie_details/     → ✅ Complete
     ├── search/            → ✅ Complete
     ├── browse/            → ✅ Complete
-    ├── watchList/         → ✅ Complete
+    ├── watchlist/         → ✅ Complete
     ├── profile/           → ✅ Complete (includes the Favorites screen)
     └── settings/          → ✅ Complete
 ```
@@ -326,7 +327,51 @@ Flutter SDK available here) — please run it and let me know what comes
 back, especially anything Hive- or timing-related, since those were the
 trickiest to get exactly right without executing them.
 
-## Project status: complete, real-API-ready, illustrated, tested
+## Full localization — 12 languages
+
+```bash
+flutter gen-l10n   # runs automatically on `flutter pub get` (generate: true in pubspec.yaml)
+```
+
+- **English, Arabic, Spanish, French, German, Italian, Russian, Turkish, Hindi,
+  Chinese, Portuguese, Dutch, Korean** — 84 real, human-quality
+  translated strings each (not machine-translated placeholders), driven
+  by Flutter's official ARB/`gen-l10n` toolchain (`lib/l10n/app_*.arb` →
+  generated `AppLocalizations`, configured in `l10n.yaml`).
+- **Every user-facing string in the app** goes through `context.l10n.*`
+  now — Home, Movie Details, Search, Browse, Watchlist, Favorites,
+  Profile, Settings, Splash, and every shared widget
+  (`InlineErrorView`, `FullScreenStateView`, `SectionHeader`,
+  `AppConfirmDialog`, `SavedMoviesList`, the bottom nav). `AppStrings`
+  (the old English-only constants class) is down to exactly one
+  constant: the brand name "MOVIES," which is intentionally the same
+  in every language.
+- **ICU plurals** where they matter — `watchlistTitleWithCount` and
+  `favoritesTitleWithCount` render "My Watchlist" with no count, and
+  "My Watchlist (3)" once something's saved, correctly pluralized per
+  language's own rules (not just English's).
+- **Language picker** — Settings → Language opens a bottom sheet with
+  all 12 languages plus "System default" (follows the device's own
+  language). Persisted via `SharedPreferences`, read directly by
+  `MaterialApp.router(locale: ...)` in `main.dart`. If the device's
+  language isn't one of the 12, `localeResolutionCallback` falls back
+  to English rather than silently picking whatever's first in the list.
+- **A hand-written validation script** (not shipped in the app, just
+  used while building this) checked every ARB file for valid JSON, a
+  correct `@@locale`, and — critically — the *exact same key set* as
+  the English template, so no language can silently drift out of sync
+  as new strings get added later.
+
+### Adding a 13th language later
+
+1. Copy `lib/l10n/app_en.arb` to `lib/l10n/app_<code>.arb`, translate
+   every value, set `"@@locale": "<code>"`.
+2. Add one line to the `AppLanguage` enum in
+   `features/settings/presentation/providers/language_provider.dart`.
+3. Run `flutter gen-l10n` (or just `flutter run`, which triggers it
+   automatically). No other code changes.
+
+## Project status: complete, real-API-ready, illustrated, tested, localized
 
 Every screen from the original brief — including both enhancements
 explicitly marked optional — is built and wired end-to-end:
@@ -338,5 +383,15 @@ The app now runs on real TMDB data the moment a key is supplied (with a
 fully-functional dummy-data fallback otherwise), ships real original
 icon/illustration assets instead of placeholders, every async section
 follows the same loading/error/empty/retry pattern with genuine offline
-awareness, and the core model/repository/provider/persistence layers
-have automated test coverage.
+awareness, the core model/repository/provider/persistence layers have
+automated test coverage, and the entire UI is available in 12
+languages.
+
+## What's next
+
+Per the current build plan, still ahead: **Firebase Authentication**
+(sign in/up, with a guest-mode fallback mirroring the TMDB
+dummy-data pattern), **per-account cloud sync** for Watchlist/Favorites,
+a **professional Profile** with real account info, a full **Help
+Center** (chatbot, FAQ, contact, about, feedback, Terms of Service,
+Privacy Policy), and **push notifications**.

@@ -5,6 +5,7 @@ import '../../models/movie.dart';
 import '../constants/asset_paths.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_dimens.dart';
+import '../extensions/context_extensions.dart';
 import 'app_error_view.dart';
 import 'movie_wide_card.dart';
 import 'shimmer_box.dart';
@@ -66,12 +67,12 @@ class SavedMoviesList extends StatelessWidget {
                   horizontal: AppDimens.screenPaddingHorizontal,
                 ),
                 color: AppColors.error,
-                child: const Row(
+                child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    Icon(Icons.delete_outline_rounded, color: Colors.white),
-                    SizedBox(width: AppDimens.space8),
-                    Text('Remove', style: TextStyle(color: Colors.white)),
+                    const Icon(Icons.delete_outline_rounded, color: Colors.white),
+                    const SizedBox(width: AppDimens.space8),
+                    Text(context.l10n.removeLabel, style: const TextStyle(color: Colors.white)),
                   ],
                 ),
               ),

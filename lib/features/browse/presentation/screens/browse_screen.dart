@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/constants/app_dimens.dart';
 import '../../../../core/constants/asset_paths.dart';
-import '../../../../core/constants/app_strings.dart';
+import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/widgets/app_error_view.dart';
 import '../../../../core/widgets/shimmer_box.dart';
 import '../../../../models/genre.dart';
@@ -23,7 +23,7 @@ class BrowseScreen extends ConsumerWidget {
     final AsyncValue<List<Genre>> genresAsync = ref.watch(genresProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text(AppStrings.browseCategory)),
+      appBar: AppBar(title: Text(context.l10n.browseCategory)),
       body: genresAsync.when(
         loading: _buildShimmerGrid,
         error: (Object error, StackTrace stackTrace) => Center(
@@ -34,11 +34,11 @@ class BrowseScreen extends ConsumerWidget {
         ),
         data: (List<Genre> genres) {
           if (genres.isEmpty) {
-            return const FullScreenStateView(
+            return FullScreenStateView(
               icon: Icons.grid_view_rounded,
               illustrationAsset: AssetPaths.noResultsIllustration,
-              title: 'No categories available',
-              subtitle: 'Check back later for genres to browse.',
+              title: context.l10n.noCategoriesAvailable,
+              subtitle: context.l10n.checkBackLaterGenres,
             );
           }
           return GridView.builder(

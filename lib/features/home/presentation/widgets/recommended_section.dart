@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/constants/app_dimens.dart';
-import '../../../../core/constants/app_strings.dart';
+import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/widgets/app_error_view.dart';
 import '../../../../core/widgets/movie_wide_card.dart';
 import '../../../../core/widgets/section_header.dart';
@@ -27,7 +27,7 @@ class RecommendedSection extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const SectionHeader(title: AppStrings.sectionRecommended),
+        SectionHeader(title: context.l10n.sectionRecommended),
         moviesAsync.when(
           loading: () => Column(
             children: List<Widget>.generate(

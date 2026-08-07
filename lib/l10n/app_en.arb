@@ -1,0 +1,384 @@
+{
+  "@@locale": "en",
+  "appTagline": "YOUR WORLD OF CINEMA",
+  "@appTagline": {
+    "description": "Tagline shown under the logo on the splash screen."
+  },
+  "navHome": "Home",
+  "@navHome": {
+    "description": "Bottom navigation label."
+  },
+  "navSearch": "Search",
+  "@navSearch": {
+    "description": "Bottom navigation label, and Search screen app bar title."
+  },
+  "navBrowse": "Browse",
+  "@navBrowse": {
+    "description": "Bottom navigation label."
+  },
+  "navWatchlist": "Watchlist",
+  "@navWatchlist": {
+    "description": "Bottom navigation label."
+  },
+  "navProfile": "Profile",
+  "@navProfile": {
+    "description": "Semantic label for the profile icon button in Home's app bar."
+  },
+  "sectionTrending": "Trending Now",
+  "@sectionTrending": {
+    "description": "Home screen section header."
+  },
+  "sectionPopular": "Popular Movies",
+  "@sectionPopular": {
+    "description": "Home screen section header."
+  },
+  "sectionTopRated": "Top Rated",
+  "@sectionTopRated": {
+    "description": "Home screen section header."
+  },
+  "sectionUpcoming": "Upcoming",
+  "@sectionUpcoming": {
+    "description": "Home screen section header."
+  },
+  "sectionRecommended": "Recommended For You",
+  "@sectionRecommended": {
+    "description": "Home screen section header."
+  },
+  "sectionCategories": "Categories",
+  "@sectionCategories": {
+    "description": "Home screen section header, above the genre chips."
+  },
+  "seeAll": "See All",
+  "@seeAll": {
+    "description": "Section header trailing action."
+  },
+  "moreLikeThis": "More Like This",
+  "@moreLikeThis": {
+    "description": "Movie Details section header for similar movies."
+  },
+  "cast": "Cast",
+  "@cast": {
+    "description": "Movie Details section header."
+  },
+  "reviews": "Reviews",
+  "@reviews": {
+    "description": "Movie Details section header."
+  },
+  "noReviewsYet": "No reviews yet — be the first to share your thoughts.",
+  "@noReviewsYet": {
+    "description": "Reviews section empty state message."
+  },
+  "overview": "Overview",
+  "watchTrailer": "Watch Trailer",
+  "@watchTrailer": {
+    "description": "Movie Details action button label."
+  },
+  "noTrailerAvailable": "No trailer available for this title yet.",
+  "@noTrailerAvailable": {
+    "description": "Snackbar shown when a movie has no trailer key available."
+  },
+  "trailerOpenFailed": "Couldn't open the trailer.",
+  "@trailerOpenFailed": {
+    "description": "Snackbar shown when launching the trailer URL fails."
+  },
+  "addToWatchlist": "Watchlist",
+  "@addToWatchlist": {
+    "description": "Movie Details action button label for toggling the watchlist."
+  },
+  "removedFromWatchlist": "Removed from watchlist",
+  "@removedFromWatchlist": {
+    "description": "Snackbar text (no title) after un-saving from Movie Details."
+  },
+  "addedToWatchlist": "Added to watchlist",
+  "@addedToWatchlist": {
+    "description": "Snackbar text after saving from Movie Details."
+  },
+  "share": "Share",
+  "@share": {
+    "description": "Movie Details action button label."
+  },
+  "readMore": "Read more",
+  "@readMore": {
+    "description": "Expandable description toggle, collapsed state."
+  },
+  "readLess": "Read less",
+  "@readLess": {
+    "description": "Expandable description toggle, expanded state."
+  },
+  "searchHint": "Search movies, actors, genres…",
+  "@searchHint": {
+    "description": "Search field placeholder text."
+  },
+  "recentSearches": "Recent Searches",
+  "@recentSearches": {
+    "description": "Search screen section header."
+  },
+  "trendingSearches": "Trending Searches",
+  "@trendingSearches": {
+    "description": "Search screen section header for suggestion chips."
+  },
+  "clearAll": "Clear All",
+  "@clearAll": {
+    "description": "Button to clear all recent searches, and the confirm dialog's title."
+  },
+  "clearRecentSearchesMessage": "Remove all of your recent searches? This can't be undone.",
+  "@clearRecentSearchesMessage": {
+    "description": "Confirm dialog body for clearing recent searches."
+  },
+  "noResultsFound": "No movies found",
+  "@noResultsFound": {
+    "description": "Search empty-results state title."
+  },
+  "noResultsSubtitle": "Try a different title, actor, or genre.",
+  "@noResultsSubtitle": {
+    "description": "Search empty-results state subtitle."
+  },
+  "startSearching": "Search for your favorite movies",
+  "@startSearching": {
+    "description": "Search idle-state title, shown before typing anything."
+  },
+  "startSearchingSubtitle": "Find titles, browse cast, and discover something new.",
+  "@startSearchingSubtitle": {
+    "description": "Search idle-state subtitle."
+  },
+  "browseCategory": "Browse Category",
+  "@browseCategory": {
+    "description": "Browse screen app bar title."
+  },
+  "noCategoriesAvailable": "No categories available",
+  "@noCategoriesAvailable": {
+    "description": "Browse empty-state title."
+  },
+  "checkBackLaterGenres": "Check back later for genres to browse.",
+  "@checkBackLaterGenres": {
+    "description": "Browse empty-state subtitle."
+  },
+  "noMoviesInGenre": "No movies yet",
+  "@noMoviesInGenre": {
+    "description": "Genre movie grid empty-state title."
+  },
+  "checkBackSoonGenre": "Nothing in this genre right now — check back soon.",
+  "@checkBackSoonGenre": {
+    "description": "Genre movie grid empty-state subtitle."
+  },
+  "watchlistTitleWithCount": "{count, plural, =0{My Watchlist} other{My Watchlist ({count})}}",
+  "@watchlistTitleWithCount": {
+    "description": "Watchlist screen app bar title, with the saved count appended once non-zero.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "watchlistEmptyTitle": "Your watchlist is empty",
+  "@watchlistEmptyTitle": {
+    "description": "Watchlist empty-state title."
+  },
+  "watchlistEmptySubtitle": "Movies you save will show up here so you never lose track of them.",
+  "@watchlistEmptySubtitle": {
+    "description": "Watchlist empty-state subtitle."
+  },
+  "removedFromWatchlistSnack": "Removed \"{title}\"",
+  "@removedFromWatchlistSnack": {
+    "description": "Snackbar after swiping a movie off the Watchlist screen.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "favoritesTitleWithCount": "{count, plural, =0{Favorites} other{Favorites ({count})}}",
+  "@favoritesTitleWithCount": {
+    "description": "Favorites screen app bar title, with the saved count appended once non-zero.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "favoritesEmptyTitle": "No favorites yet",
+  "@favoritesEmptyTitle": {
+    "description": "Favorites empty-state title."
+  },
+  "favoritesEmptySubtitle": "Movies you mark as a favorite from Movie Details will show up here.",
+  "@favoritesEmptySubtitle": {
+    "description": "Favorites empty-state subtitle."
+  },
+  "removedFromFavoritesSnack": "Removed \"{title}\" from favorites",
+  "@removedFromFavoritesSnack": {
+    "description": "Snackbar after swiping a movie off the Favorites screen.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "undo": "UNDO",
+  "@undo": {
+    "description": "Snackbar action to restore a just-removed saved movie."
+  },
+  "retry": "Retry",
+  "@retry": {
+    "description": "Generic retry button label used on every error state."
+  },
+  "genericErrorSubtitle": "We hit a snag loading this content. Please try again.",
+  "@genericErrorSubtitle": {
+    "description": "Generic inline error message."
+  },
+  "noInternetSubtitle": "Please check your connection and try again.",
+  "@noInternetSubtitle": {
+    "description": "Error message shown specifically for a NetworkFailure."
+  },
+  "profileTitle": "Profile",
+  "@profileTitle": {
+    "description": "Profile screen app bar title."
+  },
+  "yourLibrary": "Your Library",
+  "@yourLibrary": {
+    "description": "Profile screen heading."
+  },
+  "everythingSaved": "Everything you've saved, in one place",
+  "@everythingSaved": {
+    "description": "Profile screen subheading."
+  },
+  "favoritesLabel": "Favorites",
+  "@favoritesLabel": {
+    "description": "Profile screen stat card label."
+  },
+  "watchlistLabel": "Watchlist",
+  "@watchlistLabel": {
+    "description": "Profile screen stat card label."
+  },
+  "settingsLabel": "Settings",
+  "@settingsLabel": {
+    "description": "Profile screen list tile title, links to Settings."
+  },
+  "settingsSubtitle": "Theme, language, and about",
+  "@settingsSubtitle": {
+    "description": "Profile screen Settings list tile subtitle."
+  },
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": "Settings screen app bar title."
+  },
+  "appearance": "Appearance",
+  "@appearance": {
+    "description": "Settings section label."
+  },
+  "preferences": "Preferences",
+  "@preferences": {
+    "description": "Settings section label."
+  },
+  "languageLabel": "Language",
+  "@languageLabel": {
+    "description": "Settings list tile title, and the language picker sheet's heading."
+  },
+  "aboutSection": "About",
+  "@aboutSection": {
+    "description": "Settings section label."
+  },
+  "aboutThisApp": "About This App",
+  "@aboutThisApp": {
+    "description": "Settings list tile title, opens the About dialog."
+  },
+  "versionLabel": "Version {version}",
+  "@versionLabel": {
+    "description": "App version display.",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutAppTitle": "About {appName}",
+  "@aboutAppTitle": {
+    "description": "About dialog title.",
+    "placeholders": {
+      "appName": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutDescription": "A premium movie discovery app — browse trending, popular, and top-rated titles, search, and keep track of what you want to watch.",
+  "@aboutDescription": {
+    "description": "About dialog body copy."
+  },
+  "tmdbAttribution": "This product uses the TMDB API but is not endorsed or certified by TMDB.",
+  "@tmdbAttribution": {
+    "description": "Required TMDB attribution line, shown in the About dialog."
+  },
+  "visitTmdb": "Visit TMDB",
+  "@visitTmdb": {
+    "description": "About dialog link button."
+  },
+  "close": "Close",
+  "@close": {
+    "description": "Generic dialog dismiss button."
+  },
+  "comingSoon": "Coming soon",
+  "@comingSoon": {
+    "description": "Shown next to a not-yet-available language in the picker."
+  },
+  "themeLight": "Light",
+  "@themeLight": {
+    "description": "Theme mode selector segment."
+  },
+  "themeDark": "Dark",
+  "@themeDark": {
+    "description": "Theme mode selector segment."
+  },
+  "themeAuto": "Auto",
+  "@themeAuto": {
+    "description": "Theme mode selector segment (follows system setting)."
+  },
+  "confirm": "Confirm",
+  "@confirm": {
+    "description": "Generic confirmation button label."
+  },
+  "cancel": "Cancel",
+  "removeLabel": "Remove",
+  "@removeLabel": {
+    "description": "Swipe-to-remove background label on Watchlist/Favorites rows."
+  },
+  "shareWithTrailer": "{title} — check out the trailer: {trailerUrl}",
+  "@shareWithTrailer": {
+    "description": "Share-sheet text when a trailer is available.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "trailerUrl": {
+        "type": "String"
+      }
+    }
+  },
+  "shareGeneric": "Check out \"{title}\" on Movies!",
+  "@shareGeneric": {
+    "description": "Share-sheet text when no trailer is available.",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationsLabel": "Notifications",
+  "@notificationsLabel": {
+    "description": "Settings list tile (notificationsLabel)."
+  },
+  "notificationsSubtitle": "Manage what you get notified about",
+  "@notificationsSubtitle": {
+    "description": "Settings list tile (notificationsSubtitle)."
+  },
+  "helpCenterLabel": "Help Center",
+  "@helpCenterLabel": {
+    "description": "Settings list tile (helpCenterLabel)."
+  },
+  "helpCenterSubtitle": "FAQs, contact us, and more",
+  "@helpCenterSubtitle": {
+    "description": "Settings list tile (helpCenterSubtitle)."
+  },
+  "systemDefault": "System default",
+  "@systemDefault": {
+    "description": "Settings list tile (systemDefault)."
+  }
+}

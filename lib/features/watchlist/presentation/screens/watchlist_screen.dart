@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/constants/app_strings.dart';
+import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/routes/route_names.dart';
 import '../../../../core/widgets/saved_movies_list.dart';
 import '../../../../models/movie.dart';
@@ -21,9 +21,9 @@ class WatchlistScreen extends ConsumerWidget {
       ..hideCurrentSnackBar()
       ..showSnackBar(
         SnackBar(
-          content: Text('Removed "${movie.title}"'),
+          content: Text(context.l10n.removedFromWatchlistSnack(movie.title)),
           action: SnackBarAction(
-            label: 'UNDO',
+            label: context.l10n.undo,
             onPressed: () => ref.read(watchlistProvider.notifier).toggle(movie.id),
           ),
         ),
@@ -33,26 +33,21 @@ class WatchlistScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AsyncValue<List<Movie>> moviesAsync = ref.watch(watchlistMoviesProvider);
+    final int count = moviesAsync.maybeWhen(
+      data: (List<Movie> movies) => movies.length,
+      orElse: () => 0,
+    );
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          moviesAsync.maybeWhen(
-            data: (List<Movie> movies) => movies.isEmpty
-                ? AppStrings.watchlistTitle
-                : '${AppStrings.watchlistTitle} (${movies.length})',
-            orElse: () => AppStrings.watchlistTitle,
-          ),
-        ),
-      ),
+      appBar: AppBar(title: Text(context.l10n.watchlistTitleWithCount(count))),
       body: SavedMoviesList(
         moviesAsync: moviesAsync,
         onRemove: (BuildContext ctx, Movie movie) => _removeWithUndo(ctx, ref, movie),
         onMovieTap: (Movie movie) => context.push(RouteNames.movieDetails, extra: movie),
         onRetry: () => ref.invalidate(watchlistMoviesProvider),
         emptyIcon: Icons.bookmark_border_rounded,
-        emptyTitle: AppStrings.watchlistEmptyTitle,
-        emptySubtitle: AppStrings.watchlistEmptySubtitle,
+        emptyTitle: context.l10n.watchlistEmptyTitle,
+        emptySubtitle: context.l10n.watchlistEmptySubtitle,
       ),
     );
   }

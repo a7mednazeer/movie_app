@@ -48,10 +48,12 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
           onPressed: onSearchTap,
           icon: const Icon(Icons.search_rounded),
+          tooltip: context.l10n.navSearch,
         ),
         IconButton(
           onPressed: onProfileTap,
           icon: const Icon(Icons.person_outline_rounded),
+          tooltip: context.l10n.navProfile,
         ),
         const SizedBox(width: AppDimens.space8),
       ],

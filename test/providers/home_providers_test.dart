@@ -37,11 +37,12 @@ void main() {
     test("surfaces the repository's Failure as an AsyncError", () async {
       fakeRepo.failWith = const NetworkFailure('offline');
 
-      // Trigger the provider and wait for the microtask to complete the future.
-      container.read(trendingMoviesProvider);
-      await Future<void>.delayed(Duration.zero);
+      await expectLater(
+        container.read(trendingMoviesProvider.future),
+        throwsA(isA<NetworkFailure>()),
+      );
 
-      final state = container.read(trendingMoviesProvider);
+      final AsyncValue<List<Movie>> state = container.read(trendingMoviesProvider);
       expect(state.hasError, isTrue);
       expect(state.error, isA<NetworkFailure>());
     });

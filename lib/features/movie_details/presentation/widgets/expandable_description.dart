@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_dimens.dart';
-import '../../../../core/constants/app_strings.dart';
 import '../../../../core/extensions/context_extensions.dart';
 
 /// The movie's overview/synopsis, collapsed to a few lines with a
@@ -27,7 +26,7 @@ class _ExpandableDescriptionState extends State<ExpandableDescription> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(AppStrings.overview, style: context.textTheme.headlineSmall),
+          Text(context.l10n.overview, style: context.textTheme.headlineSmall),
           const SizedBox(height: AppDimens.space8),
           AnimatedSize(
             duration: const Duration(milliseconds: 220),
@@ -46,7 +45,7 @@ class _ExpandableDescriptionState extends State<ExpandableDescription> {
               child: InkWell(
                 onTap: () => setState(() => _expanded = !_expanded),
                 child: Text(
-                  _expanded ? AppStrings.readLess : AppStrings.readMore,
+                  _expanded ? context.l10n.readLess : context.l10n.readMore,
                   style: context.textTheme.labelMedium?.copyWith(
                     color: context.colors.primary,
                   ),

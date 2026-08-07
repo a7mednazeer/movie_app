@@ -4,7 +4,6 @@ import 'package:share_plus/share_plus.dart';
 
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimens.dart';
-import '../../../../core/constants/app_strings.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/utils/url_launcher_helper.dart';
 import '../../../../models/movie.dart';
@@ -22,13 +21,16 @@ class ActionButtonsRow extends ConsumerWidget {
     return openExternalUrl(
       context,
       movie.trailerUrl,
-      missingUrlMessage: 'No trailer available for this title yet.',
-      launchFailedMessage: 'Couldn\'t open the trailer.',
+      missingUrlMessage: context.l10n.noTrailerAvailable,
+      launchFailedMessage: context.l10n.trailerOpenFailed,
     );
   }
 
   void _shareMovie(BuildContext context) {
-    Share.share('Check out "${movie.title}" on Movies!');
+    final String text = movie.trailerUrl != null
+        ? context.l10n.shareWithTrailer(movie.title, movie.trailerUrl!)
+        : context.l10n.shareGeneric(movie.title);
+    Share.share(text);
   }
 
   @override
@@ -46,7 +48,7 @@ class ActionButtonsRow extends ConsumerWidget {
           Expanded(
             child: _ActionButton(
               icon: isFavorite ? Icons.favorite_rounded : Icons.favorite_border_rounded,
-              label: 'Favorite',
+              label: context.l10n.favoritesLabel,
               isActive: isFavorite,
               onTap: () => ref.read(favoritesProvider.notifier).toggle(movie.id),
             ),
@@ -55,12 +57,12 @@ class ActionButtonsRow extends ConsumerWidget {
           Expanded(
             child: _ActionButton(
               icon: isSaved ? Icons.bookmark_rounded : Icons.bookmark_border_rounded,
-              label: AppStrings.addToWatchlist,
+              label: context.l10n.addToWatchlist,
               isActive: isSaved,
               onTap: () {
                 ref.read(watchlistProvider.notifier).toggle(movie.id);
                 context.showSnack(
-                  isSaved ? AppStrings.removedFromWatchlist : AppStrings.addedToWatchlist,
+                  isSaved ? context.l10n.removedFromWatchlist : context.l10n.addedToWatchlist,
                 );
               },
             ),
@@ -69,7 +71,7 @@ class ActionButtonsRow extends ConsumerWidget {
           Expanded(
             child: _ActionButton(
               icon: Icons.ios_share_rounded,
-              label: AppStrings.share,
+              label: context.l10n.share,
               onTap: () => _shareMovie(context),
             ),
           ),
@@ -77,7 +79,7 @@ class ActionButtonsRow extends ConsumerWidget {
           Expanded(
             child: _ActionButton(
               icon: Icons.play_circle_outline_rounded,
-              label: AppStrings.watchTrailer,
+              label: context.l10n.watchTrailer,
               onTap: () => _openTrailer(context),
             ),
           ),

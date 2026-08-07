@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../constants/app_colors.dart';
 import '../constants/app_dimens.dart';
-import '../constants/app_strings.dart';
 import '../errors/failures.dart';
 import '../extensions/context_extensions.dart';
 
@@ -33,7 +32,7 @@ class InlineErrorView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String displayMessage =
-        message ?? (_isOffline ? AppStrings.noInternetSubtitle : AppStrings.genericErrorSubtitle);
+        message ?? (_isOffline ? context.l10n.noInternetSubtitle : context.l10n.genericErrorSubtitle);
 
     return Container(
       padding: const EdgeInsets.all(AppDimens.space16),
@@ -56,7 +55,7 @@ class InlineErrorView extends StatelessWidget {
           const SizedBox(width: AppDimens.space8),
           TextButton(
             onPressed: onRetry,
-            child: const Text(AppStrings.retry),
+            child: Text(context.l10n.retry),
           ),
         ],
       ),
@@ -78,7 +77,7 @@ class FullScreenStateView extends StatelessWidget {
     required this.subtitle,
     this.illustrationAsset,
     this.onRetry,
-    this.retryLabel = AppStrings.retry,
+    this.retryLabel,
     super.key,
   });
 
@@ -87,7 +86,9 @@ class FullScreenStateView extends StatelessWidget {
   final String subtitle;
   final String? illustrationAsset;
   final VoidCallback? onRetry;
-  final String retryLabel;
+
+  /// Defaults to the localized "Retry" when omitted.
+  final String? retryLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +124,10 @@ class FullScreenStateView extends StatelessWidget {
             ),
             if (onRetry != null) ...<Widget>[
               const SizedBox(height: AppDimens.space24),
-              ElevatedButton(onPressed: onRetry, child: Text(retryLabel)),
+              ElevatedButton(
+                onPressed: onRetry,
+                child: Text(retryLabel ?? context.l10n.retry),
+              ),
             ],
           ],
         ),

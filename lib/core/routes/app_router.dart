@@ -4,8 +4,10 @@ import 'package:go_router/go_router.dart';
 
 import '../../features/browse/presentation/screens/browse_screen.dart';
 import '../../features/browse/presentation/screens/genre_movies_screen.dart';
+import '../../features/help_center/presentation/screens/help_center_screen.dart';
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/movie_details/presentation/screens/movie_details_screen.dart';
+import '../../features/notifications/presentation/screens/notification_settings_screen.dart';
 import '../../features/profile/presentation/screens/favorites_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../features/search/presentation/screens/search_screen.dart';
@@ -126,6 +128,18 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((Ref ref) {
         path: RouteNames.settings,
         pageBuilder: (BuildContext context, GoRouterState state) {
           return _fadeThroughPage(const SettingsScreen(), state);
+        },
+      ),
+      GoRoute(
+        path: RouteNames.notificationSettings,
+        pageBuilder: (BuildContext context, GoRouterState state) {
+          return _fadeThroughPage(const NotificationSettingsScreen(), state);
+        },
+      ),
+      GoRoute(
+        path: RouteNames.helpCenter,
+        pageBuilder: (BuildContext context, GoRouterState state) {
+          return _fadeThroughPage(const HelpCenterScreen(), state);
         },
       ),
     ],

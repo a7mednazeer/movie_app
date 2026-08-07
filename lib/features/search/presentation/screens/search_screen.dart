@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/constants/app_strings.dart';
 import '../../../../core/constants/asset_paths.dart';
+import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/routes/route_names.dart';
 import '../../../../core/widgets/app_error_view.dart';
 import '../../../../models/movie.dart';
@@ -96,7 +96,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
     final bool showingResults = _rawQuery.trim().isNotEmpty;
 
     return Scaffold(
-      appBar: AppBar(title: const Text(AppStrings.navSearch)),
+      appBar: AppBar(title: Text(context.l10n.navSearch)),
       body: Column(
         children: <Widget>[
           SearchBarField(
@@ -113,25 +113,25 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                     isPending: _isDebouncePending,
                     onMovieTap: _openMovieDetails,
                   )
-                : _buildIdleState(),
+                : _buildIdleState(context),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildIdleState() {
+  Widget _buildIdleState(BuildContext context) {
     final List<String> recent = ref.watch(recentSearchesProvider);
 
     if (recent.isEmpty) {
       return Column(
         children: <Widget>[
-          const Expanded(
+          Expanded(
             child: FullScreenStateView(
               icon: Icons.search_rounded,
               illustrationAsset: AssetPaths.searchIllustration,
-              title: AppStrings.startSearching,
-              subtitle: AppStrings.startSearchingSubtitle,
+              title: context.l10n.startSearching,
+              subtitle: context.l10n.startSearchingSubtitle,
             ),
           ),
           SearchSuggestionsSection(onSuggestionTap: _selectTerm),

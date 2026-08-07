@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movie_app/core/constants/app_strings.dart';
 import 'package:movie_app/core/errors/failures.dart';
 import 'package:movie_app/core/theme/app_theme.dart';
 import 'package:movie_app/core/widgets/app_error_view.dart';
+import 'package:movie_app/l10n/generated/app_localizations.dart';
 
 Widget _wrap(Widget child) {
-  return MaterialApp(theme: AppTheme.dark, home: Scaffold(body: child));
+  return MaterialApp(
+    theme: AppTheme.dark,
+    locale: const Locale('en'),
+    supportedLocales: AppLocalizations.supportedLocales,
+    localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
+      AppLocalizations.delegate,
+      GlobalMaterialLocalizations.delegate,
+      GlobalWidgetsLocalizations.delegate,
+      GlobalCupertinoLocalizations.delegate,
+    ],
+    home: Scaffold(body: child),
+  );
 }
 
 void main() {
@@ -20,13 +32,21 @@ void main() {
     GoogleFonts.config.allowRuntimeFetching = false;
   });
 
+  // Pulled from the real, generated AppLocalizations rather than hardcoded,
+  // so this test can't silently drift from the actual English translation.
+  late AppLocalizations en;
+
+  setUpAll(() async {
+    en = await AppLocalizations.delegate.load(const Locale('en'));
+  });
+
   group('InlineErrorView', () {
     testWidgets('shows the generic message and error icon when no error is given', (
       WidgetTester tester,
     ) async {
       await tester.pumpWidget(_wrap(InlineErrorView(onRetry: () {})));
 
-      expect(find.text(AppStrings.genericErrorSubtitle), findsOneWidget);
+      expect(find.text(en.genericErrorSubtitle), findsOneWidget);
       expect(find.byIcon(Icons.error_outline_rounded), findsOneWidget);
       expect(find.byIcon(Icons.wifi_off_rounded), findsNothing);
     });
@@ -38,7 +58,7 @@ void main() {
         _wrap(InlineErrorView(onRetry: () {}, error: const NetworkFailure())),
       );
 
-      expect(find.text(AppStrings.noInternetSubtitle), findsOneWidget);
+      expect(find.text(en.noInternetSubtitle), findsOneWidget);
       expect(find.byIcon(Icons.wifi_off_rounded), findsOneWidget);
       expect(find.byIcon(Icons.error_outline_rounded), findsNothing);
     });
@@ -68,7 +88,7 @@ void main() {
       );
 
       expect(find.text('Custom override'), findsOneWidget);
-      expect(find.text(AppStrings.noInternetSubtitle), findsNothing);
+      expect(find.text(en.noInternetSubtitle), findsNothing);
     });
 
     testWidgets('tapping Retry invokes onRetry', (WidgetTester tester) async {
@@ -76,7 +96,7 @@ void main() {
 
       await tester.pumpWidget(_wrap(InlineErrorView(onRetry: () => retryCount++)));
 
-      await tester.tap(find.text(AppStrings.retry));
+      await tester.tap(find.text(en.retry));
       await tester.pump();
 
       expect(retryCount, 1);

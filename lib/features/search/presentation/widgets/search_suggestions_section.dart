@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/constants/app_dimens.dart';
+import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/widgets/genre_chip.dart';
 import '../../../../core/widgets/section_header.dart';
 import '../../../../core/widgets/shimmer_box.dart';
@@ -24,7 +25,7 @@ class SearchSuggestionsSection extends ConsumerWidget {
       loading: () => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const SectionHeader(title: 'Trending Searches'),
+          SectionHeader(title: context.l10n.trendingSearches),
           SizedBox(
             height: 40,
             child: ListView.separated(
@@ -47,7 +48,7 @@ class SearchSuggestionsSection extends ConsumerWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const SectionHeader(title: 'Trending Searches'),
+            SectionHeader(title: context.l10n.trendingSearches),
             SizedBox(
               height: 40,
               child: ListView.separated(

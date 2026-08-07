@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_dimens.dart';
-import '../../../../core/constants/app_strings.dart';
+import '../../../../core/extensions/context_extensions.dart';
 
 /// A rounded search input with a leading search icon and a trailing
 /// clear button that only appears once there's text to clear.
@@ -37,7 +37,7 @@ class SearchBarField extends StatelessWidget {
         onChanged: onChanged,
         onSubmitted: onSubmitted,
         decoration: InputDecoration(
-          hintText: AppStrings.searchHint,
+          hintText: context.l10n.searchHint,
           prefixIcon: const Icon(Icons.search_rounded),
           suffixIcon: ValueListenableBuilder<TextEditingValue>(
             valueListenable: controller,

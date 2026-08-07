@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_dimens.dart';
+import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/utils/url_launcher_helper.dart';
 import '../../../../models/movie.dart';
 import '../widgets/action_buttons_row.dart';
@@ -24,8 +25,8 @@ class MovieDetailsScreen extends StatelessWidget {
     return openExternalUrl(
       context,
       movie.trailerUrl,
-      missingUrlMessage: 'No trailer available for this title yet.',
-      launchFailedMessage: 'Couldn\'t open the trailer.',
+      missingUrlMessage: context.l10n.noTrailerAvailable,
+      launchFailedMessage: context.l10n.trailerOpenFailed,
     );
   }
 

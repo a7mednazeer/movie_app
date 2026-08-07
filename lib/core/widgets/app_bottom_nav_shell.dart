@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../constants/app_strings.dart';
+import '../extensions/context_extensions.dart';
 
 /// Shared bottom-navigation chrome for the four main tabs (Home, Search,
 /// Browse, Watchlist). Wraps GoRouter's [StatefulNavigationShell] so each
@@ -23,26 +23,26 @@ class AppBottomNavShell extends StatelessWidget {
           index,
           initialLocation: index == navigationShell.currentIndex,
         ),
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
-            activeIcon: Icon(Icons.home_rounded),
-            label: AppStrings.navHome,
+            icon: const Icon(Icons.home_outlined),
+            activeIcon: const Icon(Icons.home_rounded),
+            label: context.l10n.navHome,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search_outlined),
-            activeIcon: Icon(Icons.search_rounded),
-            label: AppStrings.navSearch,
+            icon: const Icon(Icons.search_outlined),
+            activeIcon: const Icon(Icons.search_rounded),
+            label: context.l10n.navSearch,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.grid_view_outlined),
-            activeIcon: Icon(Icons.grid_view_rounded),
-            label: AppStrings.navBrowse,
+            icon: const Icon(Icons.grid_view_outlined),
+            activeIcon: const Icon(Icons.grid_view_rounded),
+            label: context.l10n.navBrowse,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark_border_rounded),
-            activeIcon: Icon(Icons.bookmark_rounded),
-            label: AppStrings.navWatchlist,
+            icon: const Icon(Icons.bookmark_border_rounded),
+            activeIcon: const Icon(Icons.bookmark_rounded),
+            label: context.l10n.navWatchlist,
           ),
         ],
       ),

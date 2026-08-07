@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/constants/app_dimens.dart';
 import '../../../../core/constants/asset_paths.dart';
+import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/routes/route_names.dart';
 import '../../../../core/widgets/app_error_view.dart';
 import '../../../../core/widgets/movie_poster_card.dart';
@@ -27,7 +28,8 @@ class GenreMoviesScreen extends ConsumerWidget {
   /// Extra vertical space `MoviePosterCard` uses below the poster image
   /// for its title/year text — kept in sync here so the grid's fixed
   /// cell height matches the card's actual rendered height exactly.
-  static const double _textBlockHeight = 8 + 16 + 2 + 14;
+  /// Increased for Arabic and other tall-font language support.
+  static const double _textBlockHeight = 8 + 22 + 2 + 18;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -58,11 +60,11 @@ class GenreMoviesScreen extends ConsumerWidget {
             ),
             data: (List<Movie> movies) {
               if (movies.isEmpty) {
-                return const FullScreenStateView(
+                return FullScreenStateView(
                   icon: Icons.movie_filter_outlined,
                   illustrationAsset: AssetPaths.noResultsIllustration,
-                  title: 'No movies yet',
-                  subtitle: 'Nothing in this genre right now — check back soon.',
+                  title: context.l10n.noMoviesInGenre,
+                  subtitle: context.l10n.checkBackSoonGenre,
                 );
               }
               return GridView.builder(

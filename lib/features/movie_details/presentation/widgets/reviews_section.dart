@@ -4,7 +4,6 @@ import 'package:intl/intl.dart';
 
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimens.dart';
-import '../../../../core/constants/app_strings.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/widgets/app_error_view.dart';
 import '../../../../core/widgets/section_header.dart';
@@ -28,7 +27,7 @@ class ReviewsSection extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const SectionHeader(title: AppStrings.reviews),
+        SectionHeader(title: context.l10n.reviews),
         reviewsAsync.when(
           loading: () => const Padding(
             padding: EdgeInsets.symmetric(horizontal: AppDimens.screenPaddingHorizontal),
@@ -51,7 +50,7 @@ class ReviewsSection extends ConsumerWidget {
                   horizontal: AppDimens.screenPaddingHorizontal,
                 ),
                 child: Text(
-                  'No reviews yet — be the first to share your thoughts.',
+                  context.l10n.noReviewsYet,
                   style: context.textTheme.bodyMedium,
                 ),
               );
@@ -145,7 +144,7 @@ class _ReviewCardState extends State<_ReviewCard> {
               child: InkWell(
                 onTap: () => setState(() => _expanded = !_expanded),
                 child: Text(
-                  _expanded ? AppStrings.readLess : AppStrings.readMore,
+                  _expanded ? context.l10n.readLess : context.l10n.readMore,
                   style: context.textTheme.labelMedium?.copyWith(color: context.colors.primary),
                 ),
               ),

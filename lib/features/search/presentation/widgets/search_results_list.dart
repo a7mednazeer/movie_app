@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/constants/app_dimens.dart';
 import '../../../../core/constants/asset_paths.dart';
-import '../../../../core/constants/app_strings.dart';
+import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/widgets/app_error_view.dart';
 import '../../../../core/widgets/movie_wide_card.dart';
 import '../../../../core/widgets/shimmer_box.dart';
@@ -45,13 +45,13 @@ class SearchResultsList extends ConsumerWidget {
       ),
       data: (List<Movie> movies) {
         if (movies.isEmpty) {
-          return const Padding(
-            padding: EdgeInsets.only(top: AppDimens.space64),
+          return Padding(
+            padding: const EdgeInsets.only(top: AppDimens.space64),
             child: FullScreenStateView(
               icon: Icons.movie_filter_outlined,
               illustrationAsset: AssetPaths.noResultsIllustration,
-              title: AppStrings.noResultsFound,
-              subtitle: AppStrings.noResultsSubtitle,
+              title: context.l10n.noResultsFound,
+              subtitle: context.l10n.noResultsSubtitle,
             ),
           );
         }

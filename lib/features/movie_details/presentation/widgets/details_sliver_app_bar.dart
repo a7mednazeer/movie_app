@@ -4,6 +4,7 @@ import 'package:share_plus/share_plus.dart';
 
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimens.dart';
+import '../../../../core/extensions/context_extensions.dart';
 import '../../../../models/movie.dart';
 
 /// Collapsing backdrop header for Movie Details. Pins a translucent back
@@ -15,10 +16,10 @@ class DetailsSliverAppBar extends StatelessWidget {
   final Movie movie;
   final VoidCallback onPlayTrailer;
 
-  void _shareMovie() {
+  void _shareMovie(BuildContext context) {
     final String text = movie.trailerUrl != null
-        ? '${movie.title} — check out the trailer: ${movie.trailerUrl}'
-        : 'Check out "${movie.title}" on Movies!';
+        ? context.l10n.shareWithTrailer(movie.title, movie.trailerUrl!)
+        : context.l10n.shareGeneric(movie.title);
     Share.share(text);
   }
 
@@ -36,7 +37,7 @@ class DetailsSliverAppBar extends StatelessWidget {
         onTap: () => Navigator.of(context).maybePop(),
       ),
       actions: <Widget>[
-        _CircleIconButton(icon: Icons.ios_share_rounded, onTap: _shareMovie),
+        _CircleIconButton(icon: Icons.ios_share_rounded, onTap: () => _shareMovie(context)),
         const SizedBox(width: AppDimens.space16),
       ],
       flexibleSpace: FlexibleSpaceBar(

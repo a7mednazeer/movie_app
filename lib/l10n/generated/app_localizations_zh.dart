@@ -1,0 +1,297 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Chinese (`zh`).
+class AppLocalizationsZh extends AppLocalizations {
+  AppLocalizationsZh([String locale = 'zh']) : super(locale);
+
+  @override
+  String get appTagline => '你的电影世界';
+
+  @override
+  String get navHome => '首页';
+
+  @override
+  String get navSearch => '搜索';
+
+  @override
+  String get navBrowse => '浏览';
+
+  @override
+  String get navWatchlist => '片单';
+
+  @override
+  String get navProfile => '我的';
+
+  @override
+  String get sectionTrending => '热门趋势';
+
+  @override
+  String get sectionPopular => '热门电影';
+
+  @override
+  String get sectionTopRated => '高分口碑';
+
+  @override
+  String get sectionUpcoming => '即将上映';
+
+  @override
+  String get sectionRecommended => '为你推荐';
+
+  @override
+  String get sectionCategories => '分类';
+
+  @override
+  String get seeAll => '查看全部';
+
+  @override
+  String get moreLikeThis => '相似影片';
+
+  @override
+  String get cast => '演员阵容';
+
+  @override
+  String get reviews => '评论';
+
+  @override
+  String get noReviewsYet =>
+      'No reviews yet — be the first to share your thoughts.';
+
+  @override
+  String get overview => '剧情简介';
+
+  @override
+  String get watchTrailer => '观看预告片';
+
+  @override
+  String get noTrailerAvailable => '该片暂无预告片。';
+
+  @override
+  String get trailerOpenFailed => '无法打开预告片。';
+
+  @override
+  String get addToWatchlist => '片单';
+
+  @override
+  String get removedFromWatchlist => '已从片单移除';
+
+  @override
+  String get addedToWatchlist => '已加入片单';
+
+  @override
+  String get share => '分享';
+
+  @override
+  String get readMore => '展开';
+
+  @override
+  String get readLess => '收起';
+
+  @override
+  String get searchHint => '搜索电影、演员、类型…';
+
+  @override
+  String get recentSearches => '最近搜索';
+
+  @override
+  String get trendingSearches => '热门搜索';
+
+  @override
+  String get clearAll => '全部清除';
+
+  @override
+  String get clearRecentSearchesMessage => '确定要清除所有最近搜索吗？此操作无法撤销。';
+
+  @override
+  String get noResultsFound => '未找到相关电影';
+
+  @override
+  String get noResultsSubtitle => '请尝试其他片名、演员或类型。';
+
+  @override
+  String get startSearching => '搜索你喜爱的电影';
+
+  @override
+  String get startSearchingSubtitle => '查找片名，浏览演员阵容，发现新内容。';
+
+  @override
+  String get browseCategory => '浏览分类';
+
+  @override
+  String get noCategoriesAvailable => '暂无可用分类';
+
+  @override
+  String get checkBackLaterGenres => '请稍后再来查看可浏览的类型。';
+
+  @override
+  String get noMoviesInGenre => '暂时没有电影';
+
+  @override
+  String get checkBackSoonGenre => '该类型下暂时没有内容，请稍后再来看看。';
+
+  @override
+  String watchlistTitleWithCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '我的片单（$count）',
+      zero: '我的片单',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get watchlistEmptyTitle => '你的片单还是空的';
+
+  @override
+  String get watchlistEmptySubtitle => '你保存的电影会显示在这里，方便你随时查看。';
+
+  @override
+  String removedFromWatchlistSnack(String title) {
+    return '已移除“$title”';
+  }
+
+  @override
+  String favoritesTitleWithCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '收藏（$count）',
+      zero: '收藏',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get favoritesEmptyTitle => '还没有收藏';
+
+  @override
+  String get favoritesEmptySubtitle => '在电影详情页标记为收藏的电影会显示在这里。';
+
+  @override
+  String removedFromFavoritesSnack(String title) {
+    return '已将“$title”从收藏中移除';
+  }
+
+  @override
+  String get undo => '撤销';
+
+  @override
+  String get retry => '重试';
+
+  @override
+  String get genericErrorSubtitle => '加载内容时出了点问题，请重试。';
+
+  @override
+  String get noInternetSubtitle => '请检查网络连接后重试。';
+
+  @override
+  String get profileTitle => '我的';
+
+  @override
+  String get yourLibrary => '我的收藏库';
+
+  @override
+  String get everythingSaved => '所有保存的内容，尽在一处';
+
+  @override
+  String get favoritesLabel => '收藏';
+
+  @override
+  String get watchlistLabel => '片单';
+
+  @override
+  String get settingsLabel => '设置';
+
+  @override
+  String get settingsSubtitle => '主题、语言等';
+
+  @override
+  String get settingsTitle => '设置';
+
+  @override
+  String get appearance => '外观';
+
+  @override
+  String get preferences => '偏好设置';
+
+  @override
+  String get languageLabel => '语言';
+
+  @override
+  String get aboutSection => '关于';
+
+  @override
+  String get aboutThisApp => '关于本应用';
+
+  @override
+  String versionLabel(String version) {
+    return '版本 $version';
+  }
+
+  @override
+  String aboutAppTitle(String appName) {
+    return '关于 $appName';
+  }
+
+  @override
+  String get aboutDescription => '一款优质的电影发现应用——浏览热门趋势、热门电影和高分口碑影片，搜索并追踪你想看的内容。';
+
+  @override
+  String get tmdbAttribution => '本产品使用了 TMDB API，但未获得 TMDB 的认可或认证。';
+
+  @override
+  String get visitTmdb => '访问 TMDB';
+
+  @override
+  String get close => '关闭';
+
+  @override
+  String get comingSoon => '即将推出';
+
+  @override
+  String get themeLight => '浅色';
+
+  @override
+  String get themeDark => '深色';
+
+  @override
+  String get themeAuto => '自动';
+
+  @override
+  String get confirm => 'Confirm';
+
+  @override
+  String get cancel => '取消';
+
+  @override
+  String get removeLabel => '移除';
+
+  @override
+  String shareWithTrailer(String title, String trailerUrl) {
+    return '$title — 观看预告片：$trailerUrl';
+  }
+
+  @override
+  String shareGeneric(String title) {
+    return '快来 Movies 看看《$title》吧！';
+  }
+
+  @override
+  String get notificationsLabel => '通知';
+
+  @override
+  String get notificationsSubtitle => '管理你希望接收的通知内容';
+
+  @override
+  String get helpCenterLabel => '帮助中心';
+
+  @override
+  String get helpCenterSubtitle => '常见问题、联系我们等';
+
+  @override
+  String get systemDefault => '系统默认';
+}

@@ -1,53 +1,78 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// Every language offered in Settings' language picker.
+/// One entry per language the app ships real translations for.
 ///
-/// Only [AppLanguage.english] is wired to real content today — the
-/// others are shown (clearly labeled "Coming soon") so the picker UI is
-/// real and complete, without pretending the app is translated when it
-/// isn't.
+/// [locale] must match one of `AppLocalizations.supportedLocales` (which
+/// is generated straight from `lib/l10n/app_*.arb` — see `l10n.yaml`), so
+/// adding a language is: drop in a new ARB file, then add one line here.
 enum AppLanguage {
-  english('English', 'en'),
-  spanish('Español', 'es'),
-  french('Français', 'fr'),
-  arabic('العربية', 'ar');
+  english(Locale('en'), 'English'),
+  spanish(Locale('es'), 'Español'),
+  french(Locale('fr'), 'Français'),
+  german(Locale('de'), 'Deutsch'),
+  italian(Locale('it'), 'Italiano'),
+  russian(Locale('ru'), 'Русский'),
+  turkish(Locale('tr'), 'Türkçe'),
+  hindi(Locale('hi'), 'हिन्दी'),
+  chinese(Locale('zh'), '中文'),
+  portuguese(Locale('pt'), 'Português'),
+  dutch(Locale('nl'), 'Nederlands'),
+  korean(Locale('ko'), '한국어'),
+  arabic(Locale('ar'), 'العربية');
 
-  const AppLanguage(this.label, this.code);
+  const AppLanguage(this.locale, this.label);
 
+  final Locale locale;
   final String label;
-  final String code;
 
-  bool get isAvailable => this == AppLanguage.english;
+  static AppLanguage fromLocale(Locale locale) {
+    return AppLanguage.values.firstWhere(
+      (AppLanguage lang) => lang.locale.languageCode == locale.languageCode,
+      orElse: () => AppLanguage.english,
+    );
+  }
 }
 
-class LanguageNotifier extends StateNotifier<AppLanguage> {
-  LanguageNotifier() : super(AppLanguage.english) {
+/// Persists and exposes the user's chosen app language as a real
+/// [Locale], read directly by `MaterialApp.router(locale: ...)` in
+/// `main.dart`.
+///
+/// Defaults to `null`, meaning "follow the device's system language" —
+/// resolved against our supported list by `localeResolutionCallback`.
+/// Once the user picks a language explicitly, that choice is persisted
+/// and overrides the system language on every subsequent launch.
+class LanguageNotifier extends StateNotifier<Locale?> {
+  LanguageNotifier() : super(null) {
     _restore();
   }
 
-  static const String _prefsKey = 'app_language';
+  static const String _prefsKey = 'app_language_code';
 
   Future<void> _restore() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final String? saved = prefs.getString(_prefsKey);
     if (saved == null) return;
-    state = AppLanguage.values.firstWhere(
-      (AppLanguage lang) => lang.code == saved,
-      orElse: () => AppLanguage.english,
-    );
+    state = Locale(saved);
   }
 
   Future<void> select(AppLanguage language) async {
-    if (!language.isAvailable) return;
-    state = language;
+    state = language.locale;
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_prefsKey, language.code);
+    await prefs.setString(_prefsKey, language.locale.languageCode);
+  }
+
+  /// Reverts to following the device's system language.
+  Future<void> useSystemLanguage() async {
+    state = null;
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.remove(_prefsKey);
   }
 }
 
-final StateNotifierProvider<LanguageNotifier, AppLanguage> languageProvider =
-    StateNotifierProvider<LanguageNotifier, AppLanguage>(
+final StateNotifierProvider<LanguageNotifier, Locale?> languageProvider =
+    StateNotifierProvider<LanguageNotifier, Locale?>(
   (Ref ref) => LanguageNotifier(),
 );

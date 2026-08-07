@@ -1,0 +1,307 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Russian (`ru`).
+class AppLocalizationsRu extends AppLocalizations {
+  AppLocalizationsRu([String locale = 'ru']) : super(locale);
+
+  @override
+  String get appTagline => 'ВАШ МИР КИНО';
+
+  @override
+  String get navHome => 'Главная';
+
+  @override
+  String get navSearch => 'Поиск';
+
+  @override
+  String get navBrowse => 'Обзор';
+
+  @override
+  String get navWatchlist => 'Список';
+
+  @override
+  String get navProfile => 'Профиль';
+
+  @override
+  String get sectionTrending => 'В тренде';
+
+  @override
+  String get sectionPopular => 'Популярные фильмы';
+
+  @override
+  String get sectionTopRated => 'Высокий рейтинг';
+
+  @override
+  String get sectionUpcoming => 'Скоро выйдет';
+
+  @override
+  String get sectionRecommended => 'Рекомендуем вам';
+
+  @override
+  String get sectionCategories => 'Категории';
+
+  @override
+  String get seeAll => 'Смотреть все';
+
+  @override
+  String get moreLikeThis => 'Похожие фильмы';
+
+  @override
+  String get cast => 'В ролях';
+
+  @override
+  String get reviews => 'Отзывы';
+
+  @override
+  String get noReviewsYet =>
+      'No reviews yet — be the first to share your thoughts.';
+
+  @override
+  String get overview => 'Описание';
+
+  @override
+  String get watchTrailer => 'Смотреть трейлер';
+
+  @override
+  String get noTrailerAvailable => 'Трейлер для этого фильма пока недоступен.';
+
+  @override
+  String get trailerOpenFailed => 'Не удалось открыть трейлер.';
+
+  @override
+  String get addToWatchlist => 'Список';
+
+  @override
+  String get removedFromWatchlist => 'Удалено из списка';
+
+  @override
+  String get addedToWatchlist => 'Добавлено в список';
+
+  @override
+  String get share => 'Поделиться';
+
+  @override
+  String get readMore => 'Читать далее';
+
+  @override
+  String get readLess => 'Свернуть';
+
+  @override
+  String get searchHint => 'Поиск фильмов, актёров, жанров…';
+
+  @override
+  String get recentSearches => 'Недавние запросы';
+
+  @override
+  String get trendingSearches => 'Популярные запросы';
+
+  @override
+  String get clearAll => 'Очистить всё';
+
+  @override
+  String get clearRecentSearchesMessage =>
+      'Удалить все недавние запросы? Это действие нельзя отменить.';
+
+  @override
+  String get noResultsFound => 'Фильмы не найдены';
+
+  @override
+  String get noResultsSubtitle =>
+      'Попробуйте другое название, актёра или жанр.';
+
+  @override
+  String get startSearching => 'Найдите свои любимые фильмы';
+
+  @override
+  String get startSearchingSubtitle =>
+      'Ищите фильмы, изучайте актёрский состав и находите новое.';
+
+  @override
+  String get browseCategory => 'Категории';
+
+  @override
+  String get noCategoriesAvailable => 'Категории недоступны';
+
+  @override
+  String get checkBackLaterGenres =>
+      'Загляните позже, чтобы увидеть доступные жанры.';
+
+  @override
+  String get noMoviesInGenre => 'Пока нет фильмов';
+
+  @override
+  String get checkBackSoonGenre => 'В этом жанре пока пусто — загляните позже.';
+
+  @override
+  String watchlistTitleWithCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Мой список ($count)',
+      zero: 'Мой список',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get watchlistEmptyTitle => 'Ваш список пуст';
+
+  @override
+  String get watchlistEmptySubtitle =>
+      'Сохранённые фильмы появятся здесь, чтобы вы о них не забыли.';
+
+  @override
+  String removedFromWatchlistSnack(String title) {
+    return '«$title» удалён';
+  }
+
+  @override
+  String favoritesTitleWithCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Избранное ($count)',
+      zero: 'Избранное',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get favoritesEmptyTitle => 'Пока нет избранного';
+
+  @override
+  String get favoritesEmptySubtitle =>
+      'Фильмы, отмеченные как избранные на странице фильма, появятся здесь.';
+
+  @override
+  String removedFromFavoritesSnack(String title) {
+    return '«$title» удалён из избранного';
+  }
+
+  @override
+  String get undo => 'ОТМЕНИТЬ';
+
+  @override
+  String get retry => 'Повторить';
+
+  @override
+  String get genericErrorSubtitle =>
+      'Не удалось загрузить контент. Попробуйте ещё раз.';
+
+  @override
+  String get noInternetSubtitle =>
+      'Проверьте подключение к интернету и повторите попытку.';
+
+  @override
+  String get profileTitle => 'Профиль';
+
+  @override
+  String get yourLibrary => 'Ваша библиотека';
+
+  @override
+  String get everythingSaved => 'Всё сохранённое в одном месте';
+
+  @override
+  String get favoritesLabel => 'Избранное';
+
+  @override
+  String get watchlistLabel => 'Список';
+
+  @override
+  String get settingsLabel => 'Настройки';
+
+  @override
+  String get settingsSubtitle => 'Тема, язык и другое';
+
+  @override
+  String get settingsTitle => 'Настройки';
+
+  @override
+  String get appearance => 'Оформление';
+
+  @override
+  String get preferences => 'Предпочтения';
+
+  @override
+  String get languageLabel => 'Язык';
+
+  @override
+  String get aboutSection => 'О приложении';
+
+  @override
+  String get aboutThisApp => 'О приложении';
+
+  @override
+  String versionLabel(String version) {
+    return 'Версия $version';
+  }
+
+  @override
+  String aboutAppTitle(String appName) {
+    return 'О приложении $appName';
+  }
+
+  @override
+  String get aboutDescription =>
+      'Приложение для поиска фильмов: тренды, популярные и высокорейтинговые фильмы, поиск и список того, что вы хотите посмотреть.';
+
+  @override
+  String get tmdbAttribution =>
+      'Этот продукт использует API TMDB, но не одобрен и не сертифицирован TMDB.';
+
+  @override
+  String get visitTmdb => 'Перейти на TMDB';
+
+  @override
+  String get close => 'Закрыть';
+
+  @override
+  String get comingSoon => 'Скоро';
+
+  @override
+  String get themeLight => 'Светлая';
+
+  @override
+  String get themeDark => 'Тёмная';
+
+  @override
+  String get themeAuto => 'Авто';
+
+  @override
+  String get confirm => 'Confirm';
+
+  @override
+  String get cancel => 'Отмена';
+
+  @override
+  String get removeLabel => 'Удалить';
+
+  @override
+  String shareWithTrailer(String title, String trailerUrl) {
+    return '$title — посмотри трейлер: $trailerUrl';
+  }
+
+  @override
+  String shareGeneric(String title) {
+    return 'Посмотри «$title» в Movies!';
+  }
+
+  @override
+  String get notificationsLabel => 'Уведомления';
+
+  @override
+  String get notificationsSubtitle => 'Настройте, о чём вас уведомлять';
+
+  @override
+  String get helpCenterLabel => 'Центр помощи';
+
+  @override
+  String get helpCenterSubtitle => 'Вопросы, связь с нами и другое';
+
+  @override
+  String get systemDefault => 'Как в системе';
+}

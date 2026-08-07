@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/constants/app_dimens.dart';
-import '../../../../core/constants/app_strings.dart';
+import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/widgets/genre_chip.dart';
 import '../../../../core/widgets/section_header.dart';
 import '../../../../core/widgets/shimmer_box.dart';
@@ -24,7 +24,7 @@ class CategoriesSection extends ConsumerWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const SectionHeader(title: AppStrings.sectionCategories),
+        SectionHeader(title: context.l10n.sectionCategories),
         SizedBox(
           height: 44,
           child: genresAsync.when(
@@ -41,7 +41,7 @@ class CategoriesSection extends ConsumerWidget {
             error: (Object error, StackTrace stackTrace) => Center(
               child: TextButton(
                 onPressed: () => ref.invalidate(genresProvider),
-                child: const Text(AppStrings.retry),
+                child: Text(context.l10n.retry),
               ),
             ),
             data: (List<Genre> genres) {

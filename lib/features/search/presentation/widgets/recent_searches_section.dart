@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/constants/app_dimens.dart';
-import '../../../../core/constants/app_strings.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/widgets/app_confirm_dialog.dart';
 import '../providers/recent_searches_provider.dart';
@@ -18,9 +17,9 @@ class RecentSearchesSection extends ConsumerWidget {
   Future<void> _confirmClearAll(BuildContext context, WidgetRef ref) async {
     final bool confirmed = await AppConfirmDialog.show(
       context,
-      title: AppStrings.clearAll,
-      message: 'Remove all of your recent searches? This can\'t be undone.',
-      confirmLabel: AppStrings.clearAll,
+      title: context.l10n.clearAll,
+      message: context.l10n.clearRecentSearchesMessage,
+      confirmLabel: context.l10n.clearAll,
     );
     if (confirmed) {
       await ref.read(recentSearchesProvider.notifier).clearAll();
@@ -46,13 +45,13 @@ class RecentSearchesSection extends ConsumerWidget {
             children: <Widget>[
               Expanded(
                 child: Text(
-                  AppStrings.recentSearches,
+                  context.l10n.recentSearches,
                   style: context.textTheme.headlineSmall,
                 ),
               ),
               TextButton(
                 onPressed: () => _confirmClearAll(context, ref),
-                child: const Text(AppStrings.clearAll),
+                child: Text(context.l10n.clearAll),
               ),
             ],
           ),
