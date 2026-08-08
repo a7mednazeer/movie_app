@@ -273,10 +273,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get themeAuto => 'Automático';
 
   @override
-  String get confirm => 'Confirm';
+  String get cancel => 'Cancelar';
 
   @override
-  String get cancel => 'Cancelar';
+  String get confirm => 'Confirm';
 
   @override
   String get removeLabel => 'Eliminar';
@@ -305,4 +305,146 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get systemDefault => 'Predeterminado del sistema';
+
+  @override
+  String get back => 'Atrás';
+
+  @override
+  String get clear => 'Borrar';
+
+  @override
+  String get editInformation => 'Editar información';
+
+  @override
+  String get save => 'Guardar';
+
+  @override
+  String get displayName => 'Nombre visible';
+
+  @override
+  String get photoUrl => 'URL de la foto';
+
+  @override
+  String get enterName => 'Introduce tu nombre';
+
+  @override
+  String get profileUpdated => 'Perfil actualizado con éxito';
+
+  @override
+  String get signIn => 'Iniciar sesión';
+
+  @override
+  String get signUp => 'Registrarse';
+
+  @override
+  String get welcomeBack => 'Bienvenido de nuevo';
+
+  @override
+  String get signInSubtitle =>
+      'Inicia sesión para sincronizar tu lista y favoritas entre dispositivos.';
+
+  @override
+  String get createAccount => 'Crear cuenta';
+
+  @override
+  String get signUpSubtitle =>
+      'Regístrate para guardar tu lista y favoritas en tu cuenta.';
+
+  @override
+  String get emailLabel => 'Correo electrónico';
+
+  @override
+  String get passwordLabel => 'Contraseña';
+
+  @override
+  String get confirmPasswordLabel => 'Confirmar contraseña';
+
+  @override
+  String get nameLabel => 'Nombre';
+
+  @override
+  String get forgotPassword => '¿Olvidaste tu contraseña?';
+
+  @override
+  String get noAccountYet => '¿No tienes cuenta? ';
+
+  @override
+  String get alreadyHaveAccount => '¿Ya tienes cuenta? ';
+
+  @override
+  String get continueAsGuest => 'Continuar como invitado';
+
+  @override
+  String get authErrorFieldRequired => 'Este campo es obligatorio.';
+
+  @override
+  String get authErrorInvalidEmail => 'Introduce un correo electrónico válido.';
+
+  @override
+  String get authErrorUserDisabled => 'Esta cuenta ha sido deshabilitada.';
+
+  @override
+  String get authErrorUserNotFound =>
+      'No se encontró ninguna cuenta con ese correo.';
+
+  @override
+  String get authErrorWrongPassword => 'Correo o contraseña incorrectos.';
+
+  @override
+  String get authErrorEmailInUse => 'Ya existe una cuenta con ese correo.';
+
+  @override
+  String get authErrorWeakPassword => 'Esa contraseña es demasiado débil.';
+
+  @override
+  String authErrorWeakPasswordHint(int minLength) {
+    return 'La contraseña debe tener al menos $minLength caracteres.';
+  }
+
+  @override
+  String get authErrorTooManyRequests =>
+      'Demasiados intentos. Espera un momento e inténtalo de nuevo.';
+
+  @override
+  String get authErrorNotConfigured =>
+      'El inicio de sesión aún no está configurado para esta app.';
+
+  @override
+  String get authErrorRequiresRecentLogin =>
+      'Vuelve a iniciar sesión para continuar.';
+
+  @override
+  String get authErrorPasswordMismatch => 'Las contraseñas no coinciden.';
+
+  @override
+  String get authEnterEmailFirst =>
+      'Primero introduce tu correo electrónico arriba.';
+
+  @override
+  String authResetEmailSent(String email) {
+    return 'Se envió un correo para restablecer la contraseña a $email.';
+  }
+
+  @override
+  String get authSyncBannerTitle => 'Inicia sesión para sincronizar';
+
+  @override
+  String get authSyncBannerSubtitle =>
+      'Guarda tu lista y favoritas en tu cuenta y accede a ellas desde cualquier dispositivo.';
+
+  @override
+  String get signOut => 'Cerrar sesión';
+
+  @override
+  String get signOutConfirmTitle => '¿Cerrar sesión?';
+
+  @override
+  String get signOutConfirmMessage =>
+      'Puedes volver a iniciar sesión cuando quieras. Tu lista y favoritas seguirán guardadas en tu cuenta.';
+
+  @override
+  String get signedOutSnack => 'Sesión cerrada';
+
+  @override
+  String get guestBadge => 'Invitado';
 }

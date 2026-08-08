@@ -103,6 +103,7 @@ class MovieWideCard extends StatelessWidget {
             if (onToggleSaved != null)
               IconButton(
                 onPressed: () => onToggleSaved!(movie.id),
+                tooltip: context.l10n.navWatchlist,
                 icon: Icon(
                   isSaved ? Icons.bookmark_rounded : Icons.bookmark_border_rounded,
                   color: isSaved ? AppColors.primary : context.colors.onSurfaceVariant,

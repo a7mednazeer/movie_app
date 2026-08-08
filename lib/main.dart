@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/misc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
+import 'core/firebase/firebase_bootstrap.dart';
 import 'core/routes/app_router.dart';
 import 'core/theme/app_theme.dart';
 import 'core/theme/theme_provider.dart';
 import 'features/settings/presentation/providers/language_provider.dart';
 import 'l10n/generated/app_localizations.dart';
+import 'providers/auth_providers.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,7 +19,21 @@ Future<void> main() async {
   // `Hive.openBox(...)` call (see `watchlist_provider.dart` /
   // `favorites_provider.dart`).
   await Hive.initFlutter();
-  runApp(const ProviderScope(child: MovieApp()));
+
+  // Attempts real Firebase initialization; returns false (never throws)
+  // if it's not configured yet, in which case the app runs entirely on
+  // the local guest identity — see `firebase_bootstrap.dart` and
+  // `providers/auth_providers.dart`.
+  final bool firebaseAvailable = await tryInitializeFirebase();
+
+  runApp(
+    ProviderScope(
+      overrides: <Override>[
+        firebaseAvailableProvider.overrideWithValue(firebaseAvailable),
+      ],
+      child: const MovieApp(),
+    ),
+  );
 }
 
 /// Root application widget.

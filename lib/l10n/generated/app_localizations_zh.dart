@@ -262,10 +262,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get themeAuto => '自动';
 
   @override
-  String get confirm => 'Confirm';
+  String get cancel => '取消';
 
   @override
-  String get cancel => '取消';
+  String get confirm => 'Confirm';
 
   @override
   String get removeLabel => '移除';
@@ -294,4 +294,137 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get systemDefault => '系统默认';
+
+  @override
+  String get back => '返回';
+
+  @override
+  String get clear => '清除';
+
+  @override
+  String get editInformation => '编辑信息';
+
+  @override
+  String get save => '保存';
+
+  @override
+  String get displayName => '显示名称';
+
+  @override
+  String get photoUrl => '照片 URL';
+
+  @override
+  String get enterName => '输入您的姓名';
+
+  @override
+  String get profileUpdated => '个人资料更新成功';
+
+  @override
+  String get signIn => '登录';
+
+  @override
+  String get signUp => '注册';
+
+  @override
+  String get welcomeBack => '欢迎回来';
+
+  @override
+  String get signInSubtitle => '登录以在设备间同步你的片单和收藏。';
+
+  @override
+  String get createAccount => '创建账户';
+
+  @override
+  String get signUpSubtitle => '注册以将你的片单和收藏保存到账户中。';
+
+  @override
+  String get emailLabel => '电子邮箱';
+
+  @override
+  String get passwordLabel => '密码';
+
+  @override
+  String get confirmPasswordLabel => '确认密码';
+
+  @override
+  String get nameLabel => '姓名';
+
+  @override
+  String get forgotPassword => '忘记密码？';
+
+  @override
+  String get noAccountYet => '还没有账户？';
+
+  @override
+  String get alreadyHaveAccount => '已有账户？';
+
+  @override
+  String get continueAsGuest => '以访客身份继续';
+
+  @override
+  String get authErrorFieldRequired => '此字段为必填项。';
+
+  @override
+  String get authErrorInvalidEmail => '请输入有效的电子邮箱地址。';
+
+  @override
+  String get authErrorUserDisabled => '该账户已被禁用。';
+
+  @override
+  String get authErrorUserNotFound => '未找到使用该邮箱的账户。';
+
+  @override
+  String get authErrorWrongPassword => '邮箱或密码错误。';
+
+  @override
+  String get authErrorEmailInUse => '该邮箱已被注册。';
+
+  @override
+  String get authErrorWeakPassword => '密码强度太弱。';
+
+  @override
+  String authErrorWeakPasswordHint(int minLength) {
+    return '密码长度至少为 $minLength 个字符。';
+  }
+
+  @override
+  String get authErrorTooManyRequests => '尝试次数过多，请稍后再试。';
+
+  @override
+  String get authErrorNotConfigured => '此应用尚未配置登录功能。';
+
+  @override
+  String get authErrorRequiresRecentLogin => '请重新登录以继续。';
+
+  @override
+  String get authErrorPasswordMismatch => '两次输入的密码不一致。';
+
+  @override
+  String get authEnterEmailFirst => '请先在上方输入你的电子邮箱。';
+
+  @override
+  String authResetEmailSent(String email) {
+    return '密码重置邮件已发送至 $email。';
+  }
+
+  @override
+  String get authSyncBannerTitle => '登录以同步';
+
+  @override
+  String get authSyncBannerSubtitle => '将片单和收藏保存到账户，在任意设备上访问。';
+
+  @override
+  String get signOut => '退出登录';
+
+  @override
+  String get signOutConfirmTitle => '要退出登录吗？';
+
+  @override
+  String get signOutConfirmMessage => '你可以随时重新登录。你的片单和收藏会继续保存在账户中。';
+
+  @override
+  String get signedOutSnack => '已退出登录';
+
+  @override
+  String get guestBadge => '访客';
 }

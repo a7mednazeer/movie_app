@@ -271,10 +271,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get themeAuto => 'Auto';
 
   @override
-  String get confirm => 'Confirm';
+  String get cancel => 'Cancel';
 
   @override
-  String get cancel => 'Cancel';
+  String get confirm => 'Confirm';
 
   @override
   String get removeLabel => 'Remove';
@@ -303,4 +303,145 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get systemDefault => 'System default';
+
+  @override
+  String get back => 'Back';
+
+  @override
+  String get clear => 'Clear';
+
+  @override
+  String get editInformation => 'Edit Information';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get displayName => 'Display Name';
+
+  @override
+  String get photoUrl => 'Photo URL';
+
+  @override
+  String get enterName => 'Enter your name';
+
+  @override
+  String get profileUpdated => 'Profile updated successfully';
+
+  @override
+  String get signIn => 'Sign In';
+
+  @override
+  String get signUp => 'Sign Up';
+
+  @override
+  String get welcomeBack => 'Welcome Back';
+
+  @override
+  String get signInSubtitle =>
+      'Sign in to sync your watchlist and favorites across devices.';
+
+  @override
+  String get createAccount => 'Create Account';
+
+  @override
+  String get signUpSubtitle =>
+      'Sign up to save your watchlist and favorites to your account.';
+
+  @override
+  String get emailLabel => 'Email';
+
+  @override
+  String get passwordLabel => 'Password';
+
+  @override
+  String get confirmPasswordLabel => 'Confirm Password';
+
+  @override
+  String get nameLabel => 'Name';
+
+  @override
+  String get forgotPassword => 'Forgot password?';
+
+  @override
+  String get noAccountYet => 'Don\'t have an account? ';
+
+  @override
+  String get alreadyHaveAccount => 'Already have an account? ';
+
+  @override
+  String get continueAsGuest => 'Continue as Guest';
+
+  @override
+  String get authErrorFieldRequired => 'This field is required.';
+
+  @override
+  String get authErrorInvalidEmail => 'Enter a valid email address.';
+
+  @override
+  String get authErrorUserDisabled => 'This account has been disabled.';
+
+  @override
+  String get authErrorUserNotFound => 'No account found with that email.';
+
+  @override
+  String get authErrorWrongPassword => 'Incorrect email or password.';
+
+  @override
+  String get authErrorEmailInUse =>
+      'An account already exists with that email.';
+
+  @override
+  String get authErrorWeakPassword => 'That password is too weak.';
+
+  @override
+  String authErrorWeakPasswordHint(int minLength) {
+    return 'Password must be at least $minLength characters.';
+  }
+
+  @override
+  String get authErrorTooManyRequests =>
+      'Too many attempts. Please wait a moment and try again.';
+
+  @override
+  String get authErrorNotConfigured =>
+      'Sign-in isn\'t set up for this app yet.';
+
+  @override
+  String get authErrorRequiresRecentLogin =>
+      'Please sign in again to continue.';
+
+  @override
+  String get authErrorPasswordMismatch => 'Passwords don\'t match.';
+
+  @override
+  String get authEnterEmailFirst => 'Enter your email above first.';
+
+  @override
+  String authResetEmailSent(String email) {
+    return 'Password reset email sent to $email.';
+  }
+
+  @override
+  String get authSyncBannerTitle => 'Sign in to sync';
+
+  @override
+  String get authSyncBannerSubtitle =>
+      'Save your watchlist and favorites to your account and access them on any device.';
+
+  @override
+  String get signOut => 'Sign Out';
+
+  @override
+  String get signOutConfirmTitle => 'Sign Out?';
+
+  @override
+  String get signOutConfirmMessage =>
+      'You can sign back in anytime. Your watchlist and favorites stay saved to your account.';
+
+  @override
+  String get signedOutSnack => 'Signed out';
+
+  @override
+  String get guestBadge => 'Guest';
 }

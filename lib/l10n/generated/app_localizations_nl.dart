@@ -272,10 +272,10 @@ class AppLocalizationsNl extends AppLocalizations {
   String get themeAuto => 'Automatisch';
 
   @override
-  String get confirm => 'Confirm';
+  String get cancel => 'Annuleren';
 
   @override
-  String get cancel => 'Annuleren';
+  String get confirm => 'Confirm';
 
   @override
   String get removeLabel => 'Verwijderen';
@@ -304,4 +304,145 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get systemDefault => 'Systeeminstelling';
+
+  @override
+  String get back => 'Terug';
+
+  @override
+  String get clear => 'Wissen';
+
+  @override
+  String get editInformation => 'Informatie bewerken';
+
+  @override
+  String get save => 'Opslaan';
+
+  @override
+  String get displayName => 'Weergavename';
+
+  @override
+  String get photoUrl => 'Foto-URL';
+
+  @override
+  String get enterName => 'Voer je naam in';
+
+  @override
+  String get profileUpdated => 'Profiel succesvol bijgewerkt';
+
+  @override
+  String get signIn => 'Inloggen';
+
+  @override
+  String get signUp => 'Registreren';
+
+  @override
+  String get welcomeBack => 'Welkom terug';
+
+  @override
+  String get signInSubtitle =>
+      'Log in om je kijklijst en favorieten tussen apparaten te synchroniseren.';
+
+  @override
+  String get createAccount => 'Account aanmaken';
+
+  @override
+  String get signUpSubtitle =>
+      'Registreer om je kijklijst en favorieten in je account op te slaan.';
+
+  @override
+  String get emailLabel => 'E-mail';
+
+  @override
+  String get passwordLabel => 'Wachtwoord';
+
+  @override
+  String get confirmPasswordLabel => 'Bevestig wachtwoord';
+
+  @override
+  String get nameLabel => 'Naam';
+
+  @override
+  String get forgotPassword => 'Wachtwoord vergeten?';
+
+  @override
+  String get noAccountYet => 'Nog geen account? ';
+
+  @override
+  String get alreadyHaveAccount => 'Al een account? ';
+
+  @override
+  String get continueAsGuest => 'Doorgaan als gast';
+
+  @override
+  String get authErrorFieldRequired => 'Dit veld is verplicht.';
+
+  @override
+  String get authErrorInvalidEmail => 'Voer een geldig e-mailadres in.';
+
+  @override
+  String get authErrorUserDisabled => 'Dit account is uitgeschakeld.';
+
+  @override
+  String get authErrorUserNotFound =>
+      'Geen account gevonden met dat e-mailadres.';
+
+  @override
+  String get authErrorWrongPassword => 'Onjuiste e-mail of wachtwoord.';
+
+  @override
+  String get authErrorEmailInUse =>
+      'Er bestaat al een account met dat e-mailadres.';
+
+  @override
+  String get authErrorWeakPassword => 'Dat wachtwoord is te zwak.';
+
+  @override
+  String authErrorWeakPasswordHint(int minLength) {
+    return 'Wachtwoord moet minstens $minLength tekens bevatten.';
+  }
+
+  @override
+  String get authErrorTooManyRequests =>
+      'Te veel pogingen. Wacht even en probeer het opnieuw.';
+
+  @override
+  String get authErrorNotConfigured =>
+      'Inloggen is nog niet ingesteld voor deze app.';
+
+  @override
+  String get authErrorRequiresRecentLogin => 'Log opnieuw in om door te gaan.';
+
+  @override
+  String get authErrorPasswordMismatch => 'Wachtwoorden komen niet overeen.';
+
+  @override
+  String get authEnterEmailFirst => 'Vul hierboven eerst je e-mailadres in.';
+
+  @override
+  String authResetEmailSent(String email) {
+    return 'E-mail voor wachtwoordherstel verzonden naar $email.';
+  }
+
+  @override
+  String get authSyncBannerTitle => 'Log in om te synchroniseren';
+
+  @override
+  String get authSyncBannerSubtitle =>
+      'Sla je kijklijst en favorieten op in je account en gebruik ze op elk apparaat.';
+
+  @override
+  String get signOut => 'Uitloggen';
+
+  @override
+  String get signOutConfirmTitle => 'Uitloggen?';
+
+  @override
+  String get signOutConfirmMessage =>
+      'Je kunt altijd opnieuw inloggen. Je kijklijst en favorieten blijven opgeslagen in je account.';
+
+  @override
+  String get signedOutSnack => 'Uitgelogd';
+
+  @override
+  String get guestBadge => 'Gast';
 }

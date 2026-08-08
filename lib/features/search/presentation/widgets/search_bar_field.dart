@@ -46,6 +46,7 @@ class SearchBarField extends StatelessWidget {
               return IconButton(
                 icon: const Icon(Icons.close_rounded),
                 onPressed: onClear,
+                tooltip: context.l10n.clear,
               );
             },
           ),

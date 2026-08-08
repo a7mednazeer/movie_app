@@ -267,10 +267,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get themeAuto => 'تلقائي';
 
   @override
-  String get confirm => 'تأكيد';
+  String get cancel => 'إلغاء';
 
   @override
-  String get cancel => 'إلغاء';
+  String get confirm => 'تأكيد';
 
   @override
   String get removeLabel => 'إزالة';
@@ -299,4 +299,146 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get systemDefault => 'افتراضي النظام';
+
+  @override
+  String get back => 'رجوع';
+
+  @override
+  String get clear => 'مسح';
+
+  @override
+  String get editInformation => 'تعديل المعلومات';
+
+  @override
+  String get save => 'حفظ';
+
+  @override
+  String get displayName => 'الاسم المستعار';
+
+  @override
+  String get photoUrl => 'رابط الصورة';
+
+  @override
+  String get enterName => 'أدخل اسمك';
+
+  @override
+  String get profileUpdated => 'تم تحديث الملف الشخصي بنجاح';
+
+  @override
+  String get signIn => 'تسجيل الدخول';
+
+  @override
+  String get signUp => 'إنشاء حساب';
+
+  @override
+  String get welcomeBack => 'مرحباً بعودتك';
+
+  @override
+  String get signInSubtitle =>
+      'سجل الدخول لمزامنة قائمة المشاهدة والمفضلة عبر أجهزتك.';
+
+  @override
+  String get createAccount => 'إنشاء حساب';
+
+  @override
+  String get signUpSubtitle =>
+      'أنشئ حساباً لحفظ قائمة المشاهدة والمفضلة في حسابك.';
+
+  @override
+  String get emailLabel => 'البريد الإلكتروني';
+
+  @override
+  String get passwordLabel => 'كلمة المرور';
+
+  @override
+  String get confirmPasswordLabel => 'تأكيد كلمة المرور';
+
+  @override
+  String get nameLabel => 'الاسم';
+
+  @override
+  String get forgotPassword => 'هل نسيت كلمة المرور؟';
+
+  @override
+  String get noAccountYet => 'ليس لديك حساب؟ ';
+
+  @override
+  String get alreadyHaveAccount => 'لديك حساب بالفعل؟ ';
+
+  @override
+  String get continueAsGuest => 'المتابعة كضيف';
+
+  @override
+  String get authErrorFieldRequired => 'هذا الحقل مطلوب.';
+
+  @override
+  String get authErrorInvalidEmail => 'أدخل عنوان بريد إلكتروني صالح.';
+
+  @override
+  String get authErrorUserDisabled => 'تم تعطيل هذا الحساب.';
+
+  @override
+  String get authErrorUserNotFound =>
+      'لم يتم العثور على حساب بهذا البريد الإلكتروني.';
+
+  @override
+  String get authErrorWrongPassword =>
+      'البريد الإلكتروني أو كلمة المرور غير صحيحة.';
+
+  @override
+  String get authErrorEmailInUse => 'يوجد حساب بالفعل بهذا البريد الإلكتروني.';
+
+  @override
+  String get authErrorWeakPassword => 'كلمة المرور هذه ضعيفة جداً.';
+
+  @override
+  String authErrorWeakPasswordHint(int minLength) {
+    return 'يجب أن تتكون كلمة المرور من $minLength أحرف على الأقل.';
+  }
+
+  @override
+  String get authErrorTooManyRequests =>
+      'محاولات كثيرة جداً. يرجى الانتظار لحظة والمحاولة مرة أخرى.';
+
+  @override
+  String get authErrorNotConfigured =>
+      'لم يتم إعداد تسجيل الدخول لهذا التطبيق بعد.';
+
+  @override
+  String get authErrorRequiresRecentLogin =>
+      'يرجى تسجيل الدخول مرة أخرى للمتابعة.';
+
+  @override
+  String get authErrorPasswordMismatch => 'كلمات المرور غير متطابقة.';
+
+  @override
+  String get authEnterEmailFirst => 'أدخل بريدك الإلكتروني أعلاه أولاً.';
+
+  @override
+  String authResetEmailSent(String email) {
+    return 'تم إرسال بريد إلكتروني لإعادة تعيين كلمة المرور إلى $email.';
+  }
+
+  @override
+  String get authSyncBannerTitle => 'سجل الدخول للمزامنة';
+
+  @override
+  String get authSyncBannerSubtitle =>
+      'احفظ قائمة المشاهدة والمفضلة في حسابك والوصول إليها من أي جهاز.';
+
+  @override
+  String get signOut => 'تسجيل الخروج';
+
+  @override
+  String get signOutConfirmTitle => 'تسجيل الخروج؟';
+
+  @override
+  String get signOutConfirmMessage =>
+      'يمكنك تسجيل الدخول مرة أخرى في أي وقت. تبقى قائمة المشاهدة والمفضلة محفوظة في حسابك.';
+
+  @override
+  String get signedOutSnack => 'تم تسجيل الخروج';
+
+  @override
+  String get guestBadge => 'ضيف';
 }

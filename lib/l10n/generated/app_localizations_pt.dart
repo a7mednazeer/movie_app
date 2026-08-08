@@ -272,10 +272,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get themeAuto => 'Automático';
 
   @override
-  String get confirm => 'Confirm';
+  String get cancel => 'Cancelar';
 
   @override
-  String get cancel => 'Cancelar';
+  String get confirm => 'Confirm';
 
   @override
   String get removeLabel => 'Remover';
@@ -304,4 +304,145 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get systemDefault => 'Padrão do sistema';
+
+  @override
+  String get back => 'Voltar';
+
+  @override
+  String get clear => 'Limpar';
+
+  @override
+  String get editInformation => 'Editar informações';
+
+  @override
+  String get save => 'Salvar';
+
+  @override
+  String get displayName => 'Nome de exibição';
+
+  @override
+  String get photoUrl => 'URL da foto';
+
+  @override
+  String get enterName => 'Insira seu nome';
+
+  @override
+  String get profileUpdated => 'Perfil atualizado com sucesso';
+
+  @override
+  String get signIn => 'Entrar';
+
+  @override
+  String get signUp => 'Cadastrar-se';
+
+  @override
+  String get welcomeBack => 'Bem-vindo de volta';
+
+  @override
+  String get signInSubtitle =>
+      'Entre para sincronizar sua lista e favoritos entre dispositivos.';
+
+  @override
+  String get createAccount => 'Criar conta';
+
+  @override
+  String get signUpSubtitle =>
+      'Cadastre-se para salvar sua lista e favoritos na sua conta.';
+
+  @override
+  String get emailLabel => 'E-mail';
+
+  @override
+  String get passwordLabel => 'Senha';
+
+  @override
+  String get confirmPasswordLabel => 'Confirmar senha';
+
+  @override
+  String get nameLabel => 'Nome';
+
+  @override
+  String get forgotPassword => 'Esqueceu a senha?';
+
+  @override
+  String get noAccountYet => 'Ainda não tem conta? ';
+
+  @override
+  String get alreadyHaveAccount => 'Já tem uma conta? ';
+
+  @override
+  String get continueAsGuest => 'Continuar como convidado';
+
+  @override
+  String get authErrorFieldRequired => 'Este campo é obrigatório.';
+
+  @override
+  String get authErrorInvalidEmail => 'Digite um endereço de e-mail válido.';
+
+  @override
+  String get authErrorUserDisabled => 'Esta conta foi desativada.';
+
+  @override
+  String get authErrorUserNotFound =>
+      'Nenhuma conta encontrada com esse e-mail.';
+
+  @override
+  String get authErrorWrongPassword => 'E-mail ou senha incorretos.';
+
+  @override
+  String get authErrorEmailInUse => 'Já existe uma conta com esse e-mail.';
+
+  @override
+  String get authErrorWeakPassword => 'Essa senha é muito fraca.';
+
+  @override
+  String authErrorWeakPasswordHint(int minLength) {
+    return 'A senha deve ter pelo menos $minLength caracteres.';
+  }
+
+  @override
+  String get authErrorTooManyRequests =>
+      'Muitas tentativas. Aguarde um momento e tente novamente.';
+
+  @override
+  String get authErrorNotConfigured =>
+      'O login ainda não foi configurado para este app.';
+
+  @override
+  String get authErrorRequiresRecentLogin =>
+      'Faça login novamente para continuar.';
+
+  @override
+  String get authErrorPasswordMismatch => 'As senhas não coincidem.';
+
+  @override
+  String get authEnterEmailFirst => 'Digite seu e-mail acima primeiro.';
+
+  @override
+  String authResetEmailSent(String email) {
+    return 'E-mail de redefinição de senha enviado para $email.';
+  }
+
+  @override
+  String get authSyncBannerTitle => 'Entre para sincronizar';
+
+  @override
+  String get authSyncBannerSubtitle =>
+      'Salve sua lista e favoritos na sua conta e acesse de qualquer dispositivo.';
+
+  @override
+  String get signOut => 'Sair';
+
+  @override
+  String get signOutConfirmTitle => 'Sair da conta?';
+
+  @override
+  String get signOutConfirmMessage =>
+      'Você pode entrar novamente quando quiser. Sua lista e favoritos continuarão salvos na sua conta.';
+
+  @override
+  String get signedOutSnack => 'Sessão encerrada';
+
+  @override
+  String get guestBadge => 'Convidado';
 }

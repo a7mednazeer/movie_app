@@ -171,23 +171,26 @@ class _SaveButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      behavior: HitTestBehavior.opaque,
-      child: Container(
-        width: 26,
-        height: 26,
-        decoration: const BoxDecoration(
-          color: AppColors.scrimStrong,
-          shape: BoxShape.circle,
-        ),
-        child: AnimatedSwitcher(
-          duration: const Duration(milliseconds: 200),
-          child: Icon(
-            isSaved ? Icons.bookmark_rounded : Icons.bookmark_border_rounded,
-            key: ValueKey<bool>(isSaved),
-            size: 15,
-            color: isSaved ? AppColors.primary : Colors.white,
+    return Tooltip(
+      message: context.l10n.navWatchlist,
+      child: GestureDetector(
+        onTap: onTap,
+        behavior: HitTestBehavior.opaque,
+        child: Container(
+          width: 26,
+          height: 26,
+          decoration: const BoxDecoration(
+            color: AppColors.scrimStrong,
+            shape: BoxShape.circle,
+          ),
+          child: AnimatedSwitcher(
+            duration: const Duration(milliseconds: 200),
+            child: Icon(
+              isSaved ? Icons.bookmark_rounded : Icons.bookmark_border_rounded,
+              key: ValueKey<bool>(isSaved),
+              size: 15,
+              color: isSaved ? AppColors.primary : Colors.white,
+            ),
           ),
         ),
       ),

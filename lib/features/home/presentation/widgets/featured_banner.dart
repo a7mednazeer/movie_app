@@ -170,6 +170,7 @@ class _BannerSlide extends StatelessWidget {
             child: _IconCircleButton(
               icon: isSaved ? Icons.bookmark_rounded : Icons.bookmark_border_rounded,
               iconColor: isSaved ? AppColors.primary : Colors.white,
+              tooltip: context.l10n.navWatchlist,
               onTap: onToggleSaved,
             ),
           ),
@@ -259,6 +260,7 @@ class _IconCircleButton extends StatelessWidget {
     this.size = 36,
     this.iconSize = 18,
     this.iconColor = Colors.white,
+    this.tooltip,
   });
 
   final IconData icon;
@@ -266,21 +268,25 @@ class _IconCircleButton extends StatelessWidget {
   final double size;
   final double iconSize;
   final Color iconColor;
+  final String? tooltip;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       behavior: HitTestBehavior.opaque,
-      child: Container(
-        width: size,
-        height: size,
-        decoration: BoxDecoration(
-          color: AppColors.scrimStrong,
-          shape: BoxShape.circle,
-          border: Border.all(color: Colors.white24),
+      child: Tooltip(
+        message: tooltip ?? '',
+        child: Container(
+          width: size,
+          height: size,
+          decoration: BoxDecoration(
+            color: AppColors.scrimStrong,
+            shape: BoxShape.circle,
+            border: Border.all(color: Colors.white24),
+          ),
+          child: Icon(icon, color: iconColor, size: iconSize),
         ),
-        child: Icon(icon, color: iconColor, size: iconSize),
       ),
     );
   }

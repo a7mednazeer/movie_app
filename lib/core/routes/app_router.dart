@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/auth/presentation/screens/sign_in_screen.dart';
+import '../../features/auth/presentation/screens/sign_up_screen.dart';
 import '../../features/browse/presentation/screens/browse_screen.dart';
 import '../../features/browse/presentation/screens/genre_movies_screen.dart';
 import '../../features/help_center/presentation/screens/help_center_screen.dart';
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/movie_details/presentation/screens/movie_details_screen.dart';
 import '../../features/notifications/presentation/screens/notification_settings_screen.dart';
+import '../../features/profile/presentation/screens/edit_profile_screen.dart';
 import '../../features/profile/presentation/screens/favorites_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../features/search/presentation/screens/search_screen.dart';
@@ -108,6 +111,24 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((Ref ref) {
         pageBuilder: (BuildContext context, GoRouterState state) {
           final Movie movie = state.extra! as Movie;
           return _fadeThroughPage(MovieDetailsScreen(movie: movie), state);
+        },
+      ),
+      GoRoute(
+        path: RouteNames.signIn,
+        pageBuilder: (BuildContext context, GoRouterState state) {
+          return _fadeThroughPage(const SignInScreen(), state);
+        },
+      ),
+      GoRoute(
+        path: RouteNames.signUp,
+        pageBuilder: (BuildContext context, GoRouterState state) {
+          return _fadeThroughPage(const SignUpScreen(), state);
+        },
+      ),
+      GoRoute(
+        path: RouteNames.editProfile,
+        pageBuilder: (BuildContext context, GoRouterState state) {
+          return _fadeThroughPage(const EditProfileScreen(), state);
         },
       ),
       GoRoute(

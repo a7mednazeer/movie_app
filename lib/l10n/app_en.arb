@@ -69,6 +69,9 @@
     "description": "Reviews section empty state message."
   },
   "overview": "Overview",
+  "@overview": {
+    "description": "Movie Details section header for the synopsis."
+  },
   "watchTrailer": "Watch Trailer",
   "@watchTrailer": {
     "description": "Movie Details action button label."
@@ -331,11 +334,14 @@
   "@themeAuto": {
     "description": "Theme mode selector segment (follows system setting)."
   },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Default Cancel button on the shared confirm dialog."
+  },
   "confirm": "Confirm",
   "@confirm": {
     "description": "Generic confirmation button label."
   },
-  "cancel": "Cancel",
   "removeLabel": "Remove",
   "@removeLabel": {
     "description": "Swipe-to-remove background label on Watchlist/Favorites rows."
@@ -380,5 +386,187 @@
   "systemDefault": "System default",
   "@systemDefault": {
     "description": "Settings list tile (systemDefault)."
+  },
+  "back": "Back",
+  "@back": {
+    "description": "Tooltip for the back button."
+  },
+  "clear": "Clear",
+  "@clear": {
+    "description": "Tooltip for the clear search button."
+  },
+  "editInformation": "Edit Information",
+  "@editInformation": {
+    "description": "Title of the edit profile screen."
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Generic save button label."
+  },
+  "displayName": "Display Name",
+  "@displayName": {
+    "description": "Label for the name input field."
+  },
+  "photoUrl": "Photo URL",
+  "@photoUrl": {
+    "description": "Label for the photo URL input field."
+  },
+  "enterName": "Enter your name",
+  "@enterName": {
+    "description": "Hint text for the name input field."
+  },
+  "profileUpdated": "Profile updated successfully",
+  "@profileUpdated": {
+    "description": "Snackbar message after a successful profile update."
+  },
+  "signIn": "Sign In",
+  "@signIn": {
+    "description": "Auth screen string: signIn."
+  },
+  "signUp": "Sign Up",
+  "@signUp": {
+    "description": "Auth screen string: signUp."
+  },
+  "welcomeBack": "Welcome Back",
+  "@welcomeBack": {
+    "description": "Auth screen string: welcomeBack."
+  },
+  "signInSubtitle": "Sign in to sync your watchlist and favorites across devices.",
+  "@signInSubtitle": {
+    "description": "Auth screen string: signInSubtitle."
+  },
+  "createAccount": "Create Account",
+  "@createAccount": {
+    "description": "Auth screen string: createAccount."
+  },
+  "signUpSubtitle": "Sign up to save your watchlist and favorites to your account.",
+  "@signUpSubtitle": {
+    "description": "Auth screen string: signUpSubtitle."
+  },
+  "emailLabel": "Email",
+  "@emailLabel": {
+    "description": "Auth screen string: emailLabel."
+  },
+  "passwordLabel": "Password",
+  "@passwordLabel": {
+    "description": "Auth screen string: passwordLabel."
+  },
+  "confirmPasswordLabel": "Confirm Password",
+  "@confirmPasswordLabel": {
+    "description": "Auth screen string: confirmPasswordLabel."
+  },
+  "nameLabel": "Name",
+  "@nameLabel": {
+    "description": "Auth screen string: nameLabel."
+  },
+  "forgotPassword": "Forgot password?",
+  "@forgotPassword": {
+    "description": "Auth screen string: forgotPassword."
+  },
+  "noAccountYet": "Don't have an account? ",
+  "@noAccountYet": {
+    "description": "Auth screen string: noAccountYet."
+  },
+  "alreadyHaveAccount": "Already have an account? ",
+  "@alreadyHaveAccount": {
+    "description": "Auth screen string: alreadyHaveAccount."
+  },
+  "continueAsGuest": "Continue as Guest",
+  "@continueAsGuest": {
+    "description": "Auth screen string: continueAsGuest."
+  },
+  "authErrorFieldRequired": "This field is required.",
+  "@authErrorFieldRequired": {
+    "description": "Auth screen string: authErrorFieldRequired."
+  },
+  "authErrorInvalidEmail": "Enter a valid email address.",
+  "@authErrorInvalidEmail": {
+    "description": "Auth screen string: authErrorInvalidEmail."
+  },
+  "authErrorUserDisabled": "This account has been disabled.",
+  "@authErrorUserDisabled": {
+    "description": "Auth screen string: authErrorUserDisabled."
+  },
+  "authErrorUserNotFound": "No account found with that email.",
+  "@authErrorUserNotFound": {
+    "description": "Auth screen string: authErrorUserNotFound."
+  },
+  "authErrorWrongPassword": "Incorrect email or password.",
+  "@authErrorWrongPassword": {
+    "description": "Auth screen string: authErrorWrongPassword."
+  },
+  "authErrorEmailInUse": "An account already exists with that email.",
+  "@authErrorEmailInUse": {
+    "description": "Auth screen string: authErrorEmailInUse."
+  },
+  "authErrorWeakPassword": "That password is too weak.",
+  "@authErrorWeakPassword": {
+    "description": "Auth screen string: authErrorWeakPassword."
+  },
+  "authErrorWeakPasswordHint": "Password must be at least {minLength} characters.",
+  "@authErrorWeakPasswordHint": {
+    "description": "Auth screen string: authErrorWeakPasswordHint.",
+    "placeholders": {
+      "minLength": {
+        "type": "int"
+      }
+    }
+  },
+  "authErrorTooManyRequests": "Too many attempts. Please wait a moment and try again.",
+  "@authErrorTooManyRequests": {
+    "description": "Auth screen string: authErrorTooManyRequests."
+  },
+  "authErrorNotConfigured": "Sign-in isn't set up for this app yet.",
+  "@authErrorNotConfigured": {
+    "description": "Auth screen string: authErrorNotConfigured."
+  },
+  "authErrorRequiresRecentLogin": "Please sign in again to continue.",
+  "@authErrorRequiresRecentLogin": {
+    "description": "Auth screen string: authErrorRequiresRecentLogin."
+  },
+  "authErrorPasswordMismatch": "Passwords don't match.",
+  "@authErrorPasswordMismatch": {
+    "description": "Auth screen string: authErrorPasswordMismatch."
+  },
+  "authEnterEmailFirst": "Enter your email above first.",
+  "@authEnterEmailFirst": {
+    "description": "Auth screen string: authEnterEmailFirst."
+  },
+  "authResetEmailSent": "Password reset email sent to {email}.",
+  "@authResetEmailSent": {
+    "description": "Auth screen string: authResetEmailSent.",
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "authSyncBannerTitle": "Sign in to sync",
+  "@authSyncBannerTitle": {
+    "description": "Profile screen auth string: authSyncBannerTitle."
+  },
+  "authSyncBannerSubtitle": "Save your watchlist and favorites to your account and access them on any device.",
+  "@authSyncBannerSubtitle": {
+    "description": "Profile screen auth string: authSyncBannerSubtitle."
+  },
+  "signOut": "Sign Out",
+  "@signOut": {
+    "description": "Profile screen auth string: signOut."
+  },
+  "signOutConfirmTitle": "Sign Out?",
+  "@signOutConfirmTitle": {
+    "description": "Profile screen auth string: signOutConfirmTitle."
+  },
+  "signOutConfirmMessage": "You can sign back in anytime. Your watchlist and favorites stay saved to your account.",
+  "@signOutConfirmMessage": {
+    "description": "Profile screen auth string: signOutConfirmMessage."
+  },
+  "signedOutSnack": "Signed out",
+  "@signedOutSnack": {
+    "description": "Profile screen auth string: signedOutSnack."
+  },
+  "guestBadge": "Guest",
+  "@guestBadge": {
+    "description": "Profile screen auth string: guestBadge."
   }
 }

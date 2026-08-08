@@ -272,10 +272,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get themeAuto => 'Авто';
 
   @override
-  String get confirm => 'Confirm';
+  String get cancel => 'Отмена';
 
   @override
-  String get cancel => 'Отмена';
+  String get confirm => 'Confirm';
 
   @override
   String get removeLabel => 'Удалить';
@@ -304,4 +304,144 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get systemDefault => 'Как в системе';
+
+  @override
+  String get back => 'Назад';
+
+  @override
+  String get clear => 'Очистить';
+
+  @override
+  String get editInformation => 'Редактировать информацию';
+
+  @override
+  String get save => 'Сохранить';
+
+  @override
+  String get displayName => 'Отображаемое имя';
+
+  @override
+  String get photoUrl => 'URL фотографии';
+
+  @override
+  String get enterName => 'Введите ваше имя';
+
+  @override
+  String get profileUpdated => 'Профиль успешно обновлен';
+
+  @override
+  String get signIn => 'Войти';
+
+  @override
+  String get signUp => 'Регистрация';
+
+  @override
+  String get welcomeBack => 'С возвращением';
+
+  @override
+  String get signInSubtitle =>
+      'Войдите, чтобы синхронизировать список и избранное на всех устройствах.';
+
+  @override
+  String get createAccount => 'Создать аккаунт';
+
+  @override
+  String get signUpSubtitle =>
+      'Зарегистрируйтесь, чтобы сохранить список и избранное в своём аккаунте.';
+
+  @override
+  String get emailLabel => 'Эл. почта';
+
+  @override
+  String get passwordLabel => 'Пароль';
+
+  @override
+  String get confirmPasswordLabel => 'Подтвердите пароль';
+
+  @override
+  String get nameLabel => 'Имя';
+
+  @override
+  String get forgotPassword => 'Забыли пароль?';
+
+  @override
+  String get noAccountYet => 'Нет аккаунта? ';
+
+  @override
+  String get alreadyHaveAccount => 'Уже есть аккаунт? ';
+
+  @override
+  String get continueAsGuest => 'Продолжить как гость';
+
+  @override
+  String get authErrorFieldRequired => 'Это поле обязательно.';
+
+  @override
+  String get authErrorInvalidEmail => 'Введите корректный адрес эл. почты.';
+
+  @override
+  String get authErrorUserDisabled => 'Этот аккаунт отключён.';
+
+  @override
+  String get authErrorUserNotFound => 'Аккаунт с такой почтой не найден.';
+
+  @override
+  String get authErrorWrongPassword => 'Неверная почта или пароль.';
+
+  @override
+  String get authErrorEmailInUse => 'Аккаунт с такой почтой уже существует.';
+
+  @override
+  String get authErrorWeakPassword => 'Этот пароль слишком слабый.';
+
+  @override
+  String authErrorWeakPasswordHint(int minLength) {
+    return 'Пароль должен содержать не менее $minLength символов.';
+  }
+
+  @override
+  String get authErrorTooManyRequests =>
+      'Слишком много попыток. Подождите немного и повторите попытку.';
+
+  @override
+  String get authErrorNotConfigured =>
+      'Вход пока не настроен для этого приложения.';
+
+  @override
+  String get authErrorRequiresRecentLogin =>
+      'Пожалуйста, войдите снова, чтобы продолжить.';
+
+  @override
+  String get authErrorPasswordMismatch => 'Пароли не совпадают.';
+
+  @override
+  String get authEnterEmailFirst => 'Сначала введите свою эл. почту выше.';
+
+  @override
+  String authResetEmailSent(String email) {
+    return 'Письмо для сброса пароля отправлено на $email.';
+  }
+
+  @override
+  String get authSyncBannerTitle => 'Войдите для синхронизации';
+
+  @override
+  String get authSyncBannerSubtitle =>
+      'Сохраните список и избранное в своём аккаунте и получайте к ним доступ с любого устройства.';
+
+  @override
+  String get signOut => 'Выйти';
+
+  @override
+  String get signOutConfirmTitle => 'Выйти из аккаунта?';
+
+  @override
+  String get signOutConfirmMessage =>
+      'Вы сможете снова войти в любой момент. Ваш список и избранное останутся сохранены в аккаунте.';
+
+  @override
+  String get signedOutSnack => 'Вы вышли из аккаунта';
+
+  @override
+  String get guestBadge => 'Гость';
 }

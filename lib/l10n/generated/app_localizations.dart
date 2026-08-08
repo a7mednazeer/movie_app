@@ -222,7 +222,7 @@ abstract class AppLocalizations {
   /// **'No reviews yet — be the first to share your thoughts.'**
   String get noReviewsYet;
 
-  /// No description provided for @overview.
+  /// Movie Details section header for the synopsis.
   ///
   /// In en, this message translates to:
   /// **'Overview'**
@@ -576,17 +576,17 @@ abstract class AppLocalizations {
   /// **'Auto'**
   String get themeAuto;
 
+  /// Default Cancel button on the shared confirm dialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
   /// Generic confirmation button label.
   ///
   /// In en, this message translates to:
   /// **'Confirm'**
   String get confirm;
-
-  /// No description provided for @cancel.
-  ///
-  /// In en, this message translates to:
-  /// **'Cancel'**
-  String get cancel;
 
   /// Swipe-to-remove background label on Watchlist/Favorites rows.
   ///
@@ -635,6 +635,264 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'System default'**
   String get systemDefault;
+
+  /// Tooltip for the back button.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get back;
+
+  /// Tooltip for the clear search button.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get clear;
+
+  /// Title of the edit profile screen.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Information'**
+  String get editInformation;
+
+  /// Generic save button label.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// Label for the name input field.
+  ///
+  /// In en, this message translates to:
+  /// **'Display Name'**
+  String get displayName;
+
+  /// Label for the photo URL input field.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo URL'**
+  String get photoUrl;
+
+  /// Hint text for the name input field.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your name'**
+  String get enterName;
+
+  /// Snackbar message after a successful profile update.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile updated successfully'**
+  String get profileUpdated;
+
+  /// Auth screen string: signIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In'**
+  String get signIn;
+
+  /// Auth screen string: signUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Up'**
+  String get signUp;
+
+  /// Auth screen string: welcomeBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome Back'**
+  String get welcomeBack;
+
+  /// Auth screen string: signInSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to sync your watchlist and favorites across devices.'**
+  String get signInSubtitle;
+
+  /// Auth screen string: createAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Account'**
+  String get createAccount;
+
+  /// Auth screen string: signUpSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up to save your watchlist and favorites to your account.'**
+  String get signUpSubtitle;
+
+  /// Auth screen string: emailLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get emailLabel;
+
+  /// Auth screen string: passwordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get passwordLabel;
+
+  /// Auth screen string: confirmPasswordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirmPasswordLabel;
+
+  /// Auth screen string: nameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get nameLabel;
+
+  /// Auth screen string: forgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot password?'**
+  String get forgotPassword;
+
+  /// Auth screen string: noAccountYet.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account? '**
+  String get noAccountYet;
+
+  /// Auth screen string: alreadyHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account? '**
+  String get alreadyHaveAccount;
+
+  /// Auth screen string: continueAsGuest.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue as Guest'**
+  String get continueAsGuest;
+
+  /// Auth screen string: authErrorFieldRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'This field is required.'**
+  String get authErrorFieldRequired;
+
+  /// Auth screen string: authErrorInvalidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid email address.'**
+  String get authErrorInvalidEmail;
+
+  /// Auth screen string: authErrorUserDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'This account has been disabled.'**
+  String get authErrorUserDisabled;
+
+  /// Auth screen string: authErrorUserNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No account found with that email.'**
+  String get authErrorUserNotFound;
+
+  /// Auth screen string: authErrorWrongPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect email or password.'**
+  String get authErrorWrongPassword;
+
+  /// Auth screen string: authErrorEmailInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'An account already exists with that email.'**
+  String get authErrorEmailInUse;
+
+  /// Auth screen string: authErrorWeakPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'That password is too weak.'**
+  String get authErrorWeakPassword;
+
+  /// Auth screen string: authErrorWeakPasswordHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least {minLength} characters.'**
+  String authErrorWeakPasswordHint(int minLength);
+
+  /// Auth screen string: authErrorTooManyRequests.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many attempts. Please wait a moment and try again.'**
+  String get authErrorTooManyRequests;
+
+  /// Auth screen string: authErrorNotConfigured.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign-in isn\'t set up for this app yet.'**
+  String get authErrorNotConfigured;
+
+  /// Auth screen string: authErrorRequiresRecentLogin.
+  ///
+  /// In en, this message translates to:
+  /// **'Please sign in again to continue.'**
+  String get authErrorRequiresRecentLogin;
+
+  /// Auth screen string: authErrorPasswordMismatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords don\'t match.'**
+  String get authErrorPasswordMismatch;
+
+  /// Auth screen string: authEnterEmailFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email above first.'**
+  String get authEnterEmailFirst;
+
+  /// Auth screen string: authResetEmailSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Password reset email sent to {email}.'**
+  String authResetEmailSent(String email);
+
+  /// Profile screen auth string: authSyncBannerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to sync'**
+  String get authSyncBannerTitle;
+
+  /// Profile screen auth string: authSyncBannerSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Save your watchlist and favorites to your account and access them on any device.'**
+  String get authSyncBannerSubtitle;
+
+  /// Profile screen auth string: signOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Out'**
+  String get signOut;
+
+  /// Profile screen auth string: signOutConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Out?'**
+  String get signOutConfirmTitle;
+
+  /// Profile screen auth string: signOutConfirmMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You can sign back in anytime. Your watchlist and favorites stay saved to your account.'**
+  String get signOutConfirmMessage;
+
+  /// Profile screen auth string: signedOutSnack.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed out'**
+  String get signedOutSnack;
+
+  /// Profile screen auth string: guestBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Guest'**
+  String get guestBadge;
 }
 
 class _AppLocalizationsDelegate

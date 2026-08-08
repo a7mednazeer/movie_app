@@ -265,10 +265,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get themeAuto => '자동';
 
   @override
-  String get confirm => 'Confirm';
+  String get cancel => '취소';
 
   @override
-  String get cancel => '취소';
+  String get confirm => 'Confirm';
 
   @override
   String get removeLabel => '삭제';
@@ -297,4 +297,138 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get systemDefault => '시스템 기본값';
+
+  @override
+  String get back => '뒤로';
+
+  @override
+  String get clear => '지우기';
+
+  @override
+  String get editInformation => '정보 수정';
+
+  @override
+  String get save => '저장';
+
+  @override
+  String get displayName => '표시 이름';
+
+  @override
+  String get photoUrl => '사진 URL';
+
+  @override
+  String get enterName => '이름을 입력하세요';
+
+  @override
+  String get profileUpdated => '프로필이 성공적으로 업데이트되었습니다';
+
+  @override
+  String get signIn => '로그인';
+
+  @override
+  String get signUp => '회원가입';
+
+  @override
+  String get welcomeBack => '다시 오신 것을 환영합니다';
+
+  @override
+  String get signInSubtitle => '기기 간에 보관함과 즐겨찾기를 동기화하려면 로그인하세요.';
+
+  @override
+  String get createAccount => '계정 만들기';
+
+  @override
+  String get signUpSubtitle => '보관함과 즐겨찾기를 계정에 저장하려면 회원가입하세요.';
+
+  @override
+  String get emailLabel => '이메일';
+
+  @override
+  String get passwordLabel => '비밀번호';
+
+  @override
+  String get confirmPasswordLabel => '비밀번호 확인';
+
+  @override
+  String get nameLabel => '이름';
+
+  @override
+  String get forgotPassword => '비밀번호를 잊으셨나요?';
+
+  @override
+  String get noAccountYet => '계정이 없으신가요? ';
+
+  @override
+  String get alreadyHaveAccount => '이미 계정이 있으신가요? ';
+
+  @override
+  String get continueAsGuest => '게스트로 계속하기';
+
+  @override
+  String get authErrorFieldRequired => '이 항목은 필수입니다.';
+
+  @override
+  String get authErrorInvalidEmail => '유효한 이메일 주소를 입력하세요.';
+
+  @override
+  String get authErrorUserDisabled => '이 계정은 비활성화되었습니다.';
+
+  @override
+  String get authErrorUserNotFound => '해당 이메일의 계정을 찾을 수 없습니다.';
+
+  @override
+  String get authErrorWrongPassword => '이메일 또는 비밀번호가 올바르지 않습니다.';
+
+  @override
+  String get authErrorEmailInUse => '이미 해당 이메일로 가입된 계정이 있습니다.';
+
+  @override
+  String get authErrorWeakPassword => '비밀번호가 너무 약합니다.';
+
+  @override
+  String authErrorWeakPasswordHint(int minLength) {
+    return '비밀번호는 최소 $minLength자 이상이어야 합니다.';
+  }
+
+  @override
+  String get authErrorTooManyRequests => '시도 횟수가 너무 많습니다. 잠시 후 다시 시도해 주세요.';
+
+  @override
+  String get authErrorNotConfigured => '이 앱에는 아직 로그인이 설정되지 않았습니다.';
+
+  @override
+  String get authErrorRequiresRecentLogin => '계속하려면 다시 로그인해 주세요.';
+
+  @override
+  String get authErrorPasswordMismatch => '비밀번호가 일치하지 않습니다.';
+
+  @override
+  String get authEnterEmailFirst => '먼저 위에 이메일을 입력하세요.';
+
+  @override
+  String authResetEmailSent(String email) {
+    return '$email(으)로 비밀번호 재설정 이메일을 보냈습니다.';
+  }
+
+  @override
+  String get authSyncBannerTitle => '동기화하려면 로그인하세요';
+
+  @override
+  String get authSyncBannerSubtitle => '보관함과 즐겨찾기를 계정에 저장하고 모든 기기에서 이용하세요.';
+
+  @override
+  String get signOut => '로그아웃';
+
+  @override
+  String get signOutConfirmTitle => '로그아웃할까요?';
+
+  @override
+  String get signOutConfirmMessage =>
+      '언제든지 다시 로그인할 수 있습니다. 보관함과 즐겨찾기는 계정에 계속 저장됩니다.';
+
+  @override
+  String get signedOutSnack => '로그아웃되었습니다';
+
+  @override
+  String get guestBadge => '게스트';
 }

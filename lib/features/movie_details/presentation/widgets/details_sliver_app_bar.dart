@@ -34,10 +34,15 @@ class DetailsSliverAppBar extends StatelessWidget {
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       leading: _CircleIconButton(
         icon: Icons.arrow_back_rounded,
+        tooltip: context.l10n.back,
         onTap: () => Navigator.of(context).maybePop(),
       ),
       actions: <Widget>[
-        _CircleIconButton(icon: Icons.ios_share_rounded, onTap: () => _shareMovie(context)),
+        _CircleIconButton(
+          icon: Icons.ios_share_rounded,
+          tooltip: context.l10n.share,
+          onTap: () => _shareMovie(context),
+        ),
         const SizedBox(width: AppDimens.space16),
       ],
       flexibleSpace: FlexibleSpaceBar(
@@ -76,10 +81,15 @@ class DetailsSliverAppBar extends StatelessWidget {
 }
 
 class _CircleIconButton extends StatelessWidget {
-  const _CircleIconButton({required this.icon, required this.onTap});
+  const _CircleIconButton({
+    required this.icon,
+    required this.onTap,
+    this.tooltip,
+  });
 
   final IconData icon;
   final VoidCallback onTap;
+  final String? tooltip;
 
   @override
   Widget build(BuildContext context) {
@@ -91,9 +101,12 @@ class _CircleIconButton extends StatelessWidget {
         child: InkWell(
           onTap: onTap,
           customBorder: const CircleBorder(),
-          child: Padding(
-            padding: const EdgeInsets.all(AppDimens.space8),
-            child: Icon(icon, color: Colors.white, size: AppDimens.iconMd),
+          child: Tooltip(
+            message: tooltip ?? '',
+            child: Padding(
+              padding: const EdgeInsets.all(AppDimens.space8),
+              child: Icon(icon, color: Colors.white, size: AppDimens.iconMd),
+            ),
           ),
         ),
       ),

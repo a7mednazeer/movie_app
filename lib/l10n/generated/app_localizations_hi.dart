@@ -271,10 +271,10 @@ class AppLocalizationsHi extends AppLocalizations {
   String get themeAuto => 'ऑटो';
 
   @override
-  String get confirm => 'Confirm';
+  String get cancel => 'रद्द करें';
 
   @override
-  String get cancel => 'रद्द करें';
+  String get confirm => 'Confirm';
 
   @override
   String get removeLabel => 'हटाएं';
@@ -304,4 +304,144 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get systemDefault => 'सिस्टम डिफ़ॉल्ट';
+
+  @override
+  String get back => 'पीछे';
+
+  @override
+  String get clear => 'साफ़ करें';
+
+  @override
+  String get editInformation => 'जानकारी संपादित करें';
+
+  @override
+  String get save => 'सहेजें';
+
+  @override
+  String get displayName => 'प्रदर्शित नाम';
+
+  @override
+  String get photoUrl => 'फोटो URL';
+
+  @override
+  String get enterName => 'अपना नाम दर्ज करें';
+
+  @override
+  String get profileUpdated => 'प्रोफ़ाइल सफलतापूर्वक अपडेट की गई';
+
+  @override
+  String get signIn => 'साइन इन करें';
+
+  @override
+  String get signUp => 'साइन अप करें';
+
+  @override
+  String get welcomeBack => 'वापसी पर स्वागत है';
+
+  @override
+  String get signInSubtitle =>
+      'डिवाइसों में अपनी सूची और पसंदीदा सिंक करने के लिए साइन इन करें।';
+
+  @override
+  String get createAccount => 'खाता बनाएं';
+
+  @override
+  String get signUpSubtitle =>
+      'अपनी सूची और पसंदीदा को अपने खाते में सहेजने के लिए साइन अप करें।';
+
+  @override
+  String get emailLabel => 'ईमेल';
+
+  @override
+  String get passwordLabel => 'पासवर्ड';
+
+  @override
+  String get confirmPasswordLabel => 'पासवर्ड की पुष्टि करें';
+
+  @override
+  String get nameLabel => 'नाम';
+
+  @override
+  String get forgotPassword => 'पासवर्ड भूल गए?';
+
+  @override
+  String get noAccountYet => 'अभी तक खाता नहीं है? ';
+
+  @override
+  String get alreadyHaveAccount => 'पहले से खाता है? ';
+
+  @override
+  String get continueAsGuest => 'अतिथि के रूप में जारी रखें';
+
+  @override
+  String get authErrorFieldRequired => 'यह फ़ील्ड आवश्यक है।';
+
+  @override
+  String get authErrorInvalidEmail => 'एक मान्य ईमेल पता दर्ज करें।';
+
+  @override
+  String get authErrorUserDisabled => 'यह खाता अक्षम कर दिया गया है।';
+
+  @override
+  String get authErrorUserNotFound => 'उस ईमेल से कोई खाता नहीं मिला।';
+
+  @override
+  String get authErrorWrongPassword => 'गलत ईमेल या पासवर्ड।';
+
+  @override
+  String get authErrorEmailInUse => 'उस ईमेल से पहले से एक खाता मौजूद है।';
+
+  @override
+  String get authErrorWeakPassword => 'यह पासवर्ड बहुत कमज़ोर है।';
+
+  @override
+  String authErrorWeakPasswordHint(int minLength) {
+    return 'पासवर्ड कम से कम $minLength अक्षरों का होना चाहिए।';
+  }
+
+  @override
+  String get authErrorTooManyRequests =>
+      'बहुत अधिक प्रयास। कृपया थोड़ी देर बाद पुनः प्रयास करें।';
+
+  @override
+  String get authErrorNotConfigured =>
+      'इस ऐप के लिए साइन-इन अभी सेट नहीं किया गया है।';
+
+  @override
+  String get authErrorRequiresRecentLogin =>
+      'जारी रखने के लिए कृपया फिर से साइन इन करें।';
+
+  @override
+  String get authErrorPasswordMismatch => 'पासवर्ड मेल नहीं खाते।';
+
+  @override
+  String get authEnterEmailFirst => 'पहले ऊपर अपना ईमेल दर्ज करें।';
+
+  @override
+  String authResetEmailSent(String email) {
+    return 'पासवर्ड रीसेट ईमेल $email पर भेजा गया।';
+  }
+
+  @override
+  String get authSyncBannerTitle => 'सिंक करने के लिए साइन इन करें';
+
+  @override
+  String get authSyncBannerSubtitle =>
+      'अपनी सूची और पसंदीदा को अपने खाते में सहेजें और किसी भी डिवाइस से एक्सेस करें।';
+
+  @override
+  String get signOut => 'साइन आउट करें';
+
+  @override
+  String get signOutConfirmTitle => 'साइन आउट करें?';
+
+  @override
+  String get signOutConfirmMessage =>
+      'आप कभी भी फिर से साइन इन कर सकते हैं। आपकी सूची और पसंदीदा आपके खाते में सहेजे रहेंगे।';
+
+  @override
+  String get signedOutSnack => 'साइन आउट हो गए';
+
+  @override
+  String get guestBadge => 'अतिथि';
 }

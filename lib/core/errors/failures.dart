@@ -45,3 +45,20 @@ class NotFoundFailure extends Failure {
 class UnknownFailure extends Failure {
   const UnknownFailure([super.message = 'An unexpected error occurred.']);
 }
+
+/// Sign-in / sign-up / account errors.
+///
+/// Carries a stable [code] (mirroring Firebase Auth's own error codes,
+/// e.g. `wrong-password`, `email-already-in-use`) rather than relying on
+/// [message] for display — the UI maps [code] to a fully localized
+/// string (see `AuthErrorMessages` in the sign-in/sign-up screens) the
+/// same way `InlineErrorView` already keys off `Failure` *type* rather
+/// than its baked-in English message.
+class AuthFailure extends Failure {
+  const AuthFailure(this.code, [super.message = 'Authentication error.']);
+
+  final String code;
+
+  @override
+  List<Object?> get props => <Object?>[code, message];
+}

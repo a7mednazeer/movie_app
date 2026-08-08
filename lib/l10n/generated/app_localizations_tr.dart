@@ -271,10 +271,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get themeAuto => 'Otomatik';
 
   @override
-  String get confirm => 'Confirm';
+  String get cancel => 'Vazgeç';
 
   @override
-  String get cancel => 'Vazgeç';
+  String get confirm => 'Confirm';
 
   @override
   String get removeLabel => 'Kaldır';
@@ -303,4 +303,144 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get systemDefault => 'Sistem varsayılanı';
+
+  @override
+  String get back => 'Geri';
+
+  @override
+  String get clear => 'Temizle';
+
+  @override
+  String get editInformation => 'Bilgileri Düzenle';
+
+  @override
+  String get save => 'Kaydet';
+
+  @override
+  String get displayName => 'Görünen Ad';
+
+  @override
+  String get photoUrl => 'Fotoğraf URL\'si';
+
+  @override
+  String get enterName => 'Adınızı girin';
+
+  @override
+  String get profileUpdated => 'Profil başarıyla güncellendi';
+
+  @override
+  String get signIn => 'Giriş Yap';
+
+  @override
+  String get signUp => 'Kaydol';
+
+  @override
+  String get welcomeBack => 'Tekrar Hoş Geldin';
+
+  @override
+  String get signInSubtitle =>
+      'Listeni ve favorilerini cihazlar arasında senkronize etmek için giriş yap.';
+
+  @override
+  String get createAccount => 'Hesap Oluştur';
+
+  @override
+  String get signUpSubtitle =>
+      'Listeni ve favorilerini hesabına kaydetmek için kaydol.';
+
+  @override
+  String get emailLabel => 'E-posta';
+
+  @override
+  String get passwordLabel => 'Şifre';
+
+  @override
+  String get confirmPasswordLabel => 'Şifreyi Onayla';
+
+  @override
+  String get nameLabel => 'Ad';
+
+  @override
+  String get forgotPassword => 'Şifreni mi unuttun?';
+
+  @override
+  String get noAccountYet => 'Hesabın yok mu? ';
+
+  @override
+  String get alreadyHaveAccount => 'Zaten hesabın var mı? ';
+
+  @override
+  String get continueAsGuest => 'Misafir Olarak Devam Et';
+
+  @override
+  String get authErrorFieldRequired => 'Bu alan zorunludur.';
+
+  @override
+  String get authErrorInvalidEmail => 'Geçerli bir e-posta adresi girin.';
+
+  @override
+  String get authErrorUserDisabled => 'Bu hesap devre dışı bırakıldı.';
+
+  @override
+  String get authErrorUserNotFound => 'Bu e-postayla bir hesap bulunamadı.';
+
+  @override
+  String get authErrorWrongPassword => 'E-posta veya şifre hatalı.';
+
+  @override
+  String get authErrorEmailInUse => 'Bu e-postayla zaten bir hesap var.';
+
+  @override
+  String get authErrorWeakPassword => 'Bu şifre çok zayıf.';
+
+  @override
+  String authErrorWeakPasswordHint(int minLength) {
+    return 'Şifre en az $minLength karakter olmalıdır.';
+  }
+
+  @override
+  String get authErrorTooManyRequests =>
+      'Çok fazla deneme yapıldı. Lütfen biraz bekleyip tekrar deneyin.';
+
+  @override
+  String get authErrorNotConfigured =>
+      'Bu uygulama için giriş henüz yapılandırılmadı.';
+
+  @override
+  String get authErrorRequiresRecentLogin =>
+      'Devam etmek için lütfen tekrar giriş yapın.';
+
+  @override
+  String get authErrorPasswordMismatch => 'Şifreler eşleşmiyor.';
+
+  @override
+  String get authEnterEmailFirst => 'Önce yukarıya e-postanı gir.';
+
+  @override
+  String authResetEmailSent(String email) {
+    return 'Şifre sıfırlama e-postası $email adresine gönderildi.';
+  }
+
+  @override
+  String get authSyncBannerTitle => 'Senkronize etmek için giriş yap';
+
+  @override
+  String get authSyncBannerSubtitle =>
+      'Listeni ve favorilerini hesabına kaydet, herhangi bir cihazdan eriş.';
+
+  @override
+  String get signOut => 'Çıkış Yap';
+
+  @override
+  String get signOutConfirmTitle => 'Çıkış yapılsın mı?';
+
+  @override
+  String get signOutConfirmMessage =>
+      'İstediğin zaman tekrar giriş yapabilirsin. Listen ve favorilerin hesabında kayıtlı kalır.';
+
+  @override
+  String get signedOutSnack => 'Çıkış yapıldı';
+
+  @override
+  String get guestBadge => 'Misafir';
 }

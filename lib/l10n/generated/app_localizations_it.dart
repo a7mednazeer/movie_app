@@ -272,10 +272,10 @@ class AppLocalizationsIt extends AppLocalizations {
   String get themeAuto => 'Automatico';
 
   @override
-  String get confirm => 'Confirm';
+  String get cancel => 'Annulla';
 
   @override
-  String get cancel => 'Annulla';
+  String get confirm => 'Confirm';
 
   @override
   String get removeLabel => 'Rimuovi';
@@ -304,4 +304,145 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get systemDefault => 'Predefinito di sistema';
+
+  @override
+  String get back => 'Indietro';
+
+  @override
+  String get clear => 'Cancella';
+
+  @override
+  String get editInformation => 'Modifica informazioni';
+
+  @override
+  String get save => 'Salva';
+
+  @override
+  String get displayName => 'Nome visualizzato';
+
+  @override
+  String get photoUrl => 'URL foto';
+
+  @override
+  String get enterName => 'Inserisci il tuo nome';
+
+  @override
+  String get profileUpdated => 'Profilo aggiornato con successo';
+
+  @override
+  String get signIn => 'Accedi';
+
+  @override
+  String get signUp => 'Registrati';
+
+  @override
+  String get welcomeBack => 'Bentornato';
+
+  @override
+  String get signInSubtitle =>
+      'Accedi per sincronizzare la tua lista e i preferiti tra i dispositivi.';
+
+  @override
+  String get createAccount => 'Crea account';
+
+  @override
+  String get signUpSubtitle =>
+      'Registrati per salvare la tua lista e i preferiti nel tuo account.';
+
+  @override
+  String get emailLabel => 'Email';
+
+  @override
+  String get passwordLabel => 'Password';
+
+  @override
+  String get confirmPasswordLabel => 'Conferma password';
+
+  @override
+  String get nameLabel => 'Nome';
+
+  @override
+  String get forgotPassword => 'Password dimenticata?';
+
+  @override
+  String get noAccountYet => 'Non hai un account? ';
+
+  @override
+  String get alreadyHaveAccount => 'Hai già un account? ';
+
+  @override
+  String get continueAsGuest => 'Continua come ospite';
+
+  @override
+  String get authErrorFieldRequired => 'Questo campo è obbligatorio.';
+
+  @override
+  String get authErrorInvalidEmail => 'Inserisci un indirizzo email valido.';
+
+  @override
+  String get authErrorUserDisabled => 'Questo account è stato disabilitato.';
+
+  @override
+  String get authErrorUserNotFound =>
+      'Nessun account trovato con questa email.';
+
+  @override
+  String get authErrorWrongPassword => 'Email o password errati.';
+
+  @override
+  String get authErrorEmailInUse => 'Esiste già un account con questa email.';
+
+  @override
+  String get authErrorWeakPassword => 'Questa password è troppo debole.';
+
+  @override
+  String authErrorWeakPasswordHint(int minLength) {
+    return 'La password deve contenere almeno $minLength caratteri.';
+  }
+
+  @override
+  String get authErrorTooManyRequests =>
+      'Troppi tentativi. Attendi un momento e riprova.';
+
+  @override
+  String get authErrorNotConfigured =>
+      'L\'accesso non è ancora configurato per questa app.';
+
+  @override
+  String get authErrorRequiresRecentLogin =>
+      'Effettua di nuovo l\'accesso per continuare.';
+
+  @override
+  String get authErrorPasswordMismatch => 'Le password non corrispondono.';
+
+  @override
+  String get authEnterEmailFirst => 'Inserisci prima la tua email qui sopra.';
+
+  @override
+  String authResetEmailSent(String email) {
+    return 'Email per il reset della password inviata a $email.';
+  }
+
+  @override
+  String get authSyncBannerTitle => 'Accedi per sincronizzare';
+
+  @override
+  String get authSyncBannerSubtitle =>
+      'Salva la tua lista e i preferiti nel tuo account e accedi da qualsiasi dispositivo.';
+
+  @override
+  String get signOut => 'Esci';
+
+  @override
+  String get signOutConfirmTitle => 'Uscire?';
+
+  @override
+  String get signOutConfirmMessage =>
+      'Potrai accedere di nuovo in qualsiasi momento. La tua lista e i preferiti resteranno salvati nel tuo account.';
+
+  @override
+  String get signedOutSnack => 'Disconnesso';
+
+  @override
+  String get guestBadge => 'Ospite';
 }

@@ -387,11 +387,56 @@ awareness, the core model/repository/provider/persistence layers have
 automated test coverage, and the entire UI is available in 12
 languages.
 
+## Firebase Authentication — wired in, with an automatic guest fallback
+
+Same pattern as TMDB: the app works fully today, and upgrades to real
+accounts the moment Firebase is configured — no code changes required
+either way.
+
+```bash
+dart pub global activate flutterfire_cli   # one-time
+flutterfire configure                       # from the project root
+```
+
+`flutterfire configure` overwrites `lib/firebase_options.dart` (currently
+a structurally-valid placeholder) with your real project's config. In
+the Firebase Console, enable **Authentication → Sign-in method →
+Email/Password**. That's the entire setup — nothing else changes.
+
+- **`tryInitializeFirebase()`** (`core/firebase/firebase_bootstrap.dart`)
+  attempts real initialization at startup and returns `false` — never
+  throws — if it's not configured yet or fails for any reason.
+- **`authRepositoryProvider`** picks `FirebaseAuthRepository` or
+  `GuestAuthRepository` based on that one result. Every screen depends
+  only on the `AuthRepository` interface, exactly like the movie
+  repository split.
+- **Sign In / Sign Up** — full email/password forms with client-side
+  validation, a "Forgot password?" flow, and every Firebase error code
+  (`wrong-password`, `email-already-in-use`, `weak-password`,
+  `too-many-requests`, etc.) mapped to a real, fully localized message
+  via `authErrorMessage()` — not a generic "something went wrong."
+  "Continue as Guest" always works, with or without Firebase configured.
+- **Profile is now auth-aware**: signed out shows the honest "Your
+  Library" framing plus a sign-in banner explaining what it unlocks
+  (cross-device sync); signed in shows the real name/email/avatar (with
+  a graceful initial-letter fallback when there's no photo) and a Sign
+  Out action behind a confirmation dialog.
+- **`AppUser`** is one shared shape for both a real Firebase account and
+  the local guest identity (`AppUser.guest`) — UI code never has to
+  branch on "is Firebase even available," only on `user.isGuest`.
+
+### What Firebase Auth does *not* do yet
+
+Signing in doesn't yet move Watchlist/Favorites data anywhere — they're
+still 100% local (Hive), same as before, for both guests and signed-in
+accounts. **Per-account cloud sync (Firestore) is the next pass**, and is
+what will make signing in actually do something beyond showing your
+name on Profile.
+
 ## What's next
 
-Per the current build plan, still ahead: **Firebase Authentication**
-(sign in/up, with a guest-mode fallback mirroring the TMDB
-dummy-data pattern), **per-account cloud sync** for Watchlist/Favorites,
-a **professional Profile** with real account info, a full **Help
-Center** (chatbot, FAQ, contact, about, feedback, Terms of Service,
-Privacy Policy), and **push notifications**.
+Per the current build plan, still ahead: **per-account cloud sync**
+(Firestore) for Watchlist/Favorites, a **professional Profile** with
+editable display name/photo, a full **Help Center** (chatbot, FAQ,
+contact, about, feedback, Terms of Service, Privacy Policy), and **push
+notifications**.
