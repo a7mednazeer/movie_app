@@ -16,6 +16,7 @@
   "moreLikeThis": "Meer Zoals Dit",
   "cast": "Cast",
   "reviews": "Recensies",
+  "noReviewsYet": "Nog geen recensies — deel als eerste je mening.",
   "overview": "Overzicht",
   "watchTrailer": "Bekijk Trailer",
   "noTrailerAvailable": "Nog geen trailer beschikbaar voor deze titel.",
@@ -75,6 +76,7 @@
   "themeLight": "Licht",
   "themeDark": "Donker",
   "themeAuto": "Automatisch",
+  "confirm": "Bevestigen",
   "cancel": "Annuleren",
   "removeLabel": "Verwijderen",
   "shareWithTrailer": "{title} — bekijk de trailer: {trailerUrl}",
@@ -125,6 +127,9 @@
   "save": "Opslaan",
   "displayName": "Weergavename",
   "photoUrl": "Foto-URL",
+  "photoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "Voer je naam in",
-  "profileUpdated": "Profiel succesvol bijgewerkt"
+  "profileUpdated": "Profiel succesvol bijgewerkt",
+  "syncedToAccount": "Gesynchroniseerd met je account",
+  "localOnlyBanner": "Alleen op dit apparaat opgeslagen — log in om te synchroniseren tussen apparaten"
 }

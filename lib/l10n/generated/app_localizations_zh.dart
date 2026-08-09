@@ -57,8 +57,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get reviews => '评论';
 
   @override
-  String get noReviewsYet =>
-      'No reviews yet — be the first to share your thoughts.';
+  String get noReviewsYet => '暂无评论 — 快来发表第一条评论吧。';
 
   @override
   String get overview => '剧情简介';
@@ -265,7 +264,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get cancel => '取消';
 
   @override
-  String get confirm => 'Confirm';
+  String get confirm => '确认';
 
   @override
   String get removeLabel => '移除';
@@ -312,6 +311,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get photoUrl => '照片 URL';
+
+  @override
+  String get photoUrlHint => 'https://example.com/avatar.jpg';
 
   @override
   String get enterName => '输入您的姓名';
@@ -427,4 +429,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get guestBadge => '访客';
+
+  @override
+  String get syncedToAccount => '已同步到你的账户';
+
+  @override
+  String get localOnlyBanner => '仅保存在此设备上 — 登录以在设备间同步';
 }

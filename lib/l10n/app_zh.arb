@@ -16,6 +16,7 @@
   "moreLikeThis": "相似影片",
   "cast": "演员阵容",
   "reviews": "评论",
+  "noReviewsYet": "暂无评论 — 快来发表第一条评论吧。",
   "overview": "剧情简介",
   "watchTrailer": "观看预告片",
   "noTrailerAvailable": "该片暂无预告片。",
@@ -75,6 +76,7 @@
   "themeLight": "浅色",
   "themeDark": "深色",
   "themeAuto": "自动",
+  "confirm": "确认",
   "cancel": "取消",
   "removeLabel": "移除",
   "shareWithTrailer": "{title} — 观看预告片：{trailerUrl}",
@@ -125,6 +127,9 @@
   "save": "保存",
   "displayName": "显示名称",
   "photoUrl": "照片 URL",
+  "photoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "输入您的姓名",
-  "profileUpdated": "个人资料更新成功"
+  "profileUpdated": "个人资料更新成功",
+  "syncedToAccount": "已同步到你的账户",
+  "localOnlyBanner": "仅保存在此设备上 — 登录以在设备间同步"
 }

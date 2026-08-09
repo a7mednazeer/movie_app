@@ -16,6 +16,7 @@
   "moreLikeThis": "Filmes Parecidos",
   "cast": "Elenco",
   "reviews": "Avaliações",
+  "noReviewsYet": "Ainda não há avaliações — seja o primeiro a compartilhar sua opinião.",
   "overview": "Sinopse",
   "watchTrailer": "Assistir Trailer",
   "noTrailerAvailable": "Ainda não há trailer disponível para este título.",
@@ -75,6 +76,7 @@
   "themeLight": "Claro",
   "themeDark": "Escuro",
   "themeAuto": "Automático",
+  "confirm": "Confirmar",
   "cancel": "Cancelar",
   "removeLabel": "Remover",
   "shareWithTrailer": "{title} — confira o trailer: {trailerUrl}",
@@ -125,6 +127,9 @@
   "save": "Salvar",
   "displayName": "Nome de exibição",
   "photoUrl": "URL da foto",
+  "photoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "Insira seu nome",
-  "profileUpdated": "Perfil atualizado com sucesso"
+  "profileUpdated": "Perfil atualizado com sucesso",
+  "syncedToAccount": "Sincronizado com sua conta",
+  "localOnlyBanner": "Salvo apenas neste dispositivo — entre para sincronizar entre dispositivos"
 }

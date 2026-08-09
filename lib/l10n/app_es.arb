@@ -16,6 +16,7 @@
   "moreLikeThis": "Más como esta",
   "cast": "Reparto",
   "reviews": "Reseñas",
+  "noReviewsYet": "Aún no hay reseñas — sé el primero en compartir tu opinión.",
   "overview": "Sinopsis",
   "watchTrailer": "Ver tráiler",
   "noTrailerAvailable": "Aún no hay tráiler disponible para este título.",
@@ -75,6 +76,7 @@
   "themeLight": "Claro",
   "themeDark": "Oscuro",
   "themeAuto": "Automático",
+  "confirm": "Confirmar",
   "cancel": "Cancelar",
   "removeLabel": "Eliminar",
   "shareWithTrailer": "{title} — mira el tráiler: {trailerUrl}",
@@ -125,6 +127,9 @@
   "save": "Guardar",
   "displayName": "Nombre visible",
   "photoUrl": "URL de la foto",
+  "photoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "Introduce tu nombre",
-  "profileUpdated": "Perfil actualizado con éxito"
-}
+  "profileUpdated": "Perfil actualizado con éxito",
+  "syncedToAccount": "Sincronizado con tu cuenta",
+  "localOnlyBanner": "Guardado solo en este dispositivo — inicia sesión para sincronizar entre dispositivos"
+  }

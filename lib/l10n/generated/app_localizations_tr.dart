@@ -58,7 +58,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get noReviewsYet =>
-      'No reviews yet — be the first to share your thoughts.';
+      'Henüz yorum yok — düşüncelerini paylaşan ilk kişi sen ol.';
 
   @override
   String get overview => 'Konu';
@@ -274,7 +274,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get cancel => 'Vazgeç';
 
   @override
-  String get confirm => 'Confirm';
+  String get confirm => 'Onayla';
 
   @override
   String get removeLabel => 'Kaldır';
@@ -321,6 +321,9 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get photoUrl => 'Fotoğraf URL\'si';
+
+  @override
+  String get photoUrlHint => 'https://example.com/avatar.jpg';
 
   @override
   String get enterName => 'Adınızı girin';
@@ -443,4 +446,11 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get guestBadge => 'Misafir';
+
+  @override
+  String get syncedToAccount => 'Hesabınla senkronize edildi';
+
+  @override
+  String get localOnlyBanner =>
+      'Yalnızca bu cihazda kaydedildi — cihazlar arasında senkronize etmek için giriş yap';
 }

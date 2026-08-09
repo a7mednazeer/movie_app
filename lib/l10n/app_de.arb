@@ -16,6 +16,7 @@
   "moreLikeThis": "Ähnliche Filme",
   "cast": "Besetzung",
   "reviews": "Rezensionen",
+  "noReviewsYet": "Noch keine Rezensionen — teile als Erster deine Meinung.",
   "overview": "Handlung",
   "watchTrailer": "Trailer ansehen",
   "noTrailerAvailable": "Für diesen Titel ist noch kein Trailer verfügbar.",
@@ -75,6 +76,7 @@
   "themeLight": "Hell",
   "themeDark": "Dunkel",
   "themeAuto": "Automatisch",
+  "confirm": "Bestätigen",
   "cancel": "Abbrechen",
   "removeLabel": "Entfernen",
   "shareWithTrailer": "{title} — sieh dir den Trailer an: {trailerUrl}",
@@ -125,6 +127,9 @@
   "save": "Speichern",
   "displayName": "Anzeigename",
   "photoUrl": "Foto-URL",
+  "photoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "Gib deinen Namen ein",
-  "profileUpdated": "Profil erfolgreich aktualisiert"
+  "profileUpdated": "Profil erfolgreich aktualisiert",
+  "syncedToAccount": "Mit deinem Konto synchronisiert",
+  "localOnlyBanner": "Nur auf diesem Gerät gespeichert — melde dich an, um geräteübergreifend zu synchronisieren"
 }

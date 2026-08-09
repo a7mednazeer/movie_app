@@ -1,3 +1,4 @@
+import '../../core/errors/exceptions.dart';
 import '../../models/cast_member.dart';
 import '../../models/genre.dart';
 import '../../models/movie.dart';
@@ -1111,10 +1112,9 @@ class DummyMovieDataSource {
 
   Future<Movie> fetchDetails(int movieId) async {
     await _simulateLatency();
-    return _catalog.firstWhere(
-      (Movie movie) => movie.id == movieId,
-      orElse: () => _catalog.first,
-    );
+    final movie = _catalog.where((m) => m.id == movieId).firstOrNull;
+    if (movie == null) throw const NotFoundException();
+    return movie;
   }
 
   Future<List<Movie>> fetchSimilar(int movieId) async {

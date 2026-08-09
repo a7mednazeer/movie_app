@@ -16,6 +16,7 @@
   "moreLikeThis": "इससे मिलती-जुलती फ़िल्में",
   "cast": "कलाकार",
   "reviews": "समीक्षाएं",
+  "noReviewsYet": "अभी तक कोई समीक्षा नहीं है — अपनी राय साझा करने वाले पहले व्यक्ति बनें।",
   "overview": "कहानी",
   "watchTrailer": "ट्रेलर देखें",
   "noTrailerAvailable": "इस फ़िल्म के लिए अभी कोई ट्रेलर उपलब्ध नहीं है।",
@@ -75,6 +76,7 @@
   "themeLight": "लाइट",
   "themeDark": "डार्क",
   "themeAuto": "ऑटो",
+  "confirm": "पुष्टि करें",
   "cancel": "रद्द करें",
   "removeLabel": "हटाएं",
   "shareWithTrailer": "{title} — ट्रेलर देखें: {trailerUrl}",
@@ -125,6 +127,9 @@
   "save": "सहेजें",
   "displayName": "प्रदर्शित नाम",
   "photoUrl": "फोटो URL",
+  "photoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "अपना नाम दर्ज करें",
-  "profileUpdated": "प्रोफ़ाइल सफलतापूर्वक अपडेट की गई"
-}
+  "profileUpdated": "प्रोफ़ाइल सफलतापूर्वक अपडेट की गई",
+  "syncedToAccount": "आपके खाते के साथ सिंक हो गया",
+  "localOnlyBanner": "केवल इस डिवाइस पर सहेजा गया — डिवाइसों में सिंक करने के लिए साइन इन करें"
+  }

@@ -58,7 +58,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get noReviewsYet =>
-      'No reviews yet — be the first to share your thoughts.';
+      'Отзывов пока нет — станьте первым, кто поделится своим мнением.';
 
   @override
   String get overview => 'Описание';
@@ -275,7 +275,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get cancel => 'Отмена';
 
   @override
-  String get confirm => 'Confirm';
+  String get confirm => 'Подтвердить';
 
   @override
   String get removeLabel => 'Удалить';
@@ -322,6 +322,9 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get photoUrl => 'URL фотографии';
+
+  @override
+  String get photoUrlHint => 'https://example.com/avatar.jpg';
 
   @override
   String get enterName => 'Введите ваше имя';
@@ -444,4 +447,11 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get guestBadge => 'Гость';
+
+  @override
+  String get syncedToAccount => 'Синхронизировано с вашим аккаунтом';
+
+  @override
+  String get localOnlyBanner =>
+      'Сохранено только на этом устройстве — войдите, чтобы синхронизировать между устройствами';
 }

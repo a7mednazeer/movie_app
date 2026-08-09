@@ -319,6 +319,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get photoUrl => 'رابط الصورة';
 
   @override
+  String get photoUrlHint => 'https://example.com/avatar.jpg';
+
+  @override
   String get enterName => 'أدخل اسمك';
 
   @override
@@ -441,4 +444,11 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get guestBadge => 'ضيف';
+
+  @override
+  String get syncedToAccount => 'تمت المزامنة مع حسابك';
+
+  @override
+  String get localOnlyBanner =>
+      'تم الحفظ على هذا الجهاز فقط - سجل الدخول للمزامنة عبر الأجهزة';
 }

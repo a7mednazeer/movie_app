@@ -1,0 +1,33 @@
+rules_version = '2';
+
+// Security rules for this app's Firestore usage.
+//
+// Deploy with:
+//   firebase init firestore   (one-time, if you haven't already)
+//   firebase deploy --only firestore:rules
+//
+// Every document lives under `users/{uid}/...` and only that uid's own
+// signed-in Firebase Auth session may read or write it — nobody can read
+// or modify another person's watchlist or favorites, even though the
+// client SDK has direct access to Firestore (no backend server sits in
+// between; these rules *are* the access control).
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid} {
+      // The user's own top-level profile document, if one is ever added
+      // (e.g. preferences that should sync across devices).
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+
+      match /watchlist/{movieId} {
+        allow read, write: if request.auth != null && request.auth.uid == uid;
+      }
+
+      match /favorites/{movieId} {
+        allow read, write: if request.auth != null && request.auth.uid == uid;
+      }
+    }
+
+    // Everything else is denied by default (Firestore rules are
+    // deny-by-default outside of an explicit `allow`).
+  }
+}

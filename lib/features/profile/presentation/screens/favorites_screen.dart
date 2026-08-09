@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/routes/route_names.dart';
 import '../../../../core/widgets/saved_movies_list.dart';
+import '../../../../core/widgets/sync_status_banner.dart';
 import '../../../../models/movie.dart';
 import '../../../../providers/favorites_provider.dart';
 import '../providers/favorites_movies_provider.dart';
@@ -39,14 +40,21 @@ class FavoritesScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text(context.l10n.favoritesTitleWithCount(count))),
-      body: SavedMoviesList(
-        moviesAsync: moviesAsync,
-        onRemove: (BuildContext ctx, Movie movie) => _removeWithUndo(ctx, ref, movie),
-        onMovieTap: (Movie movie) => context.push(RouteNames.movieDetails, extra: movie),
-        onRetry: () => ref.invalidate(favoriteMoviesProvider),
-        emptyIcon: Icons.favorite_border_rounded,
-        emptyTitle: context.l10n.favoritesEmptyTitle,
-        emptySubtitle: context.l10n.favoritesEmptySubtitle,
+      body: Column(
+        children: <Widget>[
+          const SyncStatusBanner(),
+          Expanded(
+            child: SavedMoviesList(
+              moviesAsync: moviesAsync,
+              onRemove: (BuildContext ctx, Movie movie) => _removeWithUndo(ctx, ref, movie),
+              onMovieTap: (Movie movie) => context.push(RouteNames.movieDetails, extra: movie),
+              onRetry: () => ref.invalidate(favoriteMoviesProvider),
+              emptyIcon: Icons.favorite_border_rounded,
+              emptyTitle: context.l10n.favoritesEmptyTitle,
+              emptySubtitle: context.l10n.favoritesEmptySubtitle,
+            ),
+          ),
+        ],
       ),
     );
   }

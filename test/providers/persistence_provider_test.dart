@@ -1,7 +1,10 @@
 import 'dart:io';
 
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
+import 'package:movie_app/providers/auth_providers.dart';
 import 'package:movie_app/providers/favorites_provider.dart';
 import 'package:movie_app/providers/watchlist_provider.dart';
 
@@ -41,18 +44,28 @@ void main() {
     }
   });
 
+  /// A fresh, guest-mode (no Firebase) container for each notifier under
+  /// test — `SyncedIdSetNotifier` reads `authStateProvider`, which reads
+  /// through `firebaseAvailableProvider`, so that must be overridden the
+  /// same way `main.dart` overrides it at startup.
+  ProviderContainer buildContainer() {
+    final ProviderContainer container = ProviderContainer(
+      overrides: <Override>[firebaseAvailableProvider.overrideWithValue(false)],
+    );
+    addTearDown(container.dispose);
+    return container;
+  }
+
   group('WatchlistNotifier', () {
     test('starts empty when no prior data exists', () async {
-      final WatchlistNotifier notifier = WatchlistNotifier();
+      final WatchlistNotifier notifier = buildContainer().read(watchlistProvider.notifier);
       await _letRestoreComplete();
 
       expect(notifier.state, isEmpty);
-
-      notifier.dispose();
     });
 
     test('toggle adds a movie id, then removes it on a second call', () async {
-      final WatchlistNotifier notifier = WatchlistNotifier();
+      final WatchlistNotifier notifier = buildContainer().read(watchlistProvider.notifier);
       await _letRestoreComplete();
 
       await notifier.toggle(42);
@@ -62,12 +75,10 @@ void main() {
       await notifier.toggle(42);
       expect(notifier.state, isNot(contains(42)));
       expect(notifier.isSaved(42), isFalse);
-
-      notifier.dispose();
     });
 
     test('adding several ids keeps them all until individually removed', () async {
-      final WatchlistNotifier notifier = WatchlistNotifier();
+      final WatchlistNotifier notifier = buildContainer().read(watchlistProvider.notifier);
       await _letRestoreComplete();
 
       await notifier.toggle(1);
@@ -77,28 +88,25 @@ void main() {
 
       await notifier.toggle(2);
       expect(notifier.state, <int>{1, 3});
-
-      notifier.dispose();
     });
 
     test('persists across a fresh notifier instance (simulating an app restart)', () async {
-      final WatchlistNotifier first = WatchlistNotifier();
+      final WatchlistNotifier first = buildContainer().read(watchlistProvider.notifier);
       await _letRestoreComplete();
       await first.toggle(7);
-      first.dispose();
 
-      final WatchlistNotifier second = WatchlistNotifier();
+      // A brand-new container simulates a fresh app process reading the
+      // same on-disk Hive box back.
+      final WatchlistNotifier second = buildContainer().read(watchlistProvider.notifier);
       await _letRestoreComplete();
 
       expect(second.state, contains(7));
-
-      second.dispose();
     });
   });
 
   group('FavoritesNotifier', () {
     test('behaves the same way as WatchlistNotifier (add/remove/persist)', () async {
-      final FavoritesNotifier notifier = FavoritesNotifier();
+      final FavoritesNotifier notifier = buildContainer().read(favoritesProvider.notifier);
       await _letRestoreComplete();
 
       await notifier.toggle(10);
@@ -106,22 +114,18 @@ void main() {
 
       await notifier.toggle(10);
       expect(notifier.isFavorite(10), isFalse);
-
-      notifier.dispose();
     });
 
     test('is completely independent of WatchlistNotifier', () async {
-      final WatchlistNotifier watchlist = WatchlistNotifier();
-      final FavoritesNotifier favorites = FavoritesNotifier();
+      final ProviderContainer container = buildContainer();
+      final WatchlistNotifier watchlist = container.read(watchlistProvider.notifier);
+      final FavoritesNotifier favorites = container.read(favoritesProvider.notifier);
       await _letRestoreComplete();
 
       await watchlist.toggle(1);
 
       expect(watchlist.state, contains(1));
       expect(favorites.state, isEmpty);
-
-      watchlist.dispose();
-      favorites.dispose();
     });
   });
 }

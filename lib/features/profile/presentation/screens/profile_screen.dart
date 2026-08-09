@@ -12,6 +12,9 @@ import '../../../../models/app_user.dart';
 import '../../../../providers/auth_providers.dart';
 import '../../../../providers/favorites_provider.dart';
 import '../../../../providers/watchlist_provider.dart';
+import '../../../watchlist/presentation/providers/watchlist_movies_provider.dart';
+import '../../watchlist/presentation/providers/watchlist_movies_provider.dart';
+import '../providers/favorites_movies_provider.dart';
 
 /// Premium profile screen showing account info, stats, and settings.
 class ProfileScreen extends ConsumerWidget {
@@ -36,8 +39,8 @@ class ProfileScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AppUser user = ref.watch(authStateProvider).asData?.value ?? AppUser.guest;
-    final int favoritesCount = ref.watch(favoritesProvider).length;
-    final int watchlistCount = ref.watch(watchlistProvider).length;
+    final int favoritesCount = ref.watch(favoriteMoviesProvider).asData?.value.length ?? 0;
+    final int watchlistCount = ref.watch(watchlistMoviesProvider).asData?.value.length ?? 0;
 
     return Scaffold(
       body: CustomScrollView(

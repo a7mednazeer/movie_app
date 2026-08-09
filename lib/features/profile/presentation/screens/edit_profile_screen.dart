@@ -62,6 +62,11 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(context.l10n.editInformation),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_rounded),
+          tooltip: context.l10n.back,
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         actions: [
           if (!_isLoading)
             TextButton(
@@ -96,7 +101,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                 controller: _photoController,
                 decoration: InputDecoration(
                   labelText: context.l10n.photoUrl,
-                  hintText: 'https://example.com/avatar.jpg',
+                  hintText: context.l10n.photoUrlHint,
                 ),
                 keyboardType: TextInputType.url,
               ),

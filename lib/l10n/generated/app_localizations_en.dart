@@ -323,6 +323,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get photoUrl => 'Photo URL';
 
   @override
+  String get photoUrlHint => 'https://example.com/avatar.jpg';
+
+  @override
   String get enterName => 'Enter your name';
 
   @override
@@ -444,4 +447,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get guestBadge => 'Guest';
+
+  @override
+  String get syncedToAccount => 'Synced to your account';
+
+  @override
+  String get localOnlyBanner =>
+      'Saved on this device only — sign in to sync across devices';
 }

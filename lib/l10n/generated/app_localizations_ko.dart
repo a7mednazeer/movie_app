@@ -57,8 +57,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get reviews => '리뷰';
 
   @override
-  String get noReviewsYet =>
-      'No reviews yet — be the first to share your thoughts.';
+  String get noReviewsYet => '아직 리뷰가 없습니다 — 첫 번째로 의견을 공유해 보세요.';
 
   @override
   String get overview => '줄거리';
@@ -268,7 +267,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get cancel => '취소';
 
   @override
-  String get confirm => 'Confirm';
+  String get confirm => '확인';
 
   @override
   String get removeLabel => '삭제';
@@ -315,6 +314,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get photoUrl => '사진 URL';
+
+  @override
+  String get photoUrlHint => 'https://example.com/avatar.jpg';
 
   @override
   String get enterName => '이름을 입력하세요';
@@ -431,4 +433,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get guestBadge => '게스트';
+
+  @override
+  String get syncedToAccount => '계정과 동기화됨';
+
+  @override
+  String get localOnlyBanner => '이 기기에만 저장됨 — 기기 간 동기화하려면 로그인하세요';
 }

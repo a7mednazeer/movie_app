@@ -411,6 +411,10 @@
   "@photoUrl": {
     "description": "Label for the photo URL input field."
   },
+  "photoUrlHint": "https://example.com/avatar.jpg",
+  "@photoUrlHint": {
+    "description": "Hint text for the photo URL input field."
+  },
   "enterName": "Enter your name",
   "@enterName": {
     "description": "Hint text for the name input field."
@@ -568,5 +572,13 @@
   "guestBadge": "Guest",
   "@guestBadge": {
     "description": "Profile screen auth string: guestBadge."
+  },
+  "syncedToAccount": "Synced to your account",
+  "@syncedToAccount": {
+    "description": "Watchlist/Favorites sync-status string: syncedToAccount."
+  },
+  "localOnlyBanner": "Saved on this device only — sign in to sync across devices",
+  "@localOnlyBanner": {
+    "description": "Watchlist/Favorites sync-status string: localOnlyBanner."
   }
 }

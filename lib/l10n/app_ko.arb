@@ -16,6 +16,7 @@
   "moreLikeThis": "비슷한 영화",
   "cast": "출연진",
   "reviews": "리뷰",
+  "noReviewsYet": "아직 리뷰가 없습니다 — 첫 번째로 의견을 공유해 보세요.",
   "overview": "줄거리",
   "watchTrailer": "예고편 보기",
   "noTrailerAvailable": "아직 이 작품의 예고편이 없습니다.",
@@ -75,6 +76,7 @@
   "themeLight": "라이트",
   "themeDark": "다크",
   "themeAuto": "자동",
+  "confirm": "확인",
   "cancel": "취소",
   "removeLabel": "삭제",
   "shareWithTrailer": "{title} — 예고편 보기: {trailerUrl}",
@@ -125,6 +127,9 @@
   "save": "저장",
   "displayName": "표시 이름",
   "photoUrl": "사진 URL",
+  "photoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "이름을 입력하세요",
-  "profileUpdated": "프로필이 성공적으로 업데이트되었습니다"
+  "profileUpdated": "프로필이 성공적으로 업데이트되었습니다",
+  "syncedToAccount": "계정과 동기화됨",
+  "localOnlyBanner": "이 기기에만 저장됨 — 기기 간 동기화하려면 로그인하세요"
 }

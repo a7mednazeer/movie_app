@@ -58,7 +58,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get noReviewsYet =>
-      'No reviews yet — be the first to share your thoughts.';
+      'अभी तक कोई समीक्षा नहीं है — अपनी राय साझा करने वाले पहले व्यक्ति बनें।';
 
   @override
   String get overview => 'कहानी';
@@ -274,7 +274,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get cancel => 'रद्द करें';
 
   @override
-  String get confirm => 'Confirm';
+  String get confirm => 'पुष्टि करें';
 
   @override
   String get removeLabel => 'हटाएं';
@@ -322,6 +322,9 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get photoUrl => 'फोटो URL';
+
+  @override
+  String get photoUrlHint => 'https://example.com/avatar.jpg';
 
   @override
   String get enterName => 'अपना नाम दर्ज करें';
@@ -444,4 +447,11 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get guestBadge => 'अतिथि';
+
+  @override
+  String get syncedToAccount => 'आपके खाते के साथ सिंक हो गया';
+
+  @override
+  String get localOnlyBanner =>
+      'केवल इस डिवाइस पर सहेजा गया — डिवाइसों में सिंक करने के लिए साइन इन करें';
 }

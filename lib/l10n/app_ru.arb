@@ -16,6 +16,7 @@
   "moreLikeThis": "Похожие фильмы",
   "cast": "В ролях",
   "reviews": "Отзывы",
+  "noReviewsYet": "Отзывов пока нет — станьте первым, кто поделится своим мнением.",
   "overview": "Описание",
   "watchTrailer": "Смотреть трейлер",
   "noTrailerAvailable": "Трейлер для этого фильма пока недоступен.",
@@ -75,6 +76,7 @@
   "themeLight": "Светлая",
   "themeDark": "Тёмная",
   "themeAuto": "Авто",
+  "confirm": "Подтвердить",
   "cancel": "Отмена",
   "removeLabel": "Удалить",
   "shareWithTrailer": "{title} — посмотри трейлер: {trailerUrl}",
@@ -125,6 +127,9 @@
   "save": "Сохранить",
   "displayName": "Отображаемое имя",
   "photoUrl": "URL фотографии",
+  "photoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "Введите ваше имя",
-  "profileUpdated": "Профиль успешно обновлен"
+  "profileUpdated": "Профиль успешно обновлен",
+  "syncedToAccount": "Синхронизировано с вашим аккаунтом",
+  "localOnlyBanner": "Сохранено только на этом устройстве — войдите, чтобы синхронизировать между устройствами"
 }

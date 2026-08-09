@@ -16,6 +16,7 @@
   "moreLikeThis": "Benzer Filmler",
   "cast": "Oyuncular",
   "reviews": "Yorumlar",
+  "noReviewsYet": "Henüz yorum yok — düşüncelerini paylaşan ilk kişi sen ol.",
   "overview": "Konu",
   "watchTrailer": "Fragmanı İzle",
   "noTrailerAvailable": "Bu film için henüz fragman yok.",
@@ -75,6 +76,7 @@
   "themeLight": "Açık",
   "themeDark": "Koyu",
   "themeAuto": "Otomatik",
+  "confirm": "Onayla",
   "cancel": "Vazgeç",
   "removeLabel": "Kaldır",
   "shareWithTrailer": "{title} — fragmanı izle: {trailerUrl}",
@@ -125,6 +127,9 @@
   "save": "Kaydet",
   "displayName": "Görünen Ad",
   "photoUrl": "Fotoğraf URL'si",
+  "photoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "Adınızı girin",
-  "profileUpdated": "Profil başarıyla güncellendi"
+  "profileUpdated": "Profil başarıyla güncellendi",
+  "syncedToAccount": "Hesabınla senkronize edildi",
+  "localOnlyBanner": "Yalnızca bu cihazda kaydedildi — cihazlar arasında senkronize etmek için giriş yap"
 }

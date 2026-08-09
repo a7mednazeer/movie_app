@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/extensions/context_extensions.dart';
 import '../../../../core/routes/route_names.dart';
 import '../../../../core/widgets/saved_movies_list.dart';
+import '../../../../core/widgets/sync_status_banner.dart';
 import '../../../../models/movie.dart';
 import '../../../../providers/watchlist_provider.dart';
 import '../providers/watchlist_movies_provider.dart';
@@ -40,14 +41,21 @@ class WatchlistScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text(context.l10n.watchlistTitleWithCount(count))),
-      body: SavedMoviesList(
-        moviesAsync: moviesAsync,
-        onRemove: (BuildContext ctx, Movie movie) => _removeWithUndo(ctx, ref, movie),
-        onMovieTap: (Movie movie) => context.push(RouteNames.movieDetails, extra: movie),
-        onRetry: () => ref.invalidate(watchlistMoviesProvider),
-        emptyIcon: Icons.bookmark_border_rounded,
-        emptyTitle: context.l10n.watchlistEmptyTitle,
-        emptySubtitle: context.l10n.watchlistEmptySubtitle,
+      body: Column(
+        children: <Widget>[
+          const SyncStatusBanner(),
+          Expanded(
+            child: SavedMoviesList(
+              moviesAsync: moviesAsync,
+              onRemove: (BuildContext ctx, Movie movie) => _removeWithUndo(ctx, ref, movie),
+              onMovieTap: (Movie movie) => context.push(RouteNames.movieDetails, extra: movie),
+              onRetry: () => ref.invalidate(watchlistMoviesProvider),
+              emptyIcon: Icons.bookmark_border_rounded,
+              emptyTitle: context.l10n.watchlistEmptyTitle,
+              emptySubtitle: context.l10n.watchlistEmptySubtitle,
+            ),
+          ),
+        ],
       ),
     );
   }

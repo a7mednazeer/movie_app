@@ -672,6 +672,12 @@ abstract class AppLocalizations {
   /// **'Photo URL'**
   String get photoUrl;
 
+  /// Hint text for the photo URL input field.
+  ///
+  /// In en, this message translates to:
+  /// **'https://example.com/avatar.jpg'**
+  String get photoUrlHint;
+
   /// Hint text for the name input field.
   ///
   /// In en, this message translates to:
@@ -893,6 +899,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Guest'**
   String get guestBadge;
+
+  /// Watchlist/Favorites sync-status string: syncedToAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Synced to your account'**
+  String get syncedToAccount;
+
+  /// Watchlist/Favorites sync-status string: localOnlyBanner.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved on this device only — sign in to sync across devices'**
+  String get localOnlyBanner;
 }
 
 class _AppLocalizationsDelegate

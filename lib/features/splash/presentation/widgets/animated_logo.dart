@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimens.dart';
+import '../../../../core/constants/app_strings.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../../../../core/extensions/context_extensions.dart';
 
@@ -51,7 +52,7 @@ class AnimatedLogo extends StatelessWidget {
           child: Transform.translate(
             offset: Offset(0, 12 * (1 - wordT)),
             child: Text(
-              'MOVIES',
+              AppStrings.appName,
               style: AppTextStyles.headlineLarge(color: Colors.white)
                   .copyWith(letterSpacing: 6),
             ),

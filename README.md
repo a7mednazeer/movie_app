@@ -425,18 +425,56 @@ Email/Password**. That's the entire setup — nothing else changes.
   the local guest identity (`AppUser.guest`) — UI code never has to
   branch on "is Firebase even available," only on `user.isGuest`.
 
-### What Firebase Auth does *not* do yet
+## Per-account cloud sync — Firestore
 
-Signing in doesn't yet move Watchlist/Favorites data anywhere — they're
-still 100% local (Hive), same as before, for both guests and signed-in
-accounts. **Per-account cloud sync (Firestore) is the next pass**, and is
-what will make signing in actually do something beyond showing your
-name on Profile.
+Signing in now actually does something: Watchlist and Favorites sync
+across every device signed into the same account, in real time.
+
+```bash
+firebase init firestore                      # one-time, if not done already
+firebase deploy --only firestore:rules        # deploys firestore.rules
+```
+
+- **Local-first, always.** `SyncedIdSetNotifier` (shared base for both
+  `WatchlistNotifier` and `FavoritesNotifier`) writes to Hive first,
+  every time — the app behaves identically offline and for guests as it
+  did before cloud sync existed. Signing in only *adds* a mirror to
+  Firestore on top; it never becomes the sole source of truth for a
+  screen's rendering.
+- **One document per saved movie** —
+  `users/{uid}/watchlist/{movieId}` / `users/{uid}/favorites/{movieId}`
+  — rather than one array field, so writes from different devices never
+  clobber each other and each save has a natural place to carry its own
+  `addedAt` timestamp (used to keep "most recently added first" correct
+  once synced).
+- **First sign-in merges, never overwrites.** A guest's local saves are
+  combined with whatever's already in the cloud for that account, and
+  the local-only ones get uploaded — signing in never silently loses
+  what you saved before you had an account.
+- **Live sync both ways** — a Firestore listener keeps this device's
+  local Hive cache (and therefore the UI) up to date the moment another
+  signed-in device adds or removes something.
+- **Signing out clears the local cache** (not just "stops syncing") —
+  this is a correctness fix, not only privacy: without it, a second
+  account signing in on the same device would treat the first account's
+  leftover data as this device's unsynced local saves and upload it into
+  the new account.
+- **Firestore writes never block the UI or throw** — a sync failure
+  (e.g. no connection) logs and lets Firestore's own offline queue retry
+  later, since the local Hive write (what the UI actually renders from)
+  already succeeded.
+- **`firestore.rules`** (project root) locks every path to
+  `request.auth.uid == uid` — nobody can read or write another
+  account's data, enforced at the database level since there's no
+  backend server between the app and Firestore.
+- **A quiet sync-status indicator** on Watchlist/Favorites
+  (`SyncStatusBanner`) — "Synced to your account" once signed in, or a
+  tappable "local only, sign in to sync" for guests — so cloud sync is
+  honestly visible rather than an invisible background behavior.
 
 ## What's next
 
-Per the current build plan, still ahead: **per-account cloud sync**
-(Firestore) for Watchlist/Favorites, a **professional Profile** with
-editable display name/photo, a full **Help Center** (chatbot, FAQ,
+Per the current build plan, still ahead: a **professional Profile**
+with editable display name/photo, a full **Help Center** (chatbot, FAQ,
 contact, about, feedback, Terms of Service, Privacy Policy), and **push
 notifications**.

@@ -26,9 +26,6 @@ final FutureProvider<List<Movie>> favoriteMoviesProvider = FutureProvider<List<M
 
   return results
       .where((Either<Failure, Movie> either) => either.isRight())
-      .map(
-        (Either<Failure, Movie> either) =>
-            either.fold((Failure f) => throw StateError('unreachable'), (Movie m) => m),
-      )
+      .map((Either<Failure, Movie> either) => either.getOrElse(() => throw StateError('unreachable')))
       .toList();
 });

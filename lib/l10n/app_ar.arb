@@ -92,6 +92,7 @@
   "save": "حفظ",
   "displayName": "الاسم المستعار",
   "photoUrl": "رابط الصورة",
+  "photoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "أدخل اسمك",
   "profileUpdated": "تم تحديث الملف الشخصي بنجاح",
   "signIn": "تسجيل الدخول",
@@ -128,5 +129,7 @@
   "signOutConfirmTitle": "تسجيل الخروج؟",
   "signOutConfirmMessage": "يمكنك تسجيل الدخول مرة أخرى في أي وقت. تبقى قائمة المشاهدة والمفضلة محفوظة في حسابك.",
   "signedOutSnack": "تم تسجيل الخروج",
-  "guestBadge": "ضيف"
+  "guestBadge": "ضيف",
+  "syncedToAccount": "تمت المزامنة مع حسابك",
+  "localOnlyBanner": "تم الحفظ على هذا الجهاز فقط - سجل الدخول للمزامنة عبر الأجهزة"
 }

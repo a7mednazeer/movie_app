@@ -58,7 +58,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get noReviewsYet =>
-      'No reviews yet — be the first to share your thoughts.';
+      'Ainda não há avaliações — seja o primeiro a compartilhar sua opinião.';
 
   @override
   String get overview => 'Sinopse';
@@ -275,7 +275,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get cancel => 'Cancelar';
 
   @override
-  String get confirm => 'Confirm';
+  String get confirm => 'Confirmar';
 
   @override
   String get removeLabel => 'Remover';
@@ -322,6 +322,9 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get photoUrl => 'URL da foto';
+
+  @override
+  String get photoUrlHint => 'https://example.com/avatar.jpg';
 
   @override
   String get enterName => 'Insira seu nome';
@@ -445,4 +448,11 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get guestBadge => 'Convidado';
+
+  @override
+  String get syncedToAccount => 'Sincronizado com sua conta';
+
+  @override
+  String get localOnlyBanner =>
+      'Salvo apenas neste dispositivo — entre para sincronizar entre dispositivos';
 }

@@ -16,6 +16,7 @@
   "moreLikeThis": "Dans le même genre",
   "cast": "Distribution",
   "reviews": "Avis",
+  "noReviewsYet": "Aucun avis pour l'instant — soyez le premier à donner votre avis.",
   "overview": "Synopsis",
   "watchTrailer": "Voir la bande-annonce",
   "noTrailerAvailable": "Aucune bande-annonce disponible pour ce titre pour le moment.",
@@ -75,6 +76,7 @@
   "themeLight": "Clair",
   "themeDark": "Sombre",
   "themeAuto": "Automatique",
+  "confirm": "Confirmer",
   "cancel": "Annuler",
   "removeLabel": "Retirer",
   "shareWithTrailer": "{title} — regarde la bande-annonce : {trailerUrl}",
@@ -125,6 +127,9 @@
   "save": "Enregistrer",
   "displayName": "Nom d'affichage",
   "photoUrl": "URL de la photo",
+  "photoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "Entrez votre nom",
-  "profileUpdated": "Profil mis à jour avec succès"
-}
+  "profileUpdated": "Profil mis à jour avec succès",
+  "syncedToAccount": "Synchronisé avec votre compte",
+  "localOnlyBanner": "Enregistré uniquement sur cet appareil — connectez-vous pour synchroniser entre appareils"
+  }
