@@ -676,7 +676,7 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'https://example.com/avatar.jpg'**
-  String get photoUrlHint;
+  String get pphotoUrlHint;
 
   /// Hint text for the name input field.
   ///
@@ -911,6 +911,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Saved on this device only — sign in to sync across devices'**
   String get localOnlyBanner;
+
+  /// Edit Profile screen string: editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfile;
+
+  /// Edit Profile screen string: photoUrlLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo URL'**
+  String get photoUrlLabel;
+
+  /// Edit Profile screen string: photoUrlHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Paste a link to an image. Leave blank to remove your photo.'**
+  String get photoUrlHint;
+
+  /// Edit Profile screen string: invalidUrlError.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid image URL starting with http:// or https://.'**
+  String get invalidUrlError;
+
+  /// Edit Profile screen string: saveChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Changes'**
+  String get saveChanges;
+
+  /// Edit Profile screen string: profileUpdatedSnack.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile updated'**
+  String get profileUpdatedSnack;
+
+  /// Edit Profile screen string: deleteAccountAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Account'**
+  String get deleteAccountAction;
+
+  /// Edit Profile screen string: deleteAccountConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete your account?'**
+  String get deleteAccountConfirmTitle;
+
+  /// Edit Profile screen string: deleteAccountConfirmMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'This permanently deletes your account and sign-in. Your watchlist and favorites stay on this device but will no longer sync anywhere. This can\'t be undone.'**
+  String get deleteAccountConfirmMessage;
+
+  /// Edit Profile screen string: accountDeletedSnack.
+  ///
+  /// In en, this message translates to:
+  /// **'Account deleted'**
+  String get accountDeletedSnack;
 }
 
 class _AppLocalizationsDelegate

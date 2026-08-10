@@ -127,9 +127,19 @@
   "save": "Сохранить",
   "displayName": "Отображаемое имя",
   "photoUrl": "URL фотографии",
-  "photoUrlHint": "https://example.com/avatar.jpg",
+  "pphotoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "Введите ваше имя",
   "profileUpdated": "Профиль успешно обновлен",
   "syncedToAccount": "Синхронизировано с вашим аккаунтом",
-  "localOnlyBanner": "Сохранено только на этом устройстве — войдите, чтобы синхронизировать между устройствами"
+  "localOnlyBanner": "Сохранено только на этом устройстве — войдите, чтобы синхронизировать между устройствами",
+  "editProfile": "Редактировать профиль",
+  "photoUrlLabel": "URL фото",
+  "photoUrlHint": "Вставьте ссылку на изображение. Оставьте пустым, чтобы удалить фото.",
+  "invalidUrlError": "Введите корректный URL изображения, начинающийся с http:// или https://.",
+  "saveChanges": "Сохранить изменения",
+  "profileUpdatedSnack": "Профиль обновлён",
+  "deleteAccountAction": "Удалить аккаунт",
+  "deleteAccountConfirmTitle": "Удалить аккаунт?",
+  "deleteAccountConfirmMessage": "Это навсегда удалит ваш аккаунт и вход. Список и избранное останутся на этом устройстве, но больше не будут синхронизироваться. Это действие нельзя отменить.",
+  "accountDeletedSnack": "Аккаунт удалён"
 }

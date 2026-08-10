@@ -472,9 +472,37 @@ firebase deploy --only firestore:rules        # deploys firestore.rules
   tappable "local only, sign in to sync" for guests — so cloud sync is
   honestly visible rather than an invisible background behavior.
 
+## Editable Profile — display name and photo
+
+Reachable from Profile → "Edit Profile" (signed-in users only — a guest
+has nothing to edit).
+
+- **Display name** — required, saved via Firebase's
+  `updateDisplayName`, picked up everywhere `AppUser.labelOr(...)` is
+  used (Profile header, anywhere else a name is shown) the moment
+  `authStateProvider` re-emits.
+- **Photo** — a URL field with a live circular preview as you type,
+  validated to be a real `http(s)://` URL before saving. Leaving it
+  blank and saving clears the photo (mapped to Firebase's
+  null-clears-it `updatePhotoURL` call under the hood — the UI never
+  has to know that distinction, it just sends an empty string).
+  **Picking straight from the device's photo library is a deliberate
+  next step, not done here** — it needs `image_picker` (a new
+  dependency) plus a Firebase Storage upload step (a new Storage
+  security-rules file to write and verify), which is different enough
+  in scope to be its own pass rather than something to fold in
+  silently. A pasted URL is a fully real, working way to set a photo
+  today, not a placeholder standing in for it.
+- **Delete Account** — behind a confirm dialog explaining exactly what
+  happens (the account and sign-in are gone permanently; Watchlist/
+  Favorites stay on-device but stop syncing anywhere), calling
+  `AuthRepository.deleteAccount()`. Firebase's `requires-recent-login`
+  error (thrown when the sign-in is too old for a sensitive action like
+  this) was already mapped to a real, localized message in the auth
+  pass — reused here, not re-invented.
+
 ## What's next
 
-Per the current build plan, still ahead: a **professional Profile**
-with editable display name/photo, a full **Help Center** (chatbot, FAQ,
-contact, about, feedback, Terms of Service, Privacy Policy), and **push
-notifications**.
+Per the current build plan, still ahead: a full **Help Center**
+(chatbot, FAQ, contact, about, feedback, Terms of Service, Privacy
+Policy), and **push notifications**.

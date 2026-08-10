@@ -411,8 +411,8 @@
   "@photoUrl": {
     "description": "Label for the photo URL input field."
   },
-  "photoUrlHint": "https://example.com/avatar.jpg",
-  "@photoUrlHint": {
+  "pphotoUrlHint": "https://example.com/avatar.jpg",
+  "@pphotoUrlHint": {
     "description": "Hint text for the photo URL input field."
   },
   "enterName": "Enter your name",
@@ -580,5 +580,45 @@
   "localOnlyBanner": "Saved on this device only — sign in to sync across devices",
   "@localOnlyBanner": {
     "description": "Watchlist/Favorites sync-status string: localOnlyBanner."
+  },
+  "editProfile": "Edit Profile",
+  "@editProfile": {
+    "description": "Edit Profile screen string: editProfile."
+  },
+  "photoUrlLabel": "Photo URL",
+  "@photoUrlLabel": {
+    "description": "Edit Profile screen string: photoUrlLabel."
+  },
+  "photoUrlHint": "Paste a link to an image. Leave blank to remove your photo.",
+  "@photoUrlHint": {
+    "description": "Edit Profile screen string: photoUrlHint."
+  },
+  "invalidUrlError": "Enter a valid image URL starting with http:// or https://.",
+  "@invalidUrlError": {
+    "description": "Edit Profile screen string: invalidUrlError."
+  },
+  "saveChanges": "Save Changes",
+  "@saveChanges": {
+    "description": "Edit Profile screen string: saveChanges."
+  },
+  "profileUpdatedSnack": "Profile updated",
+  "@profileUpdatedSnack": {
+    "description": "Edit Profile screen string: profileUpdatedSnack."
+  },
+  "deleteAccountAction": "Delete Account",
+  "@deleteAccountAction": {
+    "description": "Edit Profile screen string: deleteAccountAction."
+  },
+  "deleteAccountConfirmTitle": "Delete your account?",
+  "@deleteAccountConfirmTitle": {
+    "description": "Edit Profile screen string: deleteAccountConfirmTitle."
+  },
+  "deleteAccountConfirmMessage": "This permanently deletes your account and sign-in. Your watchlist and favorites stay on this device but will no longer sync anywhere. This can't be undone.",
+  "@deleteAccountConfirmMessage": {
+    "description": "Edit Profile screen string: deleteAccountConfirmMessage."
+  },
+  "accountDeletedSnack": "Account deleted",
+  "@accountDeletedSnack": {
+    "description": "Edit Profile screen string: accountDeletedSnack."
   }
 }

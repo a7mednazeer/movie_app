@@ -127,9 +127,19 @@
   "save": "सहेजें",
   "displayName": "प्रदर्शित नाम",
   "photoUrl": "फोटो URL",
-  "photoUrlHint": "https://example.com/avatar.jpg",
+  "pphotoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "अपना नाम दर्ज करें",
   "profileUpdated": "प्रोफ़ाइल सफलतापूर्वक अपडेट की गई",
   "syncedToAccount": "आपके खाते के साथ सिंक हो गया",
-  "localOnlyBanner": "केवल इस डिवाइस पर सहेजा गया — डिवाइसों में सिंक करने के लिए साइन इन करें"
-  }
+  "localOnlyBanner": "केवल इस डिवाइस पर सहेजा गया — डिवाइसों में सिंक करने के लिए साइन इन करें",
+  "editProfile": "प्रोफ़ाइल संपादित करें",
+  "photoUrlLabel": "फ़ोटो URL",
+  "photoUrlHint": "किसी इमेज का लिंक पेस्ट करें। अपनी फ़ोटो हटाने के लिए खाली छोड़ दें।",
+  "invalidUrlError": "http:// या https:// से शुरू होने वाला मान्य इमेज URL दर्ज करें।",
+  "saveChanges": "परिवर्तन सहेजें",
+  "profileUpdatedSnack": "प्रोफ़ाइल अपडेट हो गई",
+  "deleteAccountAction": "खाता हटाएं",
+  "deleteAccountConfirmTitle": "अपना खाता हटाएं?",
+  "deleteAccountConfirmMessage": "यह आपके खाते और साइन-इन को स्थायी रूप से हटा देगा। आपकी सूची और पसंदीदा इस डिवाइस पर रहेंगे लेकिन अब कहीं सिंक नहीं होंगे। इसे पूर्ववत नहीं किया जा सकता।",
+  "accountDeletedSnack": "खाता हटा दिया गया"
+}

@@ -127,9 +127,19 @@
   "save": "Enregistrer",
   "displayName": "Nom d'affichage",
   "photoUrl": "URL de la photo",
-  "photoUrlHint": "https://example.com/avatar.jpg",
+  "pphotoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "Entrez votre nom",
   "profileUpdated": "Profil mis à jour avec succès",
   "syncedToAccount": "Synchronisé avec votre compte",
-  "localOnlyBanner": "Enregistré uniquement sur cet appareil — connectez-vous pour synchroniser entre appareils"
-  }
+  "localOnlyBanner": "Enregistré uniquement sur cet appareil — connectez-vous pour synchroniser entre appareils",
+  "editProfile": "Modifier le profil",
+  "photoUrlLabel": "URL de la photo",
+  "photoUrlHint": "Collez un lien vers une image. Laissez vide pour supprimer votre photo.",
+  "invalidUrlError": "Saisissez une URL d'image valide commençant par http:// ou https://.",
+  "saveChanges": "Enregistrer",
+  "profileUpdatedSnack": "Profil mis à jour",
+  "deleteAccountAction": "Supprimer le compte",
+  "deleteAccountConfirmTitle": "Supprimer votre compte ?",
+  "deleteAccountConfirmMessage": "Cela supprime définitivement votre compte et votre connexion. Votre liste et vos favoris resteront sur cet appareil mais ne seront plus synchronisés. Cette action est irréversible.",
+  "accountDeletedSnack": "Compte supprimé"
+}

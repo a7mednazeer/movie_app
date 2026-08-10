@@ -127,9 +127,19 @@
   "save": "Opslaan",
   "displayName": "Weergavename",
   "photoUrl": "Foto-URL",
-  "photoUrlHint": "https://example.com/avatar.jpg",
+  "pphotoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "Voer je naam in",
   "profileUpdated": "Profiel succesvol bijgewerkt",
   "syncedToAccount": "Gesynchroniseerd met je account",
-  "localOnlyBanner": "Alleen op dit apparaat opgeslagen — log in om te synchroniseren tussen apparaten"
+  "localOnlyBanner": "Alleen op dit apparaat opgeslagen — log in om te synchroniseren tussen apparaten",
+  "editProfile": "Profiel Bewerken",
+  "photoUrlLabel": "Foto-URL",
+  "photoUrlHint": "Plak een link naar een afbeelding. Laat leeg om je foto te verwijderen.",
+  "invalidUrlError": "Voer een geldige afbeeldings-URL in die begint met http:// of https://.",
+  "saveChanges": "Wijzigingen Opslaan",
+  "profileUpdatedSnack": "Profiel bijgewerkt",
+  "deleteAccountAction": "Account Verwijderen",
+  "deleteAccountConfirmTitle": "Je account verwijderen?",
+  "deleteAccountConfirmMessage": "Dit verwijdert je account en inloggegevens permanent. Je kijklijst en favorieten blijven op dit apparaat staan, maar worden nergens meer gesynchroniseerd. Dit kan niet ongedaan worden gemaakt.",
+  "accountDeletedSnack": "Account verwijderd"
 }

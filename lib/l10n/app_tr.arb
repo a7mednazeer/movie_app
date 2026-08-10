@@ -127,9 +127,19 @@
   "save": "Kaydet",
   "displayName": "Görünen Ad",
   "photoUrl": "Fotoğraf URL'si",
-  "photoUrlHint": "https://example.com/avatar.jpg",
+  "pphotoUrlHint": "https://example.com/avatar.jpg",
   "enterName": "Adınızı girin",
   "profileUpdated": "Profil başarıyla güncellendi",
   "syncedToAccount": "Hesabınla senkronize edildi",
-  "localOnlyBanner": "Yalnızca bu cihazda kaydedildi — cihazlar arasında senkronize etmek için giriş yap"
+  "localOnlyBanner": "Yalnızca bu cihazda kaydedildi — cihazlar arasında senkronize etmek için giriş yap",
+  "editProfile": "Profili Düzenle",
+  "photoUrlLabel": "Fotoğraf URL'si",
+  "photoUrlHint": "Bir resmin bağlantısını yapıştır. Fotoğrafını kaldırmak için boş bırak.",
+  "invalidUrlError": "http:// veya https:// ile başlayan geçerli bir resim URL'si gir.",
+  "saveChanges": "Değişiklikleri Kaydet",
+  "profileUpdatedSnack": "Profil güncellendi",
+  "deleteAccountAction": "Hesabı Sil",
+  "deleteAccountConfirmTitle": "Hesabın silinsin mi?",
+  "deleteAccountConfirmMessage": "Bu, hesabını ve girişini kalıcı olarak siler. Listen ve favorilerin bu cihazda kalır ama artık hiçbir yerle senkronize edilmez. Bu işlem geri alınamaz.",
+  "accountDeletedSnack": "Hesap silindi"
 }

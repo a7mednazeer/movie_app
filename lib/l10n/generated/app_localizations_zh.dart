@@ -313,7 +313,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get photoUrl => '照片 URL';
 
   @override
-  String get photoUrlHint => 'https://example.com/avatar.jpg';
+  String get pphotoUrlHint => 'https://example.com/avatar.jpg';
 
   @override
   String get enterName => '输入您的姓名';
@@ -435,4 +435,35 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get localOnlyBanner => '仅保存在此设备上 — 登录以在设备间同步';
+
+  @override
+  String get editProfile => '编辑资料';
+
+  @override
+  String get photoUrlLabel => '头像链接';
+
+  @override
+  String get photoUrlHint => '粘贴图片链接。留空则移除头像。';
+
+  @override
+  String get invalidUrlError => '请输入以 http:// 或 https:// 开头的有效图片链接。';
+
+  @override
+  String get saveChanges => '保存更改';
+
+  @override
+  String get profileUpdatedSnack => '资料已更新';
+
+  @override
+  String get deleteAccountAction => '删除账户';
+
+  @override
+  String get deleteAccountConfirmTitle => '删除你的账户？';
+
+  @override
+  String get deleteAccountConfirmMessage =>
+      '此操作将永久删除你的账户和登录信息。你的片单和收藏会保留在此设备上，但将不再同步。此操作无法撤销。';
+
+  @override
+  String get accountDeletedSnack => '账户已删除';
 }

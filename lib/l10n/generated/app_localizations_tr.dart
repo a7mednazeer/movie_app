@@ -323,7 +323,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get photoUrl => 'Fotoğraf URL\'si';
 
   @override
-  String get photoUrlHint => 'https://example.com/avatar.jpg';
+  String get pphotoUrlHint => 'https://example.com/avatar.jpg';
 
   @override
   String get enterName => 'Adınızı girin';
@@ -453,4 +453,37 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get localOnlyBanner =>
       'Yalnızca bu cihazda kaydedildi — cihazlar arasında senkronize etmek için giriş yap';
+
+  @override
+  String get editProfile => 'Profili Düzenle';
+
+  @override
+  String get photoUrlLabel => 'Fotoğraf URL\'si';
+
+  @override
+  String get photoUrlHint =>
+      'Bir resmin bağlantısını yapıştır. Fotoğrafını kaldırmak için boş bırak.';
+
+  @override
+  String get invalidUrlError =>
+      'http:// veya https:// ile başlayan geçerli bir resim URL\'si gir.';
+
+  @override
+  String get saveChanges => 'Değişiklikleri Kaydet';
+
+  @override
+  String get profileUpdatedSnack => 'Profil güncellendi';
+
+  @override
+  String get deleteAccountAction => 'Hesabı Sil';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Hesabın silinsin mi?';
+
+  @override
+  String get deleteAccountConfirmMessage =>
+      'Bu, hesabını ve girişini kalıcı olarak siler. Listen ve favorilerin bu cihazda kalır ama artık hiçbir yerle senkronize edilmez. Bu işlem geri alınamaz.';
+
+  @override
+  String get accountDeletedSnack => 'Hesap silindi';
 }

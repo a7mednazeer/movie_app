@@ -15,5 +15,10 @@ abstract final class Validators {
 
   static bool isValidPassword(String value) => value.length >= minPasswordLength;
 
+  static bool isValidHttpUrl(String value) {
+    final Uri? uri = Uri.tryParse(value.trim());
+    return uri != null && uri.isAbsolute && (uri.scheme == 'http' || uri.scheme == 'https');
+  }
+
   const Validators._();
 }

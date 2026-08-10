@@ -323,7 +323,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get photoUrl => 'Foto-URL';
 
   @override
-  String get photoUrlHint => 'https://example.com/avatar.jpg';
+  String get pphotoUrlHint => 'https://example.com/avatar.jpg';
 
   @override
   String get enterName => 'Voer je naam in';
@@ -454,4 +454,37 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get localOnlyBanner =>
       'Alleen op dit apparaat opgeslagen — log in om te synchroniseren tussen apparaten';
+
+  @override
+  String get editProfile => 'Profiel Bewerken';
+
+  @override
+  String get photoUrlLabel => 'Foto-URL';
+
+  @override
+  String get photoUrlHint =>
+      'Plak een link naar een afbeelding. Laat leeg om je foto te verwijderen.';
+
+  @override
+  String get invalidUrlError =>
+      'Voer een geldige afbeeldings-URL in die begint met http:// of https://.';
+
+  @override
+  String get saveChanges => 'Wijzigingen Opslaan';
+
+  @override
+  String get profileUpdatedSnack => 'Profiel bijgewerkt';
+
+  @override
+  String get deleteAccountAction => 'Account Verwijderen';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Je account verwijderen?';
+
+  @override
+  String get deleteAccountConfirmMessage =>
+      'Dit verwijdert je account en inloggegevens permanent. Je kijklijst en favorieten blijven op dit apparaat staan, maar worden nergens meer gesynchroniseerd. Dit kan niet ongedaan worden gemaakt.';
+
+  @override
+  String get accountDeletedSnack => 'Account verwijderd';
 }

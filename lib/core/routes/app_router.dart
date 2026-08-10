@@ -143,6 +143,12 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((Ref ref) {
               return _fadeThroughPage(const FavoritesScreen(), state);
             },
           ),
+          // GoRoute(
+          //   path: 'edit',
+          //   pageBuilder: (BuildContext context, GoRouterState state) {
+          //     return _fadeThroughPage(const EditProfileScreen(), state);
+          //   },
+          // ),
         ],
       ),
       GoRoute(

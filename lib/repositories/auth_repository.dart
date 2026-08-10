@@ -37,6 +37,10 @@ abstract class AuthRepository {
 
   Future<Either<Failure, void>> signOut();
 
+  /// `null` for either parameter means "leave unchanged"; an empty
+  /// string for [photoUrl] means "clear the photo" (mapped to Firebase's
+  /// own null-clears-it `updatePhotoURL` call internally — the caller
+  /// never needs to know that distinction).
   Future<Either<Failure, AppUser>> updateProfile({String? displayName, String? photoUrl});
 
   Future<Either<Failure, void>> deleteAccount();

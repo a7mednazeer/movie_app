@@ -324,7 +324,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get photoUrl => 'फोटो URL';
 
   @override
-  String get photoUrlHint => 'https://example.com/avatar.jpg';
+  String get pphotoUrlHint => 'https://example.com/avatar.jpg';
 
   @override
   String get enterName => 'अपना नाम दर्ज करें';
@@ -454,4 +454,37 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get localOnlyBanner =>
       'केवल इस डिवाइस पर सहेजा गया — डिवाइसों में सिंक करने के लिए साइन इन करें';
+
+  @override
+  String get editProfile => 'प्रोफ़ाइल संपादित करें';
+
+  @override
+  String get photoUrlLabel => 'फ़ोटो URL';
+
+  @override
+  String get photoUrlHint =>
+      'किसी इमेज का लिंक पेस्ट करें। अपनी फ़ोटो हटाने के लिए खाली छोड़ दें।';
+
+  @override
+  String get invalidUrlError =>
+      'http:// या https:// से शुरू होने वाला मान्य इमेज URL दर्ज करें।';
+
+  @override
+  String get saveChanges => 'परिवर्तन सहेजें';
+
+  @override
+  String get profileUpdatedSnack => 'प्रोफ़ाइल अपडेट हो गई';
+
+  @override
+  String get deleteAccountAction => 'खाता हटाएं';
+
+  @override
+  String get deleteAccountConfirmTitle => 'अपना खाता हटाएं?';
+
+  @override
+  String get deleteAccountConfirmMessage =>
+      'यह आपके खाते और साइन-इन को स्थायी रूप से हटा देगा। आपकी सूची और पसंदीदा इस डिवाइस पर रहेंगे लेकिन अब कहीं सिंक नहीं होंगे। इसे पूर्ववत नहीं किया जा सकता।';
+
+  @override
+  String get accountDeletedSnack => 'खाता हटा दिया गया';
 }

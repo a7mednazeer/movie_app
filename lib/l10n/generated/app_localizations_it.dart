@@ -324,7 +324,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get photoUrl => 'URL foto';
 
   @override
-  String get photoUrlHint => 'https://example.com/avatar.jpg';
+  String get pphotoUrlHint => 'https://example.com/avatar.jpg';
 
   @override
   String get enterName => 'Inserisci il tuo nome';
@@ -455,4 +455,37 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get localOnlyBanner =>
       'Salvato solo su questo dispositivo — accedi per sincronizzare tra dispositivi';
+
+  @override
+  String get editProfile => 'Modifica profilo';
+
+  @override
+  String get photoUrlLabel => 'URL foto';
+
+  @override
+  String get photoUrlHint =>
+      'Incolla il link di un\'immagine. Lascia vuoto per rimuovere la tua foto.';
+
+  @override
+  String get invalidUrlError =>
+      'Inserisci un URL immagine valido che inizi con http:// o https://.';
+
+  @override
+  String get saveChanges => 'Salva modifiche';
+
+  @override
+  String get profileUpdatedSnack => 'Profilo aggiornato';
+
+  @override
+  String get deleteAccountAction => 'Elimina account';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Eliminare il tuo account?';
+
+  @override
+  String get deleteAccountConfirmMessage =>
+      'Questo eliminerà definitivamente il tuo account e l\'accesso. La tua lista e i preferiti rimarranno su questo dispositivo ma non si sincronizzeranno più. Questa azione non può essere annullata.';
+
+  @override
+  String get accountDeletedSnack => 'Account eliminato';
 }

@@ -323,7 +323,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get photoUrl => 'Photo URL';
 
   @override
-  String get photoUrlHint => 'https://example.com/avatar.jpg';
+  String get pphotoUrlHint => 'https://example.com/avatar.jpg';
 
   @override
   String get enterName => 'Enter your name';
@@ -454,4 +454,37 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get localOnlyBanner =>
       'Saved on this device only — sign in to sync across devices';
+
+  @override
+  String get editProfile => 'Edit Profile';
+
+  @override
+  String get photoUrlLabel => 'Photo URL';
+
+  @override
+  String get photoUrlHint =>
+      'Paste a link to an image. Leave blank to remove your photo.';
+
+  @override
+  String get invalidUrlError =>
+      'Enter a valid image URL starting with http:// or https://.';
+
+  @override
+  String get saveChanges => 'Save Changes';
+
+  @override
+  String get profileUpdatedSnack => 'Profile updated';
+
+  @override
+  String get deleteAccountAction => 'Delete Account';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Delete your account?';
+
+  @override
+  String get deleteAccountConfirmMessage =>
+      'This permanently deletes your account and sign-in. Your watchlist and favorites stay on this device but will no longer sync anywhere. This can\'t be undone.';
+
+  @override
+  String get accountDeletedSnack => 'Account deleted';
 }

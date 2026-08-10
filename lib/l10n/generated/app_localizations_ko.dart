@@ -316,7 +316,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get photoUrl => '사진 URL';
 
   @override
-  String get photoUrlHint => 'https://example.com/avatar.jpg';
+  String get pphotoUrlHint => 'https://example.com/avatar.jpg';
 
   @override
   String get enterName => '이름을 입력하세요';
@@ -439,4 +439,35 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get localOnlyBanner => '이 기기에만 저장됨 — 기기 간 동기화하려면 로그인하세요';
+
+  @override
+  String get editProfile => '프로필 편집';
+
+  @override
+  String get photoUrlLabel => '사진 URL';
+
+  @override
+  String get photoUrlHint => '이미지 링크를 붙여넣으세요. 사진을 제거하려면 비워두세요.';
+
+  @override
+  String get invalidUrlError => 'http:// 또는 https://로 시작하는 유효한 이미지 URL을 입력하세요.';
+
+  @override
+  String get saveChanges => '변경 사항 저장';
+
+  @override
+  String get profileUpdatedSnack => '프로필이 업데이트되었습니다';
+
+  @override
+  String get deleteAccountAction => '계정 삭제';
+
+  @override
+  String get deleteAccountConfirmTitle => '계정을 삭제할까요?';
+
+  @override
+  String get deleteAccountConfirmMessage =>
+      '계정과 로그인 정보가 영구적으로 삭제됩니다. 보관함과 즐겨찾기는 이 기기에 남지만 더 이상 동기화되지 않습니다. 이 작업은 되돌릴 수 없습니다.';
+
+  @override
+  String get accountDeletedSnack => '계정이 삭제되었습니다';
 }

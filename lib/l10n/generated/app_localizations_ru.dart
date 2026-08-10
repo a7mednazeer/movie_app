@@ -324,7 +324,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get photoUrl => 'URL фотографии';
 
   @override
-  String get photoUrlHint => 'https://example.com/avatar.jpg';
+  String get pphotoUrlHint => 'https://example.com/avatar.jpg';
 
   @override
   String get enterName => 'Введите ваше имя';
@@ -454,4 +454,37 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get localOnlyBanner =>
       'Сохранено только на этом устройстве — войдите, чтобы синхронизировать между устройствами';
+
+  @override
+  String get editProfile => 'Редактировать профиль';
+
+  @override
+  String get photoUrlLabel => 'URL фото';
+
+  @override
+  String get photoUrlHint =>
+      'Вставьте ссылку на изображение. Оставьте пустым, чтобы удалить фото.';
+
+  @override
+  String get invalidUrlError =>
+      'Введите корректный URL изображения, начинающийся с http:// или https://.';
+
+  @override
+  String get saveChanges => 'Сохранить изменения';
+
+  @override
+  String get profileUpdatedSnack => 'Профиль обновлён';
+
+  @override
+  String get deleteAccountAction => 'Удалить аккаунт';
+
+  @override
+  String get deleteAccountConfirmTitle => 'Удалить аккаунт?';
+
+  @override
+  String get deleteAccountConfirmMessage =>
+      'Это навсегда удалит ваш аккаунт и вход. Список и избранное останутся на этом устройстве, но больше не будут синхронизироваться. Это действие нельзя отменить.';
+
+  @override
+  String get accountDeletedSnack => 'Аккаунт удалён';
 }
