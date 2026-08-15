@@ -672,12 +672,6 @@ abstract class AppLocalizations {
   /// **'Photo URL'**
   String get photoUrl;
 
-  /// Hint text for the photo URL input field.
-  ///
-  /// In en, this message translates to:
-  /// **'https://example.com/avatar.jpg'**
-  String get pphotoUrlHint;
-
   /// Hint text for the name input field.
   ///
   /// In en, this message translates to:
@@ -924,6 +918,12 @@ abstract class AppLocalizations {
   /// **'Photo URL'**
   String get photoUrlLabel;
 
+  /// Edit Profile screen string: photoUrlFieldHint.
+  ///
+  /// In en, this message translates to:
+  /// **'https://example.com/photo.jpg'**
+  String get photoUrlFieldHint;
+
   /// Edit Profile screen string: photoUrlHint.
   ///
   /// In en, this message translates to:
@@ -971,6 +971,510 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Account deleted'**
   String get accountDeletedSnack;
+
+  /// Help Center string: chatbotEntrySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Get quick answers from our FAQ assistant'**
+  String get chatbotEntrySubtitle;
+
+  /// Help Center string: faqEntrySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse common questions and answers'**
+  String get faqEntrySubtitle;
+
+  /// Help Center string: contactUsEntrySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Send us a message'**
+  String get contactUsEntrySubtitle;
+
+  /// Help Center string: feedbackEntrySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate the app and tell us what you think'**
+  String get feedbackEntrySubtitle;
+
+  /// Help Center string: aboutEntrySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Version, credits, and legal'**
+  String get aboutEntrySubtitle;
+
+  /// Help Center string: chatbotTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Help Assistant'**
+  String get chatbotTitle;
+
+  /// Help Center string: chatbotGreeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi! Ask me anything about using the app — I\'ll do my best to help.'**
+  String get chatbotGreeting;
+
+  /// Help Center string: chatbotInputHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type your question…'**
+  String get chatbotInputHint;
+
+  /// Help Center string: chatbotNoMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'m not sure about that one. Try rephrasing, browse the FAQ, or contact us and a real person will help.'**
+  String get chatbotNoMatch;
+
+  /// Help Center string: chatbotContactHumanPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Need a real person? Contact us'**
+  String get chatbotContactHumanPrompt;
+
+  /// Help Center string: faqTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Frequently Asked Questions'**
+  String get faqTitle;
+
+  /// Help Center string: faqSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search the FAQ…'**
+  String get faqSearchHint;
+
+  /// Help Center string: faqNoResultsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Try a different search term, or ask our chat assistant.'**
+  String get faqNoResultsSubtitle;
+
+  /// Help Center string: faqQAboutApp.
+  ///
+  /// In en, this message translates to:
+  /// **'What is this app?'**
+  String get faqQAboutApp;
+
+  /// Help Center string: faqAAboutApp.
+  ///
+  /// In en, this message translates to:
+  /// **'MOVIES is a movie discovery app — browse trending, popular, and top-rated titles, search for anything, and keep track of what you want to watch.'**
+  String get faqAAboutApp;
+
+  /// Help Center string: faqQSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'How do I search for a movie?'**
+  String get faqQSearch;
+
+  /// Help Center string: faqASearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap Search in the bottom navigation, then type a title, actor, or genre. Results update as you type.'**
+  String get faqASearch;
+
+  /// Help Center string: faqQWatchlistVsFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'What\'s the difference between Watchlist and Favorites?'**
+  String get faqQWatchlistVsFavorites;
+
+  /// Help Center string: faqAWatchlistVsFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Watchlist is for movies you plan to watch. Favorites is for movies you already love. They\'re tracked separately, and a movie can be in both.'**
+  String get faqAWatchlistVsFavorites;
+
+  /// Help Center string: faqQSaveMovie.
+  ///
+  /// In en, this message translates to:
+  /// **'How do I save a movie?'**
+  String get faqQSaveMovie;
+
+  /// Help Center string: faqASaveMovie.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the bookmark icon on any movie card, or use the Watchlist/Favorite buttons on a movie\'s details page.'**
+  String get faqASaveMovie;
+
+  /// Help Center string: faqQNeedAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Do I need an account to use the app?'**
+  String get faqQNeedAccount;
+
+  /// Help Center string: faqANeedAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'No — everything works as a guest, saved locally on your device. Signing in adds cross-device sync, so your watchlist and favorites follow you to any device you sign into.'**
+  String get faqANeedAccount;
+
+  /// Help Center string: faqQSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'How do I sign in or create an account?'**
+  String get faqQSignIn;
+
+  /// Help Center string: faqASignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to Profile and tap the sign-in banner, or Profile → your account area if you\'re already set up. Sign-up just needs a name, email, and password.'**
+  String get faqASignIn;
+
+  /// Help Center string: faqQSyncDevices.
+  ///
+  /// In en, this message translates to:
+  /// **'How does syncing across devices work?'**
+  String get faqQSyncDevices;
+
+  /// Help Center string: faqASyncDevices.
+  ///
+  /// In en, this message translates to:
+  /// **'Once you\'re signed in, your watchlist and favorites automatically sync to your account and update in real time on any other device signed into the same account.'**
+  String get faqASyncDevices;
+
+  /// Help Center string: faqQOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Does the app work offline?'**
+  String get faqQOffline;
+
+  /// Help Center string: faqAOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Your watchlist and favorites are always available offline since they\'re stored on your device. Browsing new movies needs an internet connection.'**
+  String get faqAOffline;
+
+  /// Help Center string: faqQChangeLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'How do I change the app\'s language?'**
+  String get faqQChangeLanguage;
+
+  /// Help Center string: faqAChangeLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to Settings → Language and pick from 12 supported languages, or choose System Default to follow your device\'s language.'**
+  String get faqAChangeLanguage;
+
+  /// Help Center string: faqQChangeTheme.
+  ///
+  /// In en, this message translates to:
+  /// **'How do I switch between light and dark mode?'**
+  String get faqQChangeTheme;
+
+  /// Help Center string: faqAChangeTheme.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to Settings → Appearance and choose Light, Dark, or Auto to follow your device\'s setting.'**
+  String get faqAChangeTheme;
+
+  /// Help Center string: faqQWatchTrailer.
+  ///
+  /// In en, this message translates to:
+  /// **'How do I watch a trailer?'**
+  String get faqQWatchTrailer;
+
+  /// Help Center string: faqAWatchTrailer.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a movie\'s details page and tap Watch Trailer. It opens in YouTube if a trailer is available for that title.'**
+  String get faqAWatchTrailer;
+
+  /// Help Center string: faqQDeleteAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'How do I delete my account?'**
+  String get faqQDeleteAccount;
+
+  /// Help Center string: faqADeleteAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to Profile → Edit Profile and scroll to Delete Account. This permanently removes your account; your watchlist and favorites stay on your device but stop syncing.'**
+  String get faqADeleteAccount;
+
+  /// Help Center string: faqQContactSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'How do I contact support?'**
+  String get faqQContactSupport;
+
+  /// Help Center string: faqAContactSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to Help Center → Contact Us and send us a message — it opens your email app with everything pre-filled.'**
+  String get faqAContactSupport;
+
+  /// Help Center string: contactUsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Us'**
+  String get contactUsTitle;
+
+  /// Help Center string: contactUsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Have a question or ran into a problem? Send us a message and we\'ll get back to you.'**
+  String get contactUsSubtitle;
+
+  /// Help Center string: contactSubjectLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Subject'**
+  String get contactSubjectLabel;
+
+  /// Help Center string: contactMessageLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Message'**
+  String get contactMessageLabel;
+
+  /// Help Center string: contactSendAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Message'**
+  String get contactSendAction;
+
+  /// Help Center string: contactMailAppUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No email app found on this device.'**
+  String get contactMailAppUnavailable;
+
+  /// Help Center string: contactEmailBodyTemplate.
+  ///
+  /// In en, this message translates to:
+  /// **'Name: {name}\nEmail: {email}\n\n{message}'**
+  String contactEmailBodyTemplate(String name, String email, String message);
+
+  /// Help Center string: feedbackTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Feedback'**
+  String get feedbackTitle;
+
+  /// Help Center string: feedbackSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How\'s your experience with the app so far?'**
+  String get feedbackSubtitle;
+
+  /// Help Center string: feedbackCommentHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell us more (optional)…'**
+  String get feedbackCommentHint;
+
+  /// Help Center string: feedbackSendAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Feedback'**
+  String get feedbackSendAction;
+
+  /// Help Center string: feedbackRatingRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a star rating first.'**
+  String get feedbackRatingRequired;
+
+  /// Help Center string: feedbackThanks.
+  ///
+  /// In en, this message translates to:
+  /// **'Thanks for your feedback!'**
+  String get feedbackThanks;
+
+  /// Help Center string: feedbackNoComment.
+  ///
+  /// In en, this message translates to:
+  /// **'(No comment provided)'**
+  String get feedbackNoComment;
+
+  /// Help Center string: feedbackEmailSubject.
+  ///
+  /// In en, this message translates to:
+  /// **'App Feedback'**
+  String get feedbackEmailSubject;
+
+  /// Help Center string: feedbackEmailBodyTemplate.
+  ///
+  /// In en, this message translates to:
+  /// **'Rating: {rating}/5\n\n{comment}'**
+  String feedbackEmailBodyTemplate(int rating, String comment);
+
+  /// Help Center string: termsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Service'**
+  String get termsTitle;
+
+  /// Help Center string: privacyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyTitle;
+
+  /// Help Center string: legalLastUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Last updated: January 2026'**
+  String get legalLastUpdated;
+
+  /// Help Center string: termsSection1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'1. Acceptance of Terms'**
+  String get termsSection1Title;
+
+  /// Help Center string: termsSection1Body.
+  ///
+  /// In en, this message translates to:
+  /// **'By using this app, you agree to these Terms of Service. If you don\'t agree, please don\'t use the app.'**
+  String get termsSection1Body;
+
+  /// Help Center string: termsSection2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'2. The Service'**
+  String get termsSection2Title;
+
+  /// Help Center string: termsSection2Body.
+  ///
+  /// In en, this message translates to:
+  /// **'This app lets you browse, search, and save movie information sourced from The Movie Database (TMDB). We don\'t host, stream, or distribute any video content ourselves.'**
+  String get termsSection2Body;
+
+  /// Help Center string: termsSection3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'3. Accounts'**
+  String get termsSection3Title;
+
+  /// Help Center string: termsSection3Body.
+  ///
+  /// In en, this message translates to:
+  /// **'You can use most features as a guest without an account. Creating an account (email and password, via Firebase Authentication) enables syncing your watchlist and favorites across your devices. You\'re responsible for keeping your password secure.'**
+  String get termsSection3Body;
+
+  /// Help Center string: termsSection4Title.
+  ///
+  /// In en, this message translates to:
+  /// **'4. Your Content'**
+  String get termsSection4Title;
+
+  /// Help Center string: termsSection4Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Your watchlist, favorites, profile name, and photo URL are yours. We store them to provide the service and don\'t sell them or use them for advertising.'**
+  String get termsSection4Body;
+
+  /// Help Center string: termsSection5Title.
+  ///
+  /// In en, this message translates to:
+  /// **'5. Third-Party Data'**
+  String get termsSection5Title;
+
+  /// Help Center string: termsSection5Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Movie titles, posters, ratings, cast, and reviews are provided by TMDB and may be inaccurate or change without notice. This product uses the TMDB API but is not endorsed or certified by TMDB.'**
+  String get termsSection5Body;
+
+  /// Help Center string: termsSection6Title.
+  ///
+  /// In en, this message translates to:
+  /// **'6. Termination'**
+  String get termsSection6Title;
+
+  /// Help Center string: termsSection6Body.
+  ///
+  /// In en, this message translates to:
+  /// **'You can delete your account at any time from Profile → Edit Profile. We may suspend access for behavior that violates these terms or misuses the service.'**
+  String get termsSection6Body;
+
+  /// Help Center string: termsSection7Title.
+  ///
+  /// In en, this message translates to:
+  /// **'7. Changes to These Terms'**
+  String get termsSection7Title;
+
+  /// Help Center string: termsSection7Body.
+  ///
+  /// In en, this message translates to:
+  /// **'We may update these terms from time to time. Continuing to use the app after changes means you accept the updated terms.'**
+  String get termsSection7Body;
+
+  /// Help Center string: privacySection1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'1. What We Collect'**
+  String get privacySection1Title;
+
+  /// Help Center string: privacySection1Body.
+  ///
+  /// In en, this message translates to:
+  /// **'If you use the app as a guest, we don\'t collect any personal data — your watchlist and favorites are stored only on your device. If you create an account, we collect your name, email address, and (optionally) a profile photo URL via Firebase Authentication.'**
+  String get privacySection1Body;
+
+  /// Help Center string: privacySection2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'2. Watchlist and Favorites Data'**
+  String get privacySection2Title;
+
+  /// Help Center string: privacySection2Body.
+  ///
+  /// In en, this message translates to:
+  /// **'When signed in, your saved movies are stored in Firestore under your account and synced across your devices. Each account\'s data is only accessible to that account — enforced by Firestore security rules.'**
+  String get privacySection2Body;
+
+  /// Help Center string: privacySection3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'3. Third-Party Services'**
+  String get privacySection3Title;
+
+  /// Help Center string: privacySection3Body.
+  ///
+  /// In en, this message translates to:
+  /// **'We use The Movie Database (TMDB) to fetch movie information, and Firebase (Google) for authentication and data storage. These services have their own privacy policies governing how they handle data on their end.'**
+  String get privacySection3Body;
+
+  /// Help Center string: privacySection4Title.
+  ///
+  /// In en, this message translates to:
+  /// **'4. Local Storage'**
+  String get privacySection4Title;
+
+  /// Help Center string: privacySection4Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Your watchlist, favorites, theme, and language preferences are stored locally on your device (via Hive) so the app works offline and instantly, whether or not you\'re signed in.'**
+  String get privacySection4Body;
+
+  /// Help Center string: privacySection5Title.
+  ///
+  /// In en, this message translates to:
+  /// **'5. Data Deletion'**
+  String get privacySection5Title;
+
+  /// Help Center string: privacySection5Body.
+  ///
+  /// In en, this message translates to:
+  /// **'You can delete your account at any time from Profile → Edit Profile, which permanently removes your account and stops any further syncing. Data already stored locally on your device remains until you clear the app\'s storage.'**
+  String get privacySection5Body;
+
+  /// Help Center string: privacySection6Title.
+  ///
+  /// In en, this message translates to:
+  /// **'6. Contact'**
+  String get privacySection6Title;
+
+  /// Help Center string: privacySection6Body.
+  ///
+  /// In en, this message translates to:
+  /// **'Questions about this policy? Reach us through Help Center → Contact Us.'**
+  String get privacySection6Body;
 }
 
 class _AppLocalizationsDelegate

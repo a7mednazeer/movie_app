@@ -501,8 +501,53 @@ has nothing to edit).
   this) was already mapped to a real, localized message in the auth
   pass — reused here, not re-invented.
 
+## Help Center — chatbot, FAQ, contact, feedback, about, legal
+
+All 7 sub-parts requested, each a real, complete screen — Help Center is
+a hub (`help_center_screen.dart`) linking to each one.
+
+- **Chatbot** — a real, working chat UI (bubbles, auto-scroll, input),
+  answered by `ChatMatcher`: character-trigram similarity between the
+  message and every FAQ question, no ML model or network call. This was
+  a deliberate choice (confirmed with you before building it) over
+  wiring up a real AI API. Trigrams specifically, rather than
+  word-splitting, because this app ships in 12 languages and several —
+  Chinese, Korean, and to a lesser extent Hindi — don't reliably
+  tokenize on whitespace the way English does; a matcher built around
+  splitting on spaces would quietly work in some languages and quietly
+  fail in others. Below a confidence threshold it honestly says "not
+  sure" and points to Contact instead of guessing.
+  **Upgrading to a real AI backend later**: swap `ChatMatcher.findBestMatch`
+  for a call to your provider of choice inside `ChatController.sendMessage`
+  — same seam as the TMDB/dummy-data split, nothing else in the chat UI
+  needs to change.
+- **FAQ** — 13 real topics (covering search, watchlist vs. favorites,
+  accounts, sync, offline behavior, language, theme, trailers, account
+  deletion, and more), searchable, in a shared `faq_catalog.dart` that
+  both the FAQ screen and the chatbot's matcher read from — one source
+  of truth, not two content sets to keep in sync.
+- **Contact Us** — a real form (name/email/subject/message) that opens
+  the device's email app with everything pre-filled via `mailto:`. No
+  backend or ticketing system needed for this to actually work.
+  Pre-fills name/email from the signed-in account when available.
+- **Feedback** — star rating + optional comment, sent the same real
+  `mailto:` way, kept separate from Contact Us since it's "tell us what
+  you think" rather than "I have a specific problem."
+- **About** — a full screen (not just a dialog): app info, TMDB
+  attribution with a working link, version, and links into Terms/Privacy.
+  Settings' "About This App" now links here instead of duplicating the
+  content in its own dialog.
+- **Terms of Service** / **Privacy Policy** — real, complete text that
+  genuinely describes what *this* app does (TMDB-sourced data, optional
+  Firebase accounts, Firestore-synced watchlist/favorites, local Hive
+  storage) rather than generic boilerplate that doesn't match the app's
+  actual behavior. Still not a substitute for a lawyer's review before a
+  real commercial launch — noted in both screens' code comments.
+- **`ChatMatcher` has real test coverage** (`test/help_center/chat_matcher_test.dart`),
+  including a case specifically proving it works without whitespace
+  tokenization (a Chinese-style query with no spaces at all).
+
 ## What's next
 
-Per the current build plan, still ahead: a full **Help Center**
-(chatbot, FAQ, contact, about, feedback, Terms of Service, Privacy
-Policy), and **push notifications**.
+Per the current build plan, **push notifications** is the one remaining
+piece.

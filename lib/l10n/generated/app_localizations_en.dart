@@ -323,9 +323,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get photoUrl => 'Photo URL';
 
   @override
-  String get pphotoUrlHint => 'https://example.com/avatar.jpg';
-
-  @override
   String get enterName => 'Enter your name';
 
   @override
@@ -462,6 +459,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get photoUrlLabel => 'Photo URL';
 
   @override
+  String get photoUrlFieldHint => 'https://example.com/photo.jpg';
+
+  @override
   String get photoUrlHint =>
       'Paste a link to an image. Leave blank to remove your photo.';
 
@@ -487,4 +487,291 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get accountDeletedSnack => 'Account deleted';
+
+  @override
+  String get chatbotEntrySubtitle => 'Get quick answers from our FAQ assistant';
+
+  @override
+  String get faqEntrySubtitle => 'Browse common questions and answers';
+
+  @override
+  String get contactUsEntrySubtitle => 'Send us a message';
+
+  @override
+  String get feedbackEntrySubtitle => 'Rate the app and tell us what you think';
+
+  @override
+  String get aboutEntrySubtitle => 'Version, credits, and legal';
+
+  @override
+  String get chatbotTitle => 'Help Assistant';
+
+  @override
+  String get chatbotGreeting =>
+      'Hi! Ask me anything about using the app — I\'ll do my best to help.';
+
+  @override
+  String get chatbotInputHint => 'Type your question…';
+
+  @override
+  String get chatbotNoMatch =>
+      'I\'m not sure about that one. Try rephrasing, browse the FAQ, or contact us and a real person will help.';
+
+  @override
+  String get chatbotContactHumanPrompt => 'Need a real person? Contact us';
+
+  @override
+  String get faqTitle => 'Frequently Asked Questions';
+
+  @override
+  String get faqSearchHint => 'Search the FAQ…';
+
+  @override
+  String get faqNoResultsSubtitle =>
+      'Try a different search term, or ask our chat assistant.';
+
+  @override
+  String get faqQAboutApp => 'What is this app?';
+
+  @override
+  String get faqAAboutApp =>
+      'MOVIES is a movie discovery app — browse trending, popular, and top-rated titles, search for anything, and keep track of what you want to watch.';
+
+  @override
+  String get faqQSearch => 'How do I search for a movie?';
+
+  @override
+  String get faqASearch =>
+      'Tap Search in the bottom navigation, then type a title, actor, or genre. Results update as you type.';
+
+  @override
+  String get faqQWatchlistVsFavorites =>
+      'What\'s the difference between Watchlist and Favorites?';
+
+  @override
+  String get faqAWatchlistVsFavorites =>
+      'Watchlist is for movies you plan to watch. Favorites is for movies you already love. They\'re tracked separately, and a movie can be in both.';
+
+  @override
+  String get faqQSaveMovie => 'How do I save a movie?';
+
+  @override
+  String get faqASaveMovie =>
+      'Tap the bookmark icon on any movie card, or use the Watchlist/Favorite buttons on a movie\'s details page.';
+
+  @override
+  String get faqQNeedAccount => 'Do I need an account to use the app?';
+
+  @override
+  String get faqANeedAccount =>
+      'No — everything works as a guest, saved locally on your device. Signing in adds cross-device sync, so your watchlist and favorites follow you to any device you sign into.';
+
+  @override
+  String get faqQSignIn => 'How do I sign in or create an account?';
+
+  @override
+  String get faqASignIn =>
+      'Go to Profile and tap the sign-in banner, or Profile → your account area if you\'re already set up. Sign-up just needs a name, email, and password.';
+
+  @override
+  String get faqQSyncDevices => 'How does syncing across devices work?';
+
+  @override
+  String get faqASyncDevices =>
+      'Once you\'re signed in, your watchlist and favorites automatically sync to your account and update in real time on any other device signed into the same account.';
+
+  @override
+  String get faqQOffline => 'Does the app work offline?';
+
+  @override
+  String get faqAOffline =>
+      'Your watchlist and favorites are always available offline since they\'re stored on your device. Browsing new movies needs an internet connection.';
+
+  @override
+  String get faqQChangeLanguage => 'How do I change the app\'s language?';
+
+  @override
+  String get faqAChangeLanguage =>
+      'Go to Settings → Language and pick from 12 supported languages, or choose System Default to follow your device\'s language.';
+
+  @override
+  String get faqQChangeTheme => 'How do I switch between light and dark mode?';
+
+  @override
+  String get faqAChangeTheme =>
+      'Go to Settings → Appearance and choose Light, Dark, or Auto to follow your device\'s setting.';
+
+  @override
+  String get faqQWatchTrailer => 'How do I watch a trailer?';
+
+  @override
+  String get faqAWatchTrailer =>
+      'Open a movie\'s details page and tap Watch Trailer. It opens in YouTube if a trailer is available for that title.';
+
+  @override
+  String get faqQDeleteAccount => 'How do I delete my account?';
+
+  @override
+  String get faqADeleteAccount =>
+      'Go to Profile → Edit Profile and scroll to Delete Account. This permanently removes your account; your watchlist and favorites stay on your device but stop syncing.';
+
+  @override
+  String get faqQContactSupport => 'How do I contact support?';
+
+  @override
+  String get faqAContactSupport =>
+      'Go to Help Center → Contact Us and send us a message — it opens your email app with everything pre-filled.';
+
+  @override
+  String get contactUsTitle => 'Contact Us';
+
+  @override
+  String get contactUsSubtitle =>
+      'Have a question or ran into a problem? Send us a message and we\'ll get back to you.';
+
+  @override
+  String get contactSubjectLabel => 'Subject';
+
+  @override
+  String get contactMessageLabel => 'Message';
+
+  @override
+  String get contactSendAction => 'Send Message';
+
+  @override
+  String get contactMailAppUnavailable => 'No email app found on this device.';
+
+  @override
+  String contactEmailBodyTemplate(String name, String email, String message) {
+    return 'Name: $name\nEmail: $email\n\n$message';
+  }
+
+  @override
+  String get feedbackTitle => 'Feedback';
+
+  @override
+  String get feedbackSubtitle => 'How\'s your experience with the app so far?';
+
+  @override
+  String get feedbackCommentHint => 'Tell us more (optional)…';
+
+  @override
+  String get feedbackSendAction => 'Send Feedback';
+
+  @override
+  String get feedbackRatingRequired => 'Please select a star rating first.';
+
+  @override
+  String get feedbackThanks => 'Thanks for your feedback!';
+
+  @override
+  String get feedbackNoComment => '(No comment provided)';
+
+  @override
+  String get feedbackEmailSubject => 'App Feedback';
+
+  @override
+  String feedbackEmailBodyTemplate(int rating, String comment) {
+    return 'Rating: $rating/5\n\n$comment';
+  }
+
+  @override
+  String get termsTitle => 'Terms of Service';
+
+  @override
+  String get privacyTitle => 'Privacy Policy';
+
+  @override
+  String get legalLastUpdated => 'Last updated: January 2026';
+
+  @override
+  String get termsSection1Title => '1. Acceptance of Terms';
+
+  @override
+  String get termsSection1Body =>
+      'By using this app, you agree to these Terms of Service. If you don\'t agree, please don\'t use the app.';
+
+  @override
+  String get termsSection2Title => '2. The Service';
+
+  @override
+  String get termsSection2Body =>
+      'This app lets you browse, search, and save movie information sourced from The Movie Database (TMDB). We don\'t host, stream, or distribute any video content ourselves.';
+
+  @override
+  String get termsSection3Title => '3. Accounts';
+
+  @override
+  String get termsSection3Body =>
+      'You can use most features as a guest without an account. Creating an account (email and password, via Firebase Authentication) enables syncing your watchlist and favorites across your devices. You\'re responsible for keeping your password secure.';
+
+  @override
+  String get termsSection4Title => '4. Your Content';
+
+  @override
+  String get termsSection4Body =>
+      'Your watchlist, favorites, profile name, and photo URL are yours. We store them to provide the service and don\'t sell them or use them for advertising.';
+
+  @override
+  String get termsSection5Title => '5. Third-Party Data';
+
+  @override
+  String get termsSection5Body =>
+      'Movie titles, posters, ratings, cast, and reviews are provided by TMDB and may be inaccurate or change without notice. This product uses the TMDB API but is not endorsed or certified by TMDB.';
+
+  @override
+  String get termsSection6Title => '6. Termination';
+
+  @override
+  String get termsSection6Body =>
+      'You can delete your account at any time from Profile → Edit Profile. We may suspend access for behavior that violates these terms or misuses the service.';
+
+  @override
+  String get termsSection7Title => '7. Changes to These Terms';
+
+  @override
+  String get termsSection7Body =>
+      'We may update these terms from time to time. Continuing to use the app after changes means you accept the updated terms.';
+
+  @override
+  String get privacySection1Title => '1. What We Collect';
+
+  @override
+  String get privacySection1Body =>
+      'If you use the app as a guest, we don\'t collect any personal data — your watchlist and favorites are stored only on your device. If you create an account, we collect your name, email address, and (optionally) a profile photo URL via Firebase Authentication.';
+
+  @override
+  String get privacySection2Title => '2. Watchlist and Favorites Data';
+
+  @override
+  String get privacySection2Body =>
+      'When signed in, your saved movies are stored in Firestore under your account and synced across your devices. Each account\'s data is only accessible to that account — enforced by Firestore security rules.';
+
+  @override
+  String get privacySection3Title => '3. Third-Party Services';
+
+  @override
+  String get privacySection3Body =>
+      'We use The Movie Database (TMDB) to fetch movie information, and Firebase (Google) for authentication and data storage. These services have their own privacy policies governing how they handle data on their end.';
+
+  @override
+  String get privacySection4Title => '4. Local Storage';
+
+  @override
+  String get privacySection4Body =>
+      'Your watchlist, favorites, theme, and language preferences are stored locally on your device (via Hive) so the app works offline and instantly, whether or not you\'re signed in.';
+
+  @override
+  String get privacySection5Title => '5. Data Deletion';
+
+  @override
+  String get privacySection5Body =>
+      'You can delete your account at any time from Profile → Edit Profile, which permanently removes your account and stops any further syncing. Data already stored locally on your device remains until you clear the app\'s storage.';
+
+  @override
+  String get privacySection6Title => '6. Contact';
+
+  @override
+  String get privacySection6Body =>
+      'Questions about this policy? Reach us through Help Center → Contact Us.';
 }

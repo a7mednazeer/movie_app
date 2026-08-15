@@ -29,3 +29,30 @@ Future<void> openExternalUrl(
     context.showSnack(launchFailedMessage, isError: true);
   }
 }
+
+/// Opens the device's email app with [to]/[subject]/[body] pre-filled —
+/// used by the Help Center's Contact screen. `mailto:` URIs need their
+/// own construction (via [Uri.https]-style query encoding) rather than
+/// being passed through [openExternalUrl] as a bare URL string.
+Future<void> openMailComposer(
+  BuildContext context, {
+  required String to,
+  required String subject,
+  required String body,
+  String launchFailedMessage = 'Couldn\'t open your email app.',
+}) async {
+  final Uri uri = Uri(
+    scheme: 'mailto',
+    path: to,
+    query: 'subject=${Uri.encodeComponent(subject)}&body=${Uri.encodeComponent(body)}',
+  );
+
+  final bool canOpen = await canLaunchUrl(uri);
+  if (!context.mounted) return;
+
+  if (canOpen) {
+    await launchUrl(uri);
+  } else {
+    context.showSnack(launchFailedMessage, isError: true);
+  }
+}

@@ -14,7 +14,7 @@ import 'movie_repository.dart';
 /// Concrete [MovieRepository].
 ///
 /// Automatically uses the real [MovieRemoteDataSource] (TMDB) once a key
-/// is configured via `--dart-define=c7e3fb5ddb5011244118a2d0e623e336=...` (see
+/// is configured via `--dart-define=TMDB_API_KEY=...` (see
 /// `ApiEndpoints.apiKey`), and falls back to [DummyMovieDataSource]
 /// otherwise — so the app is fully functional out of the box, and
 /// upgrades to real data the moment a key is supplied, with no code

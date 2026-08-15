@@ -27,19 +27,19 @@ class AppLocalizationsRu extends AppLocalizations {
   String get navProfile => 'Профиль';
 
   @override
-  String get sectionTrending => 'В тренде';
+  String get sectionTrending => 'Сейчас в тренде';
 
   @override
   String get sectionPopular => 'Популярные фильмы';
 
   @override
-  String get sectionTopRated => 'Высокий рейтинг';
+  String get sectionTopRated => 'Лучшие оценки';
 
   @override
-  String get sectionUpcoming => 'Скоро выйдет';
+  String get sectionUpcoming => 'Скоро в кино';
 
   @override
-  String get sectionRecommended => 'Рекомендуем вам';
+  String get sectionRecommended => 'Рекомендовано вам';
 
   @override
   String get sectionCategories => 'Категории';
@@ -51,17 +51,17 @@ class AppLocalizationsRu extends AppLocalizations {
   String get moreLikeThis => 'Похожие фильмы';
 
   @override
-  String get cast => 'В ролях';
+  String get cast => 'Актёрский состав';
 
   @override
-  String get reviews => 'Отзывы';
+  String get reviews => 'Рецензии';
 
   @override
   String get noReviewsYet =>
-      'Отзывов пока нет — станьте первым, кто поделится своим мнением.';
+      'Рецензий пока нет — станьте первым, кто поделится мнением.';
 
   @override
-  String get overview => 'Описание';
+  String get overview => 'Обзор';
 
   @override
   String get watchTrailer => 'Смотреть трейлер';
@@ -91,10 +91,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get readLess => 'Свернуть';
 
   @override
-  String get searchHint => 'Поиск фильмов, актёров, жанров…';
+  String get searchHint => 'Фильмы, актёры, жанры…';
 
   @override
-  String get recentSearches => 'Недавние запросы';
+  String get recentSearches => 'Недавние поиски';
 
   @override
   String get trendingSearches => 'Популярные запросы';
@@ -118,23 +118,24 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get startSearchingSubtitle =>
-      'Ищите фильмы, изучайте актёрский состав и находите новое.';
+      'Ищите названия, изучайте актёров и открывайте новое.';
 
   @override
-  String get browseCategory => 'Категории';
+  String get browseCategory => 'Обзор категории';
 
   @override
   String get noCategoriesAvailable => 'Категории недоступны';
 
   @override
   String get checkBackLaterGenres =>
-      'Загляните позже, чтобы увидеть доступные жанры.';
+      'Зайдите позже, чтобы увидеть доступные жанры.';
 
   @override
-  String get noMoviesInGenre => 'Пока нет фильмов';
+  String get noMoviesInGenre => 'Фильмов пока нет';
 
   @override
-  String get checkBackSoonGenre => 'В этом жанре пока пусто — загляните позже.';
+  String get checkBackSoonGenre =>
+      'В этом жанре пока ничего нет — загляните позже.';
 
   @override
   String watchlistTitleWithCount(int count) {
@@ -142,6 +143,9 @@ class AppLocalizationsRu extends AppLocalizations {
       count,
       locale: localeName,
       other: 'Мой список ($count)',
+      many: 'Мой список ($count)',
+      few: 'Мой список ($count)',
+      one: 'Мой список ($count)',
       zero: 'Мой список',
     );
     return '$_temp0';
@@ -152,11 +156,11 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get watchlistEmptySubtitle =>
-      'Сохранённые фильмы появятся здесь, чтобы вы о них не забыли.';
+      'Сохраненные фильмы появятся здесь, чтобы вы их не потеряли.';
 
   @override
   String removedFromWatchlistSnack(String title) {
-    return '«$title» удалён';
+    return 'Удалено: \"$title\"';
   }
 
   @override
@@ -165,21 +169,24 @@ class AppLocalizationsRu extends AppLocalizations {
       count,
       locale: localeName,
       other: 'Избранное ($count)',
+      many: 'Избранное ($count)',
+      few: 'Избранное ($count)',
+      one: 'Избранное ($count)',
       zero: 'Избранное',
     );
     return '$_temp0';
   }
 
   @override
-  String get favoritesEmptyTitle => 'Пока нет избранного';
+  String get favoritesEmptyTitle => 'В избранном пока пусто';
 
   @override
   String get favoritesEmptySubtitle =>
-      'Фильмы, отмеченные как избранные на странице фильма, появятся здесь.';
+      'Фильмы, которые вы отметите как избранные, появятся здесь.';
 
   @override
   String removedFromFavoritesSnack(String title) {
-    return '«$title» удалён из избранного';
+    return '\"$title\" удалено из избранного';
   }
 
   @override
@@ -190,11 +197,11 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get genericErrorSubtitle =>
-      'Не удалось загрузить контент. Попробуйте ещё раз.';
+      'Произошла ошибка при загрузке контента. Попробуйте ещё раз.';
 
   @override
   String get noInternetSubtitle =>
-      'Проверьте подключение к интернету и повторите попытку.';
+      'Пожалуйста, проверьте соединение и попробуйте снова.';
 
   @override
   String get profileTitle => 'Профиль';
@@ -203,7 +210,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get yourLibrary => 'Ваша библиотека';
 
   @override
-  String get everythingSaved => 'Всё сохранённое в одном месте';
+  String get everythingSaved => 'Всё сохраненное в одном месте';
 
   @override
   String get favoritesLabel => 'Избранное';
@@ -215,13 +222,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get settingsLabel => 'Настройки';
 
   @override
-  String get settingsSubtitle => 'Тема, язык и другое';
+  String get settingsSubtitle => 'Тема, язык и информация';
 
   @override
   String get settingsTitle => 'Настройки';
 
   @override
-  String get appearance => 'Оформление';
+  String get appearance => 'Внешний вид';
 
   @override
   String get preferences => 'Предпочтения';
@@ -242,19 +249,19 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String aboutAppTitle(String appName) {
-    return 'О приложении $appName';
+    return 'О $appName';
   }
 
   @override
   String get aboutDescription =>
-      'Приложение для поиска фильмов: тренды, популярные и высокорейтинговые фильмы, поиск и список того, что вы хотите посмотреть.';
+      'Премиальное приложение для поиска фильмов: изучайте тренды, популярные и высокооцененные картины, ищите и сохраняйте то, что хотите посмотреть.';
 
   @override
   String get tmdbAttribution =>
       'Этот продукт использует API TMDB, но не одобрен и не сертифицирован TMDB.';
 
   @override
-  String get visitTmdb => 'Перейти на TMDB';
+  String get visitTmdb => 'Посетить TMDB';
 
   @override
   String get close => 'Закрыть';
@@ -282,28 +289,28 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String shareWithTrailer(String title, String trailerUrl) {
-    return '$title — посмотри трейлер: $trailerUrl';
+    return '$title — посмотрите трейлер: $trailerUrl';
   }
 
   @override
   String shareGeneric(String title) {
-    return 'Посмотри «$title» в Movies!';
+    return 'Посмотрите \"$title\" в Movies!';
   }
 
   @override
   String get notificationsLabel => 'Уведомления';
 
   @override
-  String get notificationsSubtitle => 'Настройте, о чём вас уведомлять';
+  String get notificationsSubtitle => 'Управляйте своими уведомлениями';
 
   @override
   String get helpCenterLabel => 'Центр помощи';
 
   @override
-  String get helpCenterSubtitle => 'Вопросы, связь с нами и другое';
+  String get helpCenterSubtitle => 'FAQ, контакты и прочее';
 
   @override
-  String get systemDefault => 'Как в системе';
+  String get systemDefault => 'Системный язык';
 
   @override
   String get back => 'Назад';
@@ -318,13 +325,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get save => 'Сохранить';
 
   @override
-  String get displayName => 'Отображаемое имя';
+  String get displayName => 'Имя пользователя';
 
   @override
-  String get photoUrl => 'URL фотографии';
-
-  @override
-  String get pphotoUrlHint => 'https://example.com/avatar.jpg';
+  String get photoUrl => 'URL фото';
 
   @override
   String get enterName => 'Введите ваше имя';
@@ -343,17 +347,17 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get signInSubtitle =>
-      'Войдите, чтобы синхронизировать список и избранное на всех устройствах.';
+      'Войдите, чтобы синхронизировать ваши списки на всех устройствах.';
 
   @override
   String get createAccount => 'Создать аккаунт';
 
   @override
   String get signUpSubtitle =>
-      'Зарегистрируйтесь, чтобы сохранить список и избранное в своём аккаунте.';
+      'Зарегистрируйтесь, чтобы сохранять данные в своём аккаунте.';
 
   @override
-  String get emailLabel => 'Эл. почта';
+  String get emailLabel => 'Email';
 
   @override
   String get passwordLabel => 'Пароль';
@@ -377,25 +381,25 @@ class AppLocalizationsRu extends AppLocalizations {
   String get continueAsGuest => 'Продолжить как гость';
 
   @override
-  String get authErrorFieldRequired => 'Это поле обязательно.';
+  String get authErrorFieldRequired => 'Это поле обязательно для заполнения.';
 
   @override
-  String get authErrorInvalidEmail => 'Введите корректный адрес эл. почты.';
+  String get authErrorInvalidEmail => 'Введите корректный email.';
 
   @override
-  String get authErrorUserDisabled => 'Этот аккаунт отключён.';
+  String get authErrorUserDisabled => 'Этот аккаунт отключен.';
 
   @override
-  String get authErrorUserNotFound => 'Аккаунт с такой почтой не найден.';
+  String get authErrorUserNotFound => 'Аккаунт с таким email не найден.';
 
   @override
-  String get authErrorWrongPassword => 'Неверная почта или пароль.';
+  String get authErrorWrongPassword => 'Неверный email или пароль.';
 
   @override
-  String get authErrorEmailInUse => 'Аккаунт с такой почтой уже существует.';
+  String get authErrorEmailInUse => 'Аккаунт с таким email уже существует.';
 
   @override
-  String get authErrorWeakPassword => 'Этот пароль слишком слабый.';
+  String get authErrorWeakPassword => 'Слишком слабый пароль.';
 
   @override
   String authErrorWeakPasswordHint(int minLength) {
@@ -404,11 +408,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get authErrorTooManyRequests =>
-      'Слишком много попыток. Подождите немного и повторите попытку.';
+      'Слишком много попыток. Пожалуйста, подождите.';
 
   @override
-  String get authErrorNotConfigured =>
-      'Вход пока не настроен для этого приложения.';
+  String get authErrorNotConfigured => 'Вход в систему ещё не настроен.';
 
   @override
   String get authErrorRequiresRecentLogin =>
@@ -418,7 +421,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get authErrorPasswordMismatch => 'Пароли не совпадают.';
 
   @override
-  String get authEnterEmailFirst => 'Сначала введите свою эл. почту выше.';
+  String get authEnterEmailFirst => 'Сначала введите email выше.';
 
   @override
   String authResetEmailSent(String email) {
@@ -430,30 +433,30 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get authSyncBannerSubtitle =>
-      'Сохраните список и избранное в своём аккаунте и получайте к ним доступ с любого устройства.';
+      'Сохраняйте данные в аккаунте и получайте доступ с любого устройства.';
 
   @override
   String get signOut => 'Выйти';
 
   @override
-  String get signOutConfirmTitle => 'Выйти из аккаунта?';
+  String get signOutConfirmTitle => 'Выйти?';
 
   @override
   String get signOutConfirmMessage =>
-      'Вы сможете снова войти в любой момент. Ваш список и избранное останутся сохранены в аккаунте.';
+      'Вы можете войти снова в любое время. Ваши данные сохранятся в аккаунте.';
 
   @override
-  String get signedOutSnack => 'Вы вышли из аккаунта';
+  String get signedOutSnack => 'Вы вышли из системы';
 
   @override
   String get guestBadge => 'Гость';
 
   @override
-  String get syncedToAccount => 'Синхронизировано с вашим аккаунтом';
+  String get syncedToAccount => 'Синхронизировано с аккаунтом';
 
   @override
   String get localOnlyBanner =>
-      'Сохранено только на этом устройстве — войдите, чтобы синхронизировать между устройствами';
+      'Сохранено только на этом устройстве — войдите для синхронизации';
 
   @override
   String get editProfile => 'Редактировать профиль';
@@ -462,18 +465,21 @@ class AppLocalizationsRu extends AppLocalizations {
   String get photoUrlLabel => 'URL фото';
 
   @override
+  String get photoUrlFieldHint => 'https://example.com/photo.jpg';
+
+  @override
   String get photoUrlHint =>
       'Вставьте ссылку на изображение. Оставьте пустым, чтобы удалить фото.';
 
   @override
   String get invalidUrlError =>
-      'Введите корректный URL изображения, начинающийся с http:// или https://.';
+      'Введите корректный URL, начинающийся с http:// или https://.';
 
   @override
   String get saveChanges => 'Сохранить изменения';
 
   @override
-  String get profileUpdatedSnack => 'Профиль обновлён';
+  String get profileUpdatedSnack => 'Профиль обновлен';
 
   @override
   String get deleteAccountAction => 'Удалить аккаунт';
@@ -483,8 +489,298 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get deleteAccountConfirmMessage =>
-      'Это навсегда удалит ваш аккаунт и вход. Список и избранное останутся на этом устройстве, но больше не будут синхронизироваться. Это действие нельзя отменить.';
+      'Это навсегда удалит ваш аккаунт. Данные останутся на этом устройстве, но не будут синхронизироваться. Это действие нельзя отменить.';
 
   @override
-  String get accountDeletedSnack => 'Аккаунт удалён';
+  String get accountDeletedSnack => 'Аккаунт удален';
+
+  @override
+  String get chatbotEntrySubtitle => 'Быстрые ответы от нашего FAQ-помощника';
+
+  @override
+  String get faqEntrySubtitle => 'Просмотр популярных вопросов и ответов';
+
+  @override
+  String get contactUsEntrySubtitle => 'Отправьте нам сообщение';
+
+  @override
+  String get feedbackEntrySubtitle => 'Оцените приложение и поделитесь мнением';
+
+  @override
+  String get aboutEntrySubtitle => 'Версия, авторы и правовая информация';
+
+  @override
+  String get chatbotTitle => 'Помощник';
+
+  @override
+  String get chatbotGreeting =>
+      'Привет! Спрашивайте что угодно о работе приложения — я постараюсь помочь.';
+
+  @override
+  String get chatbotInputHint => 'Введите ваш вопрос…';
+
+  @override
+  String get chatbotNoMatch =>
+      'Я не совсем уверен в ответе. Попробуйте перефразировать или свяжитесь с поддержкой.';
+
+  @override
+  String get chatbotContactHumanPrompt =>
+      'Нужна помощь человека? Свяжитесь с нами';
+
+  @override
+  String get faqTitle => 'Часто задаваемые вопросы';
+
+  @override
+  String get faqSearchHint => 'Поиск в FAQ…';
+
+  @override
+  String get faqNoResultsSubtitle =>
+      'Попробуйте другой запрос или спросите помощника.';
+
+  @override
+  String get faqQAboutApp => 'Что это за приложение?';
+
+  @override
+  String get faqAAboutApp =>
+      'MOVIES — это приложение для поиска кино: изучайте тренды, ищите любые картины и сохраняйте то, что хотите посмотреть.';
+
+  @override
+  String get faqQSearch => 'Как искать фильм?';
+
+  @override
+  String get faqASearch =>
+      'Нажмите на Поиск в меню, затем введите название, актёра или жанр. Результаты обновляются на лету.';
+
+  @override
+  String get faqQWatchlistVsFavorites =>
+      'В чем разница между Списком и Избранным?';
+
+  @override
+  String get faqAWatchlistVsFavorites =>
+      'Список — для фильмов, которые вы планируете посмотреть. Избранное — для тех, что вы уже любите.';
+
+  @override
+  String get faqQSaveMovie => 'Как сохранить фильм?';
+
+  @override
+  String get faqASaveMovie =>
+      'Нажмите на иконку закладки на карточке фильма или используйте кнопки на странице деталей.';
+
+  @override
+  String get faqQNeedAccount =>
+      'Нужен ли аккаунт для использования приложения?';
+
+  @override
+  String get faqANeedAccount =>
+      'Нет — всё работает в гостевом режиме. Вход нужен для синхронизации между устройствами.';
+
+  @override
+  String get faqQSignIn => 'Как войти или создать аккаунт?';
+
+  @override
+  String get faqASignIn =>
+      'Перейдите в Профиль и нажмите на баннер входа. Для регистрации нужны имя, email и пароль.';
+
+  @override
+  String get faqQSyncDevices => 'Как работает синхронизация?';
+
+  @override
+  String get faqASyncDevices =>
+      'После входа ваши данные автоматически синхронизируются в реальном времени на всех устройствах.';
+
+  @override
+  String get faqQOffline => 'Работает ли приложение офлайн?';
+
+  @override
+  String get faqAOffline =>
+      'Ваши списки доступны офлайн. Для поиска новых фильмов нужен интернет.';
+
+  @override
+  String get faqQChangeLanguage => 'Как сменить язык?';
+
+  @override
+  String get faqAChangeLanguage =>
+      'Настройки → Язык, выберите один из 12 языков или системный.';
+
+  @override
+  String get faqQChangeTheme =>
+      'Как переключиться между светлой и тёмной темой?';
+
+  @override
+  String get faqAChangeTheme =>
+      'Настройки → Внешний вид, выберите Светлую, Тёмную или Авто.';
+
+  @override
+  String get faqQWatchTrailer => 'Как посмотреть трейлер?';
+
+  @override
+  String get faqAWatchTrailer =>
+      'На странице деталей фильма нажмите Смотреть трейлер. Он откроется в YouTube.';
+
+  @override
+  String get faqQDeleteAccount => 'Как удалить аккаунт?';
+
+  @override
+  String get faqADeleteAccount =>
+      'Профиль → Редактировать профиль → Удалить аккаунт. Облачные данные будут стерты навсегда.';
+
+  @override
+  String get faqQContactSupport => 'Как связаться с поддержкой?';
+
+  @override
+  String get faqAContactSupport =>
+      'Центр помощи → Связаться с нами; откроется ваше почтовое приложение.';
+
+  @override
+  String get contactUsTitle => 'Связаться с нами';
+
+  @override
+  String get contactUsSubtitle =>
+      'Есть вопросы или проблемы? Напишите нам, и мы ответим.';
+
+  @override
+  String get contactSubjectLabel => 'Тема';
+
+  @override
+  String get contactMessageLabel => 'Сообщение';
+
+  @override
+  String get contactSendAction => 'Отправить';
+
+  @override
+  String get contactMailAppUnavailable => 'Почтовое приложение не найдено.';
+
+  @override
+  String contactEmailBodyTemplate(String name, String email, String message) {
+    return 'Имя: $name\nEmail: $email\n\n$message';
+  }
+
+  @override
+  String get feedbackTitle => 'Отзыв';
+
+  @override
+  String get feedbackSubtitle => 'Как вам приложение?';
+
+  @override
+  String get feedbackCommentHint => 'Расскажите подробнее (необязательно)…';
+
+  @override
+  String get feedbackSendAction => 'Отправить отзыв';
+
+  @override
+  String get feedbackRatingRequired => 'Сначала выберите оценку.';
+
+  @override
+  String get feedbackThanks => 'Спасибо за ваш отзыв!';
+
+  @override
+  String get feedbackNoComment => '(Без комментария)';
+
+  @override
+  String get feedbackEmailSubject => 'Отзыв о приложении';
+
+  @override
+  String feedbackEmailBodyTemplate(int rating, String comment) {
+    return 'Оценка: $rating/5\n\n$comment';
+  }
+
+  @override
+  String get termsTitle => 'Условия использования';
+
+  @override
+  String get privacyTitle => 'Политика конфиденциальности';
+
+  @override
+  String get legalLastUpdated => 'Последнее обновление: январь 2026';
+
+  @override
+  String get termsSection1Title => '1. Принятие условий';
+
+  @override
+  String get termsSection1Body =>
+      'Используя приложение, вы соглашаетесь с этими условиями. Если вы не согласны, не используйте его.';
+
+  @override
+  String get termsSection2Title => '2. Сервис';
+
+  @override
+  String get termsSection2Body =>
+      'Приложение предоставляет инфо из TMDB. Мы не хостим и не транслируем видеоконтент сами.';
+
+  @override
+  String get termsSection3Title => '3. Аккаунты';
+
+  @override
+  String get termsSection3Body =>
+      'Возможен гостевой вход. Аккаунт нужен для синхронизации. Вы отвечаете за безопасность пароля.';
+
+  @override
+  String get termsSection4Title => '4. Ваш контент';
+
+  @override
+  String get termsSection4Body =>
+      'Ваши данные принадлежат вам. Мы храним их для работы сервиса и не продаем.';
+
+  @override
+  String get termsSection5Title => '5. Сторонние данные';
+
+  @override
+  String get termsSection5Body =>
+      'Инфо предоставлена TMDB и может меняться. Приложение использует API, но не сертифицировано TMDB.';
+
+  @override
+  String get termsSection6Title => '6. Прекращение доступа';
+
+  @override
+  String get termsSection6Body =>
+      'Вы можете удалить аккаунт в любое время. Мы можем ограничить доступ за нарушения.';
+
+  @override
+  String get termsSection7Title => '7. Изменения условий';
+
+  @override
+  String get termsSection7Body =>
+      'Мы можем обновлять условия. Дальнейшее использование означает принятие обновлений.';
+
+  @override
+  String get privacySection1Title => '1. Что мы собираем';
+
+  @override
+  String get privacySection1Body =>
+      'В гостевом режиме — ничего личного. С аккаунтом: имя, email и фото.';
+
+  @override
+  String get privacySection2Title => '2. Данные списков';
+
+  @override
+  String get privacySection2Body =>
+      'Надежно хранятся в Firestore и доступны только вам.';
+
+  @override
+  String get privacySection3Title => '3. Сторонние сервисы';
+
+  @override
+  String get privacySection3Body =>
+      'TMDB для инфо и Firebase для данных. У них свои политики.';
+
+  @override
+  String get privacySection4Title => '4. Локальное хранилище';
+
+  @override
+  String get privacySection4Body =>
+      'Настройки хранятся на устройстве для мгновенной работы.';
+
+  @override
+  String get privacySection5Title => '5. Удаление данных';
+
+  @override
+  String get privacySection5Body =>
+      'Удаление аккаунта стирает данные из облака. Локальные данные остаются до очистки кэша.';
+
+  @override
+  String get privacySection6Title => '6. Контакты';
+
+  @override
+  String get privacySection6Body =>
+      'Вопросы? Свяжитесь с нами через Центр помощи.';
 }

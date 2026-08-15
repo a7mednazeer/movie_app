@@ -13,6 +13,8 @@ abstract final class RouteNames {
   static const String settings = '/settings';
   static const String notificationSettings = '/notification-settings';
   static const String helpCenter = '/help-center';
+  static const String termsOfService = '/terms-of-service';
+  static const String privacyPolicy = '/privacy-policy';
   static const String movieDetails = '/movie-details';
 
   const RouteNames._();

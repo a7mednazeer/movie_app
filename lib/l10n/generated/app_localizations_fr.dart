@@ -325,9 +325,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get photoUrl => 'URL de la photo';
 
   @override
-  String get pphotoUrlHint => 'https://example.com/avatar.jpg';
-
-  @override
   String get enterName => 'Entrez votre nom';
 
   @override
@@ -465,6 +462,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get photoUrlLabel => 'URL de la photo';
 
   @override
+  String get photoUrlFieldHint => 'https://example.com/photo.jpg';
+
+  @override
   String get photoUrlHint =>
       'Collez un lien vers une image. Laissez vide pour supprimer votre photo.';
 
@@ -490,4 +490,301 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get accountDeletedSnack => 'Compte supprimé';
+
+  @override
+  String get chatbotEntrySubtitle =>
+      'Obtenez des réponses rapides de notre assistant FAQ';
+
+  @override
+  String get faqEntrySubtitle =>
+      'Parcourez les questions et réponses courantes';
+
+  @override
+  String get contactUsEntrySubtitle => 'Envoyez-nous un message';
+
+  @override
+  String get feedbackEntrySubtitle =>
+      'Évaluez l\'app et dites-nous ce que vous en pensez';
+
+  @override
+  String get aboutEntrySubtitle => 'Version, crédits et mentions légales';
+
+  @override
+  String get chatbotTitle => 'Assistant d\'aide';
+
+  @override
+  String get chatbotGreeting =>
+      'Bonjour ! Posez-moi vos questions sur l\'utilisation de l\'app — je ferai de mon mieux pour vous aider.';
+
+  @override
+  String get chatbotInputHint => 'Tapez votre question…';
+
+  @override
+  String get chatbotNoMatch =>
+      'Je ne suis pas sûr de ça. Essayez de reformuler, consultez la FAQ, ou contactez-nous et une vraie personne vous aidera.';
+
+  @override
+  String get chatbotContactHumanPrompt =>
+      'Besoin de parler à quelqu\'un ? Contactez-nous';
+
+  @override
+  String get faqTitle => 'Questions fréquentes';
+
+  @override
+  String get faqSearchHint => 'Rechercher dans la FAQ…';
+
+  @override
+  String get faqNoResultsSubtitle =>
+      'Essayez un autre terme de recherche, ou posez la question à notre assistant.';
+
+  @override
+  String get faqQAboutApp => 'Qu\'est-ce que cette app ?';
+
+  @override
+  String get faqAAboutApp =>
+      'MOVIES est une app de découverte de films : parcourez les tendances, les films populaires et les mieux notés, recherchez ce que vous voulez et suivez ce que vous voulez regarder.';
+
+  @override
+  String get faqQSearch => 'Comment rechercher un film ?';
+
+  @override
+  String get faqASearch =>
+      'Appuyez sur Recherche dans la barre de navigation, puis tapez un titre, un acteur ou un genre. Les résultats se mettent à jour au fur et à mesure.';
+
+  @override
+  String get faqQWatchlistVsFavorites =>
+      'Quelle est la différence entre Ma liste et Favoris ?';
+
+  @override
+  String get faqAWatchlistVsFavorites =>
+      'Ma liste regroupe les films que vous prévoyez de regarder. Favoris regroupe ceux que vous aimez déjà. Ils sont suivis séparément, et un film peut figurer dans les deux.';
+
+  @override
+  String get faqQSaveMovie => 'Comment enregistrer un film ?';
+
+  @override
+  String get faqASaveMovie =>
+      'Appuyez sur l\'icône de marque-page sur n\'importe quelle fiche film, ou utilisez les boutons Ma liste/Favori sur la page de détails d\'un film.';
+
+  @override
+  String get faqQNeedAccount =>
+      'Ai-je besoin d\'un compte pour utiliser l\'app ?';
+
+  @override
+  String get faqANeedAccount =>
+      'Non — tout fonctionne en tant qu\'invité, enregistré localement sur votre appareil. Se connecter ajoute la synchronisation entre appareils, pour que votre liste et vos favoris vous suivent partout où vous vous connectez.';
+
+  @override
+  String get faqQSignIn => 'Comment se connecter ou créer un compte ?';
+
+  @override
+  String get faqASignIn =>
+      'Allez dans Profil et appuyez sur la bannière de connexion, ou Profil → votre espace compte si vous en avez déjà un. L\'inscription ne nécessite qu\'un nom, un e-mail et un mot de passe.';
+
+  @override
+  String get faqQSyncDevices =>
+      'Comment fonctionne la synchronisation entre appareils ?';
+
+  @override
+  String get faqASyncDevices =>
+      'Une fois connecté, votre liste et vos favoris se synchronisent automatiquement avec votre compte et se mettent à jour en temps réel sur tout autre appareil connecté au même compte.';
+
+  @override
+  String get faqQOffline => 'L\'app fonctionne-t-elle hors ligne ?';
+
+  @override
+  String get faqAOffline =>
+      'Votre liste et vos favoris sont toujours disponibles hors ligne car ils sont stockés sur votre appareil. Parcourir de nouveaux films nécessite une connexion internet.';
+
+  @override
+  String get faqQChangeLanguage => 'Comment changer la langue de l\'app ?';
+
+  @override
+  String get faqAChangeLanguage =>
+      'Allez dans Paramètres → Langue et choisissez parmi 12 langues disponibles, ou sélectionnez Paramètre système pour suivre la langue de votre appareil.';
+
+  @override
+  String get faqQChangeTheme =>
+      'Comment basculer entre le mode clair et sombre ?';
+
+  @override
+  String get faqAChangeTheme =>
+      'Allez dans Paramètres → Apparence et choisissez Clair, Sombre ou Automatique pour suivre le réglage de votre appareil.';
+
+  @override
+  String get faqQWatchTrailer => 'Comment regarder une bande-annonce ?';
+
+  @override
+  String get faqAWatchTrailer =>
+      'Ouvrez la page de détails d\'un film et appuyez sur Voir la bande-annonce. Elle s\'ouvre dans YouTube si une bande-annonce est disponible pour ce titre.';
+
+  @override
+  String get faqQDeleteAccount => 'Comment supprimer mon compte ?';
+
+  @override
+  String get faqADeleteAccount =>
+      'Allez dans Profil → Modifier le profil et faites défiler jusqu\'à Supprimer le compte. Cela supprime définitivement votre compte ; votre liste et vos favoris restent sur votre appareil mais ne se synchronisent plus.';
+
+  @override
+  String get faqQContactSupport => 'Comment contacter le support ?';
+
+  @override
+  String get faqAContactSupport =>
+      'Allez dans Centre d\'aide → Contactez-nous et envoyez-nous un message — cela ouvre votre app e-mail avec tout pré-rempli.';
+
+  @override
+  String get contactUsTitle => 'Contactez-nous';
+
+  @override
+  String get contactUsSubtitle =>
+      'Une question ou un problème ? Envoyez-nous un message et nous vous répondrons.';
+
+  @override
+  String get contactSubjectLabel => 'Objet';
+
+  @override
+  String get contactMessageLabel => 'Message';
+
+  @override
+  String get contactSendAction => 'Envoyer le message';
+
+  @override
+  String get contactMailAppUnavailable =>
+      'Aucune app e-mail trouvée sur cet appareil.';
+
+  @override
+  String contactEmailBodyTemplate(String name, String email, String message) {
+    return 'Nom : $name\nE-mail : $email\n\n$message';
+  }
+
+  @override
+  String get feedbackTitle => 'Avis';
+
+  @override
+  String get feedbackSubtitle =>
+      'Comment se passe votre expérience avec l\'app jusqu\'à présent ?';
+
+  @override
+  String get feedbackCommentHint => 'Dites-nous en plus (facultatif)…';
+
+  @override
+  String get feedbackSendAction => 'Envoyer l\'avis';
+
+  @override
+  String get feedbackRatingRequired =>
+      'Veuillez d\'abord sélectionner une note.';
+
+  @override
+  String get feedbackThanks => 'Merci pour votre avis !';
+
+  @override
+  String get feedbackNoComment => '(Aucun commentaire fourni)';
+
+  @override
+  String get feedbackEmailSubject => 'Avis sur l\'app';
+
+  @override
+  String feedbackEmailBodyTemplate(int rating, String comment) {
+    return 'Note : $rating/5\n\n$comment';
+  }
+
+  @override
+  String get termsTitle => 'Conditions d\'utilisation';
+
+  @override
+  String get privacyTitle => 'Politique de confidentialité';
+
+  @override
+  String get legalLastUpdated => 'Dernière mise à jour : janvier 2026';
+
+  @override
+  String get termsSection1Title => '1. Acceptation des conditions';
+
+  @override
+  String get termsSection1Body =>
+      'En utilisant cette app, vous acceptez ces Conditions d\'utilisation. Si vous n\'êtes pas d\'accord, veuillez ne pas utiliser l\'app.';
+
+  @override
+  String get termsSection2Title => '2. Le service';
+
+  @override
+  String get termsSection2Body =>
+      'Cette app vous permet de parcourir, rechercher et enregistrer des informations sur les films provenant de The Movie Database (TMDB). Nous n\'hébergeons, ne diffusons ni ne distribuons aucun contenu vidéo nous-mêmes.';
+
+  @override
+  String get termsSection3Title => '3. Comptes';
+
+  @override
+  String get termsSection3Body =>
+      'Vous pouvez utiliser la plupart des fonctionnalités en tant qu\'invité, sans compte. Créer un compte (e-mail et mot de passe, via Firebase Authentication) permet de synchroniser votre liste et vos favoris entre vos appareils. Vous êtes responsable de la sécurité de votre mot de passe.';
+
+  @override
+  String get termsSection4Title => '4. Votre contenu';
+
+  @override
+  String get termsSection4Body =>
+      'Votre liste, vos favoris, votre nom de profil et l\'URL de votre photo vous appartiennent. Nous les stockons pour fournir le service et ne les vendons ni ne les utilisons à des fins publicitaires.';
+
+  @override
+  String get termsSection5Title => '5. Données de tiers';
+
+  @override
+  String get termsSection5Body =>
+      'Les titres, affiches, notes, distributions et critiques de films sont fournis par TMDB et peuvent être inexacts ou changer sans préavis. Ce produit utilise l\'API TMDB, mais n\'est ni approuvé ni certifié par TMDB.';
+
+  @override
+  String get termsSection6Title => '6. Résiliation';
+
+  @override
+  String get termsSection6Body =>
+      'Vous pouvez supprimer votre compte à tout moment depuis Profil → Modifier le profil. Nous pouvons suspendre l\'accès en cas de comportement enfreignant ces conditions ou d\'utilisation abusive du service.';
+
+  @override
+  String get termsSection7Title => '7. Modifications de ces conditions';
+
+  @override
+  String get termsSection7Body =>
+      'Nous pouvons mettre à jour ces conditions de temps à autre. Continuer à utiliser l\'app après des modifications signifie que vous acceptez les conditions mises à jour.';
+
+  @override
+  String get privacySection1Title => '1. Ce que nous collectons';
+
+  @override
+  String get privacySection1Body =>
+      'Si vous utilisez l\'app en tant qu\'invité, nous ne collectons aucune donnée personnelle — votre liste et vos favoris sont stockés uniquement sur votre appareil. Si vous créez un compte, nous collectons votre nom, votre adresse e-mail et (facultativement) une URL de photo de profil via Firebase Authentication.';
+
+  @override
+  String get privacySection2Title => '2. Données de liste et de favoris';
+
+  @override
+  String get privacySection2Body =>
+      'Une fois connecté, vos films enregistrés sont stockés dans Firestore sous votre compte et synchronisés entre vos appareils. Les données de chaque compte ne sont accessibles qu\'à ce compte, conformément aux règles de sécurité Firestore.';
+
+  @override
+  String get privacySection3Title => '3. Services tiers';
+
+  @override
+  String get privacySection3Body =>
+      'Nous utilisons The Movie Database (TMDB) pour récupérer les informations sur les films, et Firebase (Google) pour l\'authentification et le stockage des données. Ces services ont leurs propres politiques de confidentialité régissant la gestion des données de leur côté.';
+
+  @override
+  String get privacySection4Title => '4. Stockage local';
+
+  @override
+  String get privacySection4Body =>
+      'Votre liste, vos favoris, votre thème et vos préférences de langue sont stockés localement sur votre appareil (via Hive) afin que l\'app fonctionne hors ligne et instantanément, que vous soyez connecté ou non.';
+
+  @override
+  String get privacySection5Title => '5. Suppression des données';
+
+  @override
+  String get privacySection5Body =>
+      'Vous pouvez supprimer votre compte à tout moment depuis Profil → Modifier le profil, ce qui supprime définitivement votre compte et arrête toute synchronisation future. Les données déjà stockées localement sur votre appareil restent jusqu\'à ce que vous effaciez le stockage de l\'app.';
+
+  @override
+  String get privacySection6Title => '6. Contact';
+
+  @override
+  String get privacySection6Body =>
+      'Des questions sur cette politique ? Contactez-nous via Centre d\'aide → Contactez-nous.';
 }

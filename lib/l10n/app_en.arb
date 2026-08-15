@@ -411,10 +411,6 @@
   "@photoUrl": {
     "description": "Label for the photo URL input field."
   },
-  "pphotoUrlHint": "https://example.com/avatar.jpg",
-  "@pphotoUrlHint": {
-    "description": "Hint text for the photo URL input field."
-  },
   "enterName": "Enter your name",
   "@enterName": {
     "description": "Hint text for the name input field."
@@ -589,6 +585,10 @@
   "@photoUrlLabel": {
     "description": "Edit Profile screen string: photoUrlLabel."
   },
+  "photoUrlFieldHint": "https://example.com/photo.jpg",
+  "@photoUrlFieldHint": {
+    "description": "Edit Profile screen string: photoUrlFieldHint."
+  },
   "photoUrlHint": "Paste a link to an image. Leave blank to remove your photo.",
   "@photoUrlHint": {
     "description": "Edit Profile screen string: photoUrlHint."
@@ -620,5 +620,360 @@
   "accountDeletedSnack": "Account deleted",
   "@accountDeletedSnack": {
     "description": "Edit Profile screen string: accountDeletedSnack."
+  },
+  "chatbotEntrySubtitle": "Get quick answers from our FAQ assistant",
+  "@chatbotEntrySubtitle": {
+    "description": "Help Center string: chatbotEntrySubtitle."
+  },
+  "faqEntrySubtitle": "Browse common questions and answers",
+  "@faqEntrySubtitle": {
+    "description": "Help Center string: faqEntrySubtitle."
+  },
+  "contactUsEntrySubtitle": "Send us a message",
+  "@contactUsEntrySubtitle": {
+    "description": "Help Center string: contactUsEntrySubtitle."
+  },
+  "feedbackEntrySubtitle": "Rate the app and tell us what you think",
+  "@feedbackEntrySubtitle": {
+    "description": "Help Center string: feedbackEntrySubtitle."
+  },
+  "aboutEntrySubtitle": "Version, credits, and legal",
+  "@aboutEntrySubtitle": {
+    "description": "Help Center string: aboutEntrySubtitle."
+  },
+  "chatbotTitle": "Help Assistant",
+  "@chatbotTitle": {
+    "description": "Help Center string: chatbotTitle."
+  },
+  "chatbotGreeting": "Hi! Ask me anything about using the app — I'll do my best to help.",
+  "@chatbotGreeting": {
+    "description": "Help Center string: chatbotGreeting."
+  },
+  "chatbotInputHint": "Type your question…",
+  "@chatbotInputHint": {
+    "description": "Help Center string: chatbotInputHint."
+  },
+  "chatbotNoMatch": "I'm not sure about that one. Try rephrasing, browse the FAQ, or contact us and a real person will help.",
+  "@chatbotNoMatch": {
+    "description": "Help Center string: chatbotNoMatch."
+  },
+  "chatbotContactHumanPrompt": "Need a real person? Contact us",
+  "@chatbotContactHumanPrompt": {
+    "description": "Help Center string: chatbotContactHumanPrompt."
+  },
+  "faqTitle": "Frequently Asked Questions",
+  "@faqTitle": {
+    "description": "Help Center string: faqTitle."
+  },
+  "faqSearchHint": "Search the FAQ…",
+  "@faqSearchHint": {
+    "description": "Help Center string: faqSearchHint."
+  },
+  "faqNoResultsSubtitle": "Try a different search term, or ask our chat assistant.",
+  "@faqNoResultsSubtitle": {
+    "description": "Help Center string: faqNoResultsSubtitle."
+  },
+  "faqQAboutApp": "What is this app?",
+  "@faqQAboutApp": {
+    "description": "Help Center string: faqQAboutApp."
+  },
+  "faqAAboutApp": "MOVIES is a movie discovery app — browse trending, popular, and top-rated titles, search for anything, and keep track of what you want to watch.",
+  "@faqAAboutApp": {
+    "description": "Help Center string: faqAAboutApp."
+  },
+  "faqQSearch": "How do I search for a movie?",
+  "@faqQSearch": {
+    "description": "Help Center string: faqQSearch."
+  },
+  "faqASearch": "Tap Search in the bottom navigation, then type a title, actor, or genre. Results update as you type.",
+  "@faqASearch": {
+    "description": "Help Center string: faqASearch."
+  },
+  "faqQWatchlistVsFavorites": "What's the difference between Watchlist and Favorites?",
+  "@faqQWatchlistVsFavorites": {
+    "description": "Help Center string: faqQWatchlistVsFavorites."
+  },
+  "faqAWatchlistVsFavorites": "Watchlist is for movies you plan to watch. Favorites is for movies you already love. They're tracked separately, and a movie can be in both.",
+  "@faqAWatchlistVsFavorites": {
+    "description": "Help Center string: faqAWatchlistVsFavorites."
+  },
+  "faqQSaveMovie": "How do I save a movie?",
+  "@faqQSaveMovie": {
+    "description": "Help Center string: faqQSaveMovie."
+  },
+  "faqASaveMovie": "Tap the bookmark icon on any movie card, or use the Watchlist/Favorite buttons on a movie's details page.",
+  "@faqASaveMovie": {
+    "description": "Help Center string: faqASaveMovie."
+  },
+  "faqQNeedAccount": "Do I need an account to use the app?",
+  "@faqQNeedAccount": {
+    "description": "Help Center string: faqQNeedAccount."
+  },
+  "faqANeedAccount": "No — everything works as a guest, saved locally on your device. Signing in adds cross-device sync, so your watchlist and favorites follow you to any device you sign into.",
+  "@faqANeedAccount": {
+    "description": "Help Center string: faqANeedAccount."
+  },
+  "faqQSignIn": "How do I sign in or create an account?",
+  "@faqQSignIn": {
+    "description": "Help Center string: faqQSignIn."
+  },
+  "faqASignIn": "Go to Profile and tap the sign-in banner, or Profile → your account area if you're already set up. Sign-up just needs a name, email, and password.",
+  "@faqASignIn": {
+    "description": "Help Center string: faqASignIn."
+  },
+  "faqQSyncDevices": "How does syncing across devices work?",
+  "@faqQSyncDevices": {
+    "description": "Help Center string: faqQSyncDevices."
+  },
+  "faqASyncDevices": "Once you're signed in, your watchlist and favorites automatically sync to your account and update in real time on any other device signed into the same account.",
+  "@faqASyncDevices": {
+    "description": "Help Center string: faqASyncDevices."
+  },
+  "faqQOffline": "Does the app work offline?",
+  "@faqQOffline": {
+    "description": "Help Center string: faqQOffline."
+  },
+  "faqAOffline": "Your watchlist and favorites are always available offline since they're stored on your device. Browsing new movies needs an internet connection.",
+  "@faqAOffline": {
+    "description": "Help Center string: faqAOffline."
+  },
+  "faqQChangeLanguage": "How do I change the app's language?",
+  "@faqQChangeLanguage": {
+    "description": "Help Center string: faqQChangeLanguage."
+  },
+  "faqAChangeLanguage": "Go to Settings → Language and pick from 12 supported languages, or choose System Default to follow your device's language.",
+  "@faqAChangeLanguage": {
+    "description": "Help Center string: faqAChangeLanguage."
+  },
+  "faqQChangeTheme": "How do I switch between light and dark mode?",
+  "@faqQChangeTheme": {
+    "description": "Help Center string: faqQChangeTheme."
+  },
+  "faqAChangeTheme": "Go to Settings → Appearance and choose Light, Dark, or Auto to follow your device's setting.",
+  "@faqAChangeTheme": {
+    "description": "Help Center string: faqAChangeTheme."
+  },
+  "faqQWatchTrailer": "How do I watch a trailer?",
+  "@faqQWatchTrailer": {
+    "description": "Help Center string: faqQWatchTrailer."
+  },
+  "faqAWatchTrailer": "Open a movie's details page and tap Watch Trailer. It opens in YouTube if a trailer is available for that title.",
+  "@faqAWatchTrailer": {
+    "description": "Help Center string: faqAWatchTrailer."
+  },
+  "faqQDeleteAccount": "How do I delete my account?",
+  "@faqQDeleteAccount": {
+    "description": "Help Center string: faqQDeleteAccount."
+  },
+  "faqADeleteAccount": "Go to Profile → Edit Profile and scroll to Delete Account. This permanently removes your account; your watchlist and favorites stay on your device but stop syncing.",
+  "@faqADeleteAccount": {
+    "description": "Help Center string: faqADeleteAccount."
+  },
+  "faqQContactSupport": "How do I contact support?",
+  "@faqQContactSupport": {
+    "description": "Help Center string: faqQContactSupport."
+  },
+  "faqAContactSupport": "Go to Help Center → Contact Us and send us a message — it opens your email app with everything pre-filled.",
+  "@faqAContactSupport": {
+    "description": "Help Center string: faqAContactSupport."
+  },
+  "contactUsTitle": "Contact Us",
+  "@contactUsTitle": {
+    "description": "Help Center string: contactUsTitle."
+  },
+  "contactUsSubtitle": "Have a question or ran into a problem? Send us a message and we'll get back to you.",
+  "@contactUsSubtitle": {
+    "description": "Help Center string: contactUsSubtitle."
+  },
+  "contactSubjectLabel": "Subject",
+  "@contactSubjectLabel": {
+    "description": "Help Center string: contactSubjectLabel."
+  },
+  "contactMessageLabel": "Message",
+  "@contactMessageLabel": {
+    "description": "Help Center string: contactMessageLabel."
+  },
+  "contactSendAction": "Send Message",
+  "@contactSendAction": {
+    "description": "Help Center string: contactSendAction."
+  },
+  "contactMailAppUnavailable": "No email app found on this device.",
+  "@contactMailAppUnavailable": {
+    "description": "Help Center string: contactMailAppUnavailable."
+  },
+  "contactEmailBodyTemplate": "Name: {name}\nEmail: {email}\n\n{message}",
+  "@contactEmailBodyTemplate": {
+    "description": "Help Center string: contactEmailBodyTemplate.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "email": {
+        "type": "String"
+      },
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackTitle": "Feedback",
+  "@feedbackTitle": {
+    "description": "Help Center string: feedbackTitle."
+  },
+  "feedbackSubtitle": "How's your experience with the app so far?",
+  "@feedbackSubtitle": {
+    "description": "Help Center string: feedbackSubtitle."
+  },
+  "feedbackCommentHint": "Tell us more (optional)…",
+  "@feedbackCommentHint": {
+    "description": "Help Center string: feedbackCommentHint."
+  },
+  "feedbackSendAction": "Send Feedback",
+  "@feedbackSendAction": {
+    "description": "Help Center string: feedbackSendAction."
+  },
+  "feedbackRatingRequired": "Please select a star rating first.",
+  "@feedbackRatingRequired": {
+    "description": "Help Center string: feedbackRatingRequired."
+  },
+  "feedbackThanks": "Thanks for your feedback!",
+  "@feedbackThanks": {
+    "description": "Help Center string: feedbackThanks."
+  },
+  "feedbackNoComment": "(No comment provided)",
+  "@feedbackNoComment": {
+    "description": "Help Center string: feedbackNoComment."
+  },
+  "feedbackEmailSubject": "App Feedback",
+  "@feedbackEmailSubject": {
+    "description": "Help Center string: feedbackEmailSubject."
+  },
+  "feedbackEmailBodyTemplate": "Rating: {rating}/5\n\n{comment}",
+  "@feedbackEmailBodyTemplate": {
+    "description": "Help Center string: feedbackEmailBodyTemplate.",
+    "placeholders": {
+      "rating": {
+        "type": "int"
+      },
+      "comment": {
+        "type": "String"
+      }
+    }
+  },
+  "termsTitle": "Terms of Service",
+  "@termsTitle": {
+    "description": "Help Center string: termsTitle."
+  },
+  "privacyTitle": "Privacy Policy",
+  "@privacyTitle": {
+    "description": "Help Center string: privacyTitle."
+  },
+  "legalLastUpdated": "Last updated: January 2026",
+  "@legalLastUpdated": {
+    "description": "Help Center string: legalLastUpdated."
+  },
+  "termsSection1Title": "1. Acceptance of Terms",
+  "@termsSection1Title": {
+    "description": "Help Center string: termsSection1Title."
+  },
+  "termsSection1Body": "By using this app, you agree to these Terms of Service. If you don't agree, please don't use the app.",
+  "@termsSection1Body": {
+    "description": "Help Center string: termsSection1Body."
+  },
+  "termsSection2Title": "2. The Service",
+  "@termsSection2Title": {
+    "description": "Help Center string: termsSection2Title."
+  },
+  "termsSection2Body": "This app lets you browse, search, and save movie information sourced from The Movie Database (TMDB). We don't host, stream, or distribute any video content ourselves.",
+  "@termsSection2Body": {
+    "description": "Help Center string: termsSection2Body."
+  },
+  "termsSection3Title": "3. Accounts",
+  "@termsSection3Title": {
+    "description": "Help Center string: termsSection3Title."
+  },
+  "termsSection3Body": "You can use most features as a guest without an account. Creating an account (email and password, via Firebase Authentication) enables syncing your watchlist and favorites across your devices. You're responsible for keeping your password secure.",
+  "@termsSection3Body": {
+    "description": "Help Center string: termsSection3Body."
+  },
+  "termsSection4Title": "4. Your Content",
+  "@termsSection4Title": {
+    "description": "Help Center string: termsSection4Title."
+  },
+  "termsSection4Body": "Your watchlist, favorites, profile name, and photo URL are yours. We store them to provide the service and don't sell them or use them for advertising.",
+  "@termsSection4Body": {
+    "description": "Help Center string: termsSection4Body."
+  },
+  "termsSection5Title": "5. Third-Party Data",
+  "@termsSection5Title": {
+    "description": "Help Center string: termsSection5Title."
+  },
+  "termsSection5Body": "Movie titles, posters, ratings, cast, and reviews are provided by TMDB and may be inaccurate or change without notice. This product uses the TMDB API but is not endorsed or certified by TMDB.",
+  "@termsSection5Body": {
+    "description": "Help Center string: termsSection5Body."
+  },
+  "termsSection6Title": "6. Termination",
+  "@termsSection6Title": {
+    "description": "Help Center string: termsSection6Title."
+  },
+  "termsSection6Body": "You can delete your account at any time from Profile → Edit Profile. We may suspend access for behavior that violates these terms or misuses the service.",
+  "@termsSection6Body": {
+    "description": "Help Center string: termsSection6Body."
+  },
+  "termsSection7Title": "7. Changes to These Terms",
+  "@termsSection7Title": {
+    "description": "Help Center string: termsSection7Title."
+  },
+  "termsSection7Body": "We may update these terms from time to time. Continuing to use the app after changes means you accept the updated terms.",
+  "@termsSection7Body": {
+    "description": "Help Center string: termsSection7Body."
+  },
+  "privacySection1Title": "1. What We Collect",
+  "@privacySection1Title": {
+    "description": "Help Center string: privacySection1Title."
+  },
+  "privacySection1Body": "If you use the app as a guest, we don't collect any personal data — your watchlist and favorites are stored only on your device. If you create an account, we collect your name, email address, and (optionally) a profile photo URL via Firebase Authentication.",
+  "@privacySection1Body": {
+    "description": "Help Center string: privacySection1Body."
+  },
+  "privacySection2Title": "2. Watchlist and Favorites Data",
+  "@privacySection2Title": {
+    "description": "Help Center string: privacySection2Title."
+  },
+  "privacySection2Body": "When signed in, your saved movies are stored in Firestore under your account and synced across your devices. Each account's data is only accessible to that account — enforced by Firestore security rules.",
+  "@privacySection2Body": {
+    "description": "Help Center string: privacySection2Body."
+  },
+  "privacySection3Title": "3. Third-Party Services",
+  "@privacySection3Title": {
+    "description": "Help Center string: privacySection3Title."
+  },
+  "privacySection3Body": "We use The Movie Database (TMDB) to fetch movie information, and Firebase (Google) for authentication and data storage. These services have their own privacy policies governing how they handle data on their end.",
+  "@privacySection3Body": {
+    "description": "Help Center string: privacySection3Body."
+  },
+  "privacySection4Title": "4. Local Storage",
+  "@privacySection4Title": {
+    "description": "Help Center string: privacySection4Title."
+  },
+  "privacySection4Body": "Your watchlist, favorites, theme, and language preferences are stored locally on your device (via Hive) so the app works offline and instantly, whether or not you're signed in.",
+  "@privacySection4Body": {
+    "description": "Help Center string: privacySection4Body."
+  },
+  "privacySection5Title": "5. Data Deletion",
+  "@privacySection5Title": {
+    "description": "Help Center string: privacySection5Title."
+  },
+  "privacySection5Body": "You can delete your account at any time from Profile → Edit Profile, which permanently removes your account and stops any further syncing. Data already stored locally on your device remains until you clear the app's storage.",
+  "@privacySection5Body": {
+    "description": "Help Center string: privacySection5Body."
+  },
+  "privacySection6Title": "6. Contact",
+  "@privacySection6Title": {
+    "description": "Help Center string: privacySection6Title."
+  },
+  "privacySection6Body": "Questions about this policy? Reach us through Help Center → Contact Us.",
+  "@privacySection6Body": {
+    "description": "Help Center string: privacySection6Body."
   }
 }

@@ -6,7 +6,14 @@ import '../../features/auth/presentation/screens/sign_in_screen.dart';
 import '../../features/auth/presentation/screens/sign_up_screen.dart';
 import '../../features/browse/presentation/screens/browse_screen.dart';
 import '../../features/browse/presentation/screens/genre_movies_screen.dart';
+import '../../features/help_center/presentation/screens/about_screen.dart';
+import '../../features/help_center/presentation/screens/chatbot_screen.dart';
+import '../../features/help_center/presentation/screens/contact_screen.dart';
+import '../../features/help_center/presentation/screens/faq_screen.dart';
+import '../../features/help_center/presentation/screens/feedback_screen.dart';
 import '../../features/help_center/presentation/screens/help_center_screen.dart';
+import '../../features/help_center/presentation/screens/privacy_policy_screen.dart';
+import '../../features/help_center/presentation/screens/terms_of_service_screen.dart';
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/movie_details/presentation/screens/movie_details_screen.dart';
 import '../../features/notifications/presentation/screens/notification_settings_screen.dart';
@@ -167,6 +174,50 @@ final Provider<GoRouter> appRouterProvider = Provider<GoRouter>((Ref ref) {
         path: RouteNames.helpCenter,
         pageBuilder: (BuildContext context, GoRouterState state) {
           return _fadeThroughPage(const HelpCenterScreen(), state);
+        },
+        routes: <RouteBase>[
+          GoRoute(
+            path: 'chat',
+            pageBuilder: (BuildContext context, GoRouterState state) {
+              return _fadeThroughPage(const ChatbotScreen(), state);
+            },
+          ),
+          GoRoute(
+            path: 'faq',
+            pageBuilder: (BuildContext context, GoRouterState state) {
+              return _fadeThroughPage(const FaqScreen(), state);
+            },
+          ),
+          GoRoute(
+            path: 'contact',
+            pageBuilder: (BuildContext context, GoRouterState state) {
+              return _fadeThroughPage(const ContactScreen(), state);
+            },
+          ),
+          GoRoute(
+            path: 'feedback',
+            pageBuilder: (BuildContext context, GoRouterState state) {
+              return _fadeThroughPage(const FeedbackScreen(), state);
+            },
+          ),
+          GoRoute(
+            path: 'about',
+            pageBuilder: (BuildContext context, GoRouterState state) {
+              return _fadeThroughPage(const AboutScreen(), state);
+            },
+          ),
+        ],
+      ),
+      GoRoute(
+        path: RouteNames.termsOfService,
+        pageBuilder: (BuildContext context, GoRouterState state) {
+          return _fadeThroughPage(const TermsOfServiceScreen(), state);
+        },
+      ),
+      GoRoute(
+        path: RouteNames.privacyPolicy,
+        pageBuilder: (BuildContext context, GoRouterState state) {
+          return _fadeThroughPage(const PrivacyPolicyScreen(), state);
         },
       ),
     ],
